@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synapse-engine-comfyui"
+version = "1.0.0"
+description = "Advanced compositional prompt generator for ComfyUI using YAML dimension system"
+authors = [{name = "Cadejo77", email = "noreply@github.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["comfyui", "prompt-generation", "ai", "stable-diffusion"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.urls]
+Homepage = "https://github.com/Cadejo77/Synapse-Engine"
+Repository = "https://github.com/Cadejo77/Synapse-Engine"
+Issues = "https://github.com/Cadejo77/Synapse-Engine/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = ["node_modules*", "dist*", "src*", "config*", "data*", "plans*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml", "*.yml", "*.json", "*.js", "*.ts"]
