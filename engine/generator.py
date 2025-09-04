@@ -13,16 +13,24 @@ from .complexity import get_cost, get_rarity_budget, check_budget_available, con
 from .safety import categorize_tokens, violates_policy, apply_safety_filter
 from .synonyms import normalize_all
 from .prompt_assembler import assemble_prompt, assemble_style, make_tags_header
+from .negative_prompts import generate_negative_prompts
+from .model_formatter import format_prompt_for_model, create_regional_prompt_format
 
 class PromptGenerator:
     """Main prompt generator using YAML configuration"""
     
-    def __init__(self, config: Dict[str, Any], seed: Optional[int] = None):
+    def __init__(self, config: Dict[str, Any], seed: Optional[int] = None, 
+                 explicit_content: str = "disabled", fixed_genre: str = "random"):
         self.cfg = config
         self.rng = DeterministicRandom(seed)
+        self.explicit_content = explicit_content
+        self.fixed_genre = fixed_genre
     
-    def pick_genre(self) -> str:
-        """Pick a random genre"""
+    def pick_genre(self, fixed_genre: str = "random") -> str:
+        """Pick a genre - either random or fixed"""
+        if fixed_genre != "random":
+            return fixed_genre
+            
         genres = self.cfg.get('meta', {}).get('genres', {}).get('genres', [])
         if not genres:
             return 'fantasy'
@@ -237,7 +245,7 @@ class PromptGenerator:
     def generate_one(self) -> Dict[str, Any]:
         """Generate a single prompt result"""
         # Pick basic parameters
-        genre = self.pick_genre()
+        genre = self.pick_genre(self.fixed_genre)
         rarity = self.pick_rarity()
         vibe = self.pick_vibe()
         content_type = self.pick_content_type()
@@ -305,6 +313,9 @@ class PromptGenerator:
         if violates_policy(safety_map, self.cfg.get('meta', {}).get('safety', {})):
             context.setdefault('warnings', []).append('Safety violation: blocked category combination')
         
+        # Add explicit content if enabled
+        self._add_explicit_content(context, genre, rarity)
+        
         # Apply synonym normalization
         for dim, tokens in context.get('tokens', {}).items():
             context['tokens'][dim] = normalize_all(tokens, self.cfg.get('meta', {}).get('synonyms', {}))
@@ -324,6 +335,40 @@ class PromptGenerator:
             'tags_header': tags_header,
             'metadata': context
         }
+    
+    def _add_explicit_content(self, context: Dict[str, Any], genre: str, rarity: str) -> None:
+        """Add explicit content based on settings and probability"""
+        if self.explicit_content == "disabled":
+            return
+            
+        safety_config = self.cfg.get('meta', {}).get('safety', {})
+        policy = safety_config.get('policy', {})
+        
+        # Check rarity-based probability for R-rated content
+        r_rated_chances = policy.get('r_rated_chance', {})
+        base_chance = r_rated_chances.get(rarity, 0.05)
+        
+        # Increase chance for artistic nude genres
+        artistic_genres = policy.get('artistic_nude_genres', [])
+        if genre in artistic_genres:
+            base_chance *= 1.5
+            
+        if self.rng.random() < base_chance:
+            # Get appropriate explicit content
+            flags = safety_config.get('flags', {})
+            
+            if self.explicit_content == "artistic_only":
+                explicit_tokens = flags.get('r_rated_artistic', [])
+            elif self.explicit_content == "full_explicit":
+                explicit_tokens = flags.get('explicit', []) + flags.get('r_rated_artistic', [])
+            else:
+                return
+                
+            if explicit_tokens:
+                # Add one explicit token to modifiers
+                chosen_token = self.rng.choice(explicit_tokens)
+                context.setdefault('tokens', {}).setdefault('modifiers', []).append(chosen_token)
+                context.setdefault('warnings', []).append(f'Added R-rated content: {chosen_token}')
     
     def generate(self, count: int = 1) -> List[Dict[str, Any]]:
         """Generate multiple prompts"""

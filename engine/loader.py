@@ -46,6 +46,8 @@ def load_all_config(root_dir: str) -> Dict[str, Any]:
         'safety': read_yaml(str(meta_dir / 'safety_flags.yaml')),
         'synonyms': read_yaml(str(meta_dir / 'synonyms.yaml')),
         'complexity': read_yaml(str(meta_dir / 'complexity_rules.yaml')),
+        'model_profiles': read_yaml(str(meta_dir / 'model_profiles.yaml')),
+        'negative_prompts': read_yaml(str(meta_dir / 'negative_prompts.yaml')),
     }
     
     # Load relations
