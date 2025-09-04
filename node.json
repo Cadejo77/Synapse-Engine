@@ -1,7 +1,7 @@
 {
   "name": "Synapse-Engine",
-  "description": "Advanced compositional prompt generator for ComfyUI using YAML dimension system. Generates sophisticated prompts through dimensional composition with genre selection, rarity tiers, vibe selection, and complex relational weighting.",
-  "version": "1.0.0",
+  "description": "Python-only compositional prompt generator for ComfyUI using YAML dimension system.",
+  "version": "1.1.0",
   "author": "Cadejo77",
   "license": "MIT",
   "repository": "https://github.com/Cadejo77/Synapse-Engine",
@@ -10,9 +10,6 @@
     "https://github.com/Cadejo77/Synapse-Engine"
   ],
   "install_type": "git-clone",
-  "pip": [],
-  "nodename_pattern": "Synapse",
-  "js_path": "./dist",
-  "preemptions": [],
-  "apt": ["nodejs", "npm"]
+  "pip": ["PyYAML>=6.0"],
+  "nodename_pattern": "Synapse"
 }

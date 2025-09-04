@@ -1,12 +1,11 @@
 # Synapse Engine - Advanced Prompt Generation System
 
-This repository contains a fully decomposed, compositional prompt generation system designed for AI image generation tools like Stable Diffusion. It works both as a standalone CLI tool and as a **ComfyUI custom node**.
+This repository contains a fully decomposed, compositional prompt generation system designed for AI image generation tools like Stable Diffusion. It works as a **pure Python ComfyUI custom node** using only YAML configuration files.
 
 ## 🚀 ComfyUI Integration
 
 ### Prerequisites
-- **Node.js** (v16 or higher) - [Download here](https://nodejs.org/)
-- **npm** (comes with Node.js)
+- **Python** (3.8 or higher)
 - **ComfyUI** - [ComfyUI Repository](https://github.com/comfyanonymous/ComfyUI)
 
 ### Installation for ComfyUI
@@ -28,9 +27,9 @@ This repository contains a fully decomposed, compositional prompt generation sys
    cd Synapse-Engine
    ```
 
-3. Run the installation script:
+3. Install Python dependencies:
    ```bash
-   python install.py
+   pip install -r requirements.txt
    ```
 
 4. Restart ComfyUI
@@ -50,16 +49,18 @@ This repository contains a fully decomposed, compositional prompt generation sys
 
 The system supports:
 
-1. **Mode Selection**: Compositional (dimension-driven) vs Legacy (pre-fused line)
-2. **Conditional Gating**: rarity_min/max, allow_genres/block_genres, vibe_bias
-3. **Relational Weight Adjustments**: species ↔ archetype, archetype ↔ power_source, biome ↔ structure, vibe ↔ palette
-4. **Conflict Handling** (negative_conflicts)
-5. **Complexity Budgeting** (complexity_rules.yaml)
-6. **Style & Composition Layers**
-7. **Safety Filtering** (safety_flags.yaml)
-8. **Synonym Normalization** (synonyms.yaml)
-9. **Rarity Overrides** (rarity_overrides.yaml)
-10. **Tag Emission**: Final prompt can prepend /genre:.../ /rarity:.../ /vibe:.../ etc.
+1. **Pure Python Implementation**: No Node.js required - runs entirely in Python with PyYAML
+2. **Deterministic Seeding**: Reproducible results using Python's random.Random(seed)
+3. **Mode Selection**: Compositional (dimension-driven) vs Legacy (pre-fused line)
+4. **Conditional Gating**: rarity_min/max, allow_genres/block_genres, vibe_bias
+5. **Relational Weight Adjustments**: species ↔ archetype, archetype ↔ power_source, biome ↔ structure, vibe ↔ palette
+6. **Conflict Handling** (negative_conflicts)
+7. **Complexity Budgeting** (complexity_rules.yaml)
+8. **Style & Composition Layers**
+9. **Safety Filtering** (safety_flags.yaml)
+10. **Synonym Normalization** (synonyms.yaml)
+11. **Rarity Overrides** (rarity_overrides.yaml)
+12. **Tag Emission**: Final prompt can prepend /genre:.../ /rarity:.../ /vibe:.../ etc.
 
 ## 🎯 Generation Flow (Recommended)
 
@@ -94,35 +95,34 @@ Defined per rarity in complexity_rules.yaml. Each chosen token has complexity_co
 
 See file tree in main answer. Each pool file ends with a metadata block showing version & selection parameters.
 
-## 🔧 Standalone CLI Usage
+## 🔧 Testing Your Installation
 
-You can also use this as a standalone command-line tool:
+You can test your installation using the provided test script:
 
 ```bash
-# Install dependencies
-npm install
+# Navigate to the Synapse-Engine directory
+cd /path/to/ComfyUI/custom_nodes/Synapse-Engine
 
-# Build the project
-npm run build
-
-# Generate prompts
-node dist/index.js --count 3
-node dist/index.js --count 5 --json
-node dist/index.js --count 1 --root /custom/config/path
+# Run the test script
+python test_engine.py
 ```
 
-### CLI Options
-- `--count N`: Generate N prompts (default: 1)
-- `--json`: Output in JSON format with metadata
-- `--root PATH`: Use custom config directory path
-- `--out FILE`: Write output to file (JSON mode only)
+This will validate that:
+- Configuration files load correctly
+- Both compositional and legacy modes work
+- Seeding produces reproducible results
+- JSON and text output formats function properly
 
 ## 🚀 Next Steps (Optional)
 
 - Add composites (macro archetype bundles)
-- Add faction/culture dimension
+- Add faction/culture dimension  
 - Introduce usage_stats tracking & dynamic overrides
 - Add template variants file for natural language assembly
+
+### Legacy Mode Support
+
+This implementation preserves the original "fused line" mode from `data/subject_core_legacy.yaml`, `data/landscape_core_legacy.yaml`, and finishers. The probability is controlled by the `compositional_chance` setting in `generation_pipeline.yaml` (set to 1.0 to force compositional-only mode).
 
 ## 📄 License
 

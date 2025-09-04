@@ -1,7 +1,9 @@
-import subprocess
 import json
 import os
 from pathlib import Path
+from typing import Optional, Dict, Any
+
+from engine import PromptGenerator, load_all_config
 
 
 class SynapsePromptGenerator:
@@ -29,94 +31,77 @@ class SynapsePromptGenerator:
     def __init__(self):
         # Get the path to this node's directory
         self.node_dir = Path(__file__).parent
+        self._config_cache = {}
+        self._last_root = None
+        
+    def _load_config(self, root_path: str) -> Dict[str, Any]:
+        """Load configuration with simple caching"""
+        if root_path != self._last_root or not self._config_cache:
+            try:
+                self._config_cache = load_all_config(root_path)
+                self._last_root = root_path
+                print(f"[Synapse Engine] Loaded config from: {root_path}")
+            except Exception as e:
+                print(f"[Synapse Engine] Error loading config: {e}")
+                raise
+        return self._config_cache
         
     def generate_prompt(self, count, output_format, seed, custom_root=""):
         """
-        Generate prompts using the Synapse Engine JavaScript generator.
+        Generate prompts using the Synapse Engine Python implementation.
         """
         try:
-            # Build the command
-            cmd = ["node", str(self.node_dir / "dist" / "index.js")]
-            cmd.extend(["--count", str(count)])
-            
-            if output_format == "json":
-                cmd.append("--json")
-            
-            if custom_root:
-                cmd.extend(["--root", custom_root])
+            # Determine root path
+            if custom_root and Path(custom_root).exists():
+                root_path = custom_root
             else:
-                cmd.extend(["--root", str(self.node_dir)])
+                root_path = str(self.node_dir)
             
-            # Set environment for reproducible results if seed is provided
-            env = os.environ.copy()
-            if seed >= 0:
-                env['SEED'] = str(seed)
+            # Load configuration
+            config = self._load_config(root_path)
             
-            # Run the Synapse Engine
-            result = subprocess.run(
-                cmd,
-                cwd=self.node_dir,
-                capture_output=True,
-                text=True,
-                env=env
-            )
+            # Use seed if provided, otherwise let it be random
+            actual_seed = seed if seed >= 0 else None
             
-            if result.returncode != 0:
-                error_msg = f"Synapse Engine failed: {result.stderr}"
-                print(f"[Synapse Engine] Error: {error_msg}")
-                return (error_msg,)
+            # Create generator and generate prompts
+            generator = PromptGenerator(config, seed=actual_seed)
+            results = generator.generate(count)
             
-            output = result.stdout.strip()
+            if not results:
+                return ("No prompts generated",)
             
+            # Format output based on requested format
             if output_format == "json":
-                try:
-                    # Parse JSON and extract prompts
-                    data = json.loads(output)
-                    if isinstance(data, list) and len(data) > 0:
-                        # Return the first prompt if multiple generated
-                        return (data[0].get('prompt', output),)
-                    else:
-                        return (output,)
-                except json.JSONDecodeError:
-                    return (output,)
+                # Return JSON representation
+                result_data = results[0] if results else {}
+                return (json.dumps(result_data, indent=2),)
             else:
-                # For text format, extract just the prompt part (skip metadata)
-                lines = output.split('\n')
-                prompts = []
-                for line in lines:
-                    line = line.strip()
-                    if line and not line.startswith('---') and not line.startswith('Warnings:'):
-                        # Remove metadata tags from the beginning
-                        if '/' in line:
-                            # Find where the actual prompt starts after metadata tags
-                            # Metadata tags are in format /key:value/
-                            parts = line.split(' ')
-                            prompt_parts = []
-                            
-                            for part in parts:
-                                if part.startswith('/') and part.endswith('/'):
-                                    # This is a metadata tag, skip it
-                                    continue
-                                else:
-                                    # This is part of the prompt
-                                    prompt_parts.append(part)
-                            
-                            if prompt_parts:
-                                clean_prompt = ' '.join(prompt_parts)
-                                prompts.append(clean_prompt)
-                            else:
-                                # Fallback if no clean parts found
-                                prompts.append(line)
-                        else:
-                            prompts.append(line)
+                # Return clean text prompt (first result)
+                first_result = results[0]
+                prompt = first_result.get('prompt', '')
                 
-                if prompts:
-                    return (prompts[0],)  # Return first prompt
-                else:
-                    return (output,)  # Fallback to raw output
+                # Clean up the prompt by removing metadata tags if present
+                if prompt.startswith('/'):
+                    # Find where the actual prompt starts after metadata tags
+                    parts = prompt.split(' ')
+                    clean_parts = []
+                    
+                    for part in parts:
+                        if part.startswith('/') and part.endswith('/'):
+                            # This is a metadata tag, skip it
+                            continue
+                        else:
+                            # This is part of the prompt
+                            clean_parts.append(part)
+                    
+                    if clean_parts:
+                        clean_prompt = ' '.join(clean_parts)
+                        return (clean_prompt,)
+                
+                return (prompt,)
                     
         except Exception as e:
-            error_msg = f"Error running Synapse Engine: {str(e)}"
+            error_msg = f"Synapse Engine error: {str(e)}"
             print(f"[Synapse Engine] Error: {error_msg}")
             return (error_msg,)
 
