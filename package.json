@@ -1,12 +1,21 @@
 {
-  "name": "prompt-gen-node",
+  "name": "synapse-engine-comfyui",
   "version": "1.0.0",
   "type": "module",
-  "description": "Advanced compositional prompt generator for YAML dimension system",
+  "description": "Advanced compositional prompt generator for ComfyUI and CLI usage with YAML dimension system",
+  "keywords": ["comfyui", "prompt-generation", "ai", "stable-diffusion", "custom-node"],
+  "author": "Cadejo77",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cadejo77/Synapse-Engine.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "ts-node src/index.ts --count 3",
-    "gen": "node dist/index.js --count 3"
+    "gen": "node dist/index.js --count 3",
+    "test": "python test_node.py",
+    "install-comfyui": "python install.py"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
