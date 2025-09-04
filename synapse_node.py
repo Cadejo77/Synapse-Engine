@@ -21,9 +21,8 @@ class SynapsePromptGenerator:
         return {
             "required": {
                 "count": ("INT", {"default": 1, "min": 1, "max": 100}),
-                "output_format": (["text", "json", "regional", "structured"], {"default": "text"}),
+                "output_format": (["text", "json", "structured"], {"default": "text"}),
                 "seed": ("INT", {"default": -1}),
-                "model_profile": (["sdxl", "flux", "illustrious_xl", "pony"], {"default": "sdxl"}),
             },
             "optional": {
                 "custom_root": ("STRING", {"default": ""}),
@@ -32,7 +31,6 @@ class SynapsePromptGenerator:
                 "negative_prompts": ("BOOLEAN", {"default": True}),
                 "custom_negative": ("STRING", {"default": "", "multiline": True}),
                 "explicit_content": (["disabled", "artistic_only", "full_explicit"], {"default": "disabled"}),
-                "regional_prompting": ("BOOLEAN", {"default": False}),
             }
         }
 
@@ -70,9 +68,9 @@ class SynapsePromptGenerator:
                 raise RuntimeError(f"Failed to load config: {e}") from e
         return self._config_cache
 
-    def generate_prompt(self, count, output_format, seed, model_profile="sdxl", custom_root="", 
+    def generate_prompt(self, count, output_format, seed, custom_root="", 
                        user_prompt="", genre_control="random", negative_prompts=True, 
-                       custom_negative="", explicit_content="disabled", regional_prompting=False):
+                       custom_negative="", explicit_content="disabled"):
         """
         Generate prompts using the Synapse Engine Python implementation.
         """
@@ -96,13 +94,11 @@ class SynapsePromptGenerator:
 
             first_result = results[0]
             
-            # Import the new modules for processing
+            # Import the universal formatter
             try:
-                from engine.negative_prompts import generate_negative_prompts
-                from engine.model_formatter import format_prompt_for_model, create_regional_prompt_format
+                from engine.universal_formatter import format_universal_prompt, generate_universal_negative_prompts
             except ImportError:
-                from .engine.negative_prompts import generate_negative_prompts
-                from .engine.model_formatter import format_prompt_for_model, create_regional_prompt_format
+                from .engine.universal_formatter import format_universal_prompt, generate_universal_negative_prompts
             
             # Get the raw prompt
             prompt = first_result.get('prompt', '')
@@ -119,37 +115,28 @@ class SynapsePromptGenerator:
                 if clean_parts:
                     clean_prompt = ' '.join(clean_parts)
             
-            # Apply model-specific formatting
-            formatted_prompt = format_prompt_for_model(clean_prompt, first_result.get('metadata', {}), 
-                                                     model_profile, config, user_prompt)
+            # Apply universal formatting
+            formatted_prompt = format_universal_prompt(clean_prompt, first_result.get('metadata', {}), user_prompt)
             
             # Generate negative prompts if enabled
             negative_prompt = ""
             if negative_prompts:
-                # Add rng to context for negative prompt generation
-                context = first_result.get('metadata', {}).copy()
-                context['rng'] = generator.rng
-                negative_prompt = generate_negative_prompts(context, config, model_profile, custom_negative)
+                negative_prompt = generate_universal_negative_prompts(first_result.get('metadata', {}), custom_negative)
             elif custom_negative.strip():
                 negative_prompt = custom_negative.strip()
             
             # Create metadata string
             metadata_dict = first_result.get('metadata', {})
-            metadata_str = f"Genre: {metadata_dict.get('genre', 'unknown')}, Rarity: {metadata_dict.get('rarity', 'common')}, Vibe: {metadata_dict.get('vibe', 'neutral')}, Model: {model_profile}"
+            metadata_str = f"Genre: {metadata_dict.get('genre', 'unknown')}, Rarity: {metadata_dict.get('rarity', 'common')}, Vibe: {metadata_dict.get('vibe', 'neutral')}"
             
             # Handle different output formats
             if output_format == "json":
                 json_output = {
                     "positive_prompt": formatted_prompt,
                     "negative_prompt": negative_prompt,
-                    "metadata": metadata_dict,
-                    "model_profile": model_profile
+                    "metadata": metadata_dict
                 }
                 return (json.dumps(json_output, indent=2), negative_prompt, metadata_str)
-            
-            elif output_format == "regional" or regional_prompting:
-                regional_output = create_regional_prompt_format(formatted_prompt, negative_prompt, metadata_str)
-                return (regional_output, negative_prompt, metadata_str)
                 
             elif output_format == "structured":
                 structured_output = f"POSITIVE: {formatted_prompt}\n\nNEGATIVE: {negative_prompt}\n\nMETADATA: {metadata_str}"

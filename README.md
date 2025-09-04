@@ -62,25 +62,25 @@ This repository contains a fully decomposed, compositional prompt generation sys
 
 The Synapse Engine now includes professional-grade enhancements:
 
-### 🎯 Model-Specific Formatting
-- **SDXL**: Tag-based prompts with quality prefixes and comprehensive negatives
-- **Flux**: Natural language prose with descriptive flow
-- **Illustrious XL**: Danbooru-style tags with precise ordering  
-- **Pony**: Score-based anime tokens with source indicators
+### 🎯 Universal Format (UPDATED!)
+- **Single Universal Format**: Simplified from 4 model-specific variants to one optimized format
+- **Standardized Structure**: Quality tags → Subject → Background → Supporting tags
+- **Cross-Model Compatibility**: Works optimally with SDXL, Flux, Illustrious XL, Pony and other models
+- **Regional Synapse Node**: New companion node for advanced prompt organization
 
 ### 🎨 Advanced UI Controls
 - **User Prompt Integration**: Blend your prompts with AI-generated content
 - **Genre Control**: Lock to specific genres or use random selection
 - **Explicit Content**: Graduated controls (disabled → artistic only → full explicit)
-- **Multiple Output Formats**: Text, JSON, Regional Prompting, Structured
+- **Multiple Output Formats**: Text, JSON, Structured
 
 ### 🚀 Quality Improvements
-- **Automatic Negative Prompts**: Model-aware quality control
-- **Regional Prompting**: Advanced composition control for complex scenes  
-- **R-Rated Artistic Content**: Tasteful nudity for fine art generation
+- **Automatic Negative Prompts**: Universal quality control system
 - **Enhanced Variety**: Richer language and more diverse compositions
+- **Regional Prompting**: Advanced composition control through dedicated Regional Synapse Node
+- **R-Rated Artistic Content**: Tasteful nudity for fine art generation
 
-See [ENHANCED_FEATURES.md](ENHANCED_FEATURES.md) for complete documentation.
+See [UNIVERSAL_FORMAT.md](UNIVERSAL_FORMAT.md) for complete documentation of the new system.
 
 ## 📋 Core Features
 
@@ -134,15 +134,27 @@ See file tree in main answer. Each pool file ends with a metadata block showing 
 
 ## 🔧 Testing Your Installation
 
-You can test your installation using the provided test script:
+You can test your installation using the provided test scripts:
 
 ```bash
 # Navigate to the Synapse-Engine directory
 cd /path/to/ComfyUI/custom_nodes/Synapse-Engine
 
-# Run the test script
+# Test the new universal format and regional node
+python test_universal.py
+
+# Test the original engine functionality
 python test_engine.py
+
+# Test enhanced features (legacy model-specific tests)
+python test_enhanced.py
 ```
+
+The new `test_universal.py` validates:
+- Universal format generation (no model profiles)
+- Regional Synapse Node functionality
+- Integration between both nodes
+- Different output formats (text, JSON, structured)
 
 This will validate that:
 - Configuration files load correctly
