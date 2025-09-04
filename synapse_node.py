@@ -21,15 +21,22 @@ class SynapsePromptGenerator:
         return {
             "required": {
                 "count": ("INT", {"default": 1, "min": 1, "max": 100}),
-                "output_format": (["text", "json"], {"default": "text"}),
+                "output_type": (["full_prompt", "regional_components", "json"], {"default": "full_prompt"}),
                 "seed": ("INT", {"default": -1}),
+                "model_profile": (["auto", "sdxl", "flux", "illustrious_xl", "pony"], {"default": "auto"}),
+                "genre_control": (["random", "fixed"], {"default": "random"}),
+                "content_rating": (["safe", "mature", "artistic_r"], {"default": "safe"}),
             },
             "optional": {
+                "user_prompt": ("STRING", {"multiline": True, "default": ""}),
+                "negative_prompt": ("STRING", {"multiline": True, "default": ""}),
+                "fixed_genre": (["fantasy", "dark_fantasy", "sci_fi", "cyberpunk", "steampunk", "post_apoc", "multi"], {"default": "fantasy"}),
                 "custom_root": ("STRING", {"default": ""}),
             }
         }
 
-    RETURN_TYPES = ("STRING",)
+    RETURN_TYPES = ("STRING", "STRING")
+    RETURN_NAMES = ("positive_prompt", "negative_prompt")
     FUNCTION = "generate_prompt"
     CATEGORY = "text/synapse"
 
@@ -62,7 +69,19 @@ class SynapsePromptGenerator:
                 raise RuntimeError(f"Failed to load config: {e}") from e
         return self._config_cache
 
-    def generate_prompt(self, count, output_format, seed, custom_root=""):
+    def _get_model_negatives(self, model_profile: str) -> str:
+        """Get model-specific negative prompts"""
+        negatives = {
+            "sdxl": "ugly, deformed, bad hands, worst quality, lowres, blurry",
+            "flux": "",  # Flux often doesn't need negatives
+            "illustrious_xl": "worst quality, low quality, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped",
+            "pony": "low quality, worst quality",
+            "auto": "bad quality, blurry"
+        }
+        return negatives.get(model_profile, negatives["auto"])
+
+    def generate_prompt(self, count, output_type, seed, model_profile, genre_control, content_rating, 
+                       user_prompt="", negative_prompt="", fixed_genre="fantasy", custom_root=""):
         """
         Generate prompts using the Synapse Engine Python implementation.
         """
@@ -75,19 +94,31 @@ class SynapsePromptGenerator:
             config = self._load_config(root_path)
             actual_seed = seed if seed >= 0 else None
 
-            generator = PromptGenerator(config, seed=actual_seed)
+            # Create enhanced generator context
+            generator_context = {
+                'user_prompt': user_prompt.strip() if user_prompt else '',
+                'model_profile': model_profile,
+                'genre_control': genre_control,
+                'fixed_genre': fixed_genre if genre_control == "fixed" else None,
+                'content_rating': content_rating,
+                'output_type': output_type
+            }
+
+            generator = PromptGenerator(config, seed=actual_seed, context=generator_context)
             results = generator.generate(count)
 
             if not results:
-                return ("No prompts generated",)
+                return ("No prompts generated", negative_prompt)
 
-            if output_format == "json":
-                return (json.dumps(results[0], indent=2),)
+            first_result = results[0]
+            
+            if output_type == "json":
+                positive_output = json.dumps(first_result, indent=2)
             else:
-                first_result = results[0]
+                # Get the main prompt
                 prompt = first_result.get('prompt', '')
 
-                # Strip metadata tags if present
+                # Strip metadata tags if present for clean output
                 if prompt.startswith('/'):
                     parts = prompt.split(' ')
                     clean_parts = []
@@ -96,13 +127,67 @@ class SynapsePromptGenerator:
                             continue
                         clean_parts.append(part)
                     if clean_parts:
-                        return (' '.join(clean_parts),)
-                return (prompt,)
+                        prompt = ' '.join(clean_parts)
+                
+                # Handle different output formats
+                if output_type == "regional_components":
+                    # Split into subject and style components for regional prompting
+                    metadata = first_result.get('metadata', {})
+                    tokens = metadata.get('tokens', {})
+                    
+                    # Get subject components (figure/landscape content)
+                    subject_parts = []
+                    content_type = metadata.get('content_type', 'figure')
+                    
+                    if content_type in ['figure', 'hybrid']:
+                        for dim in ['species', 'archetypes', 'physiques', 'artistic_poses', 'emotions', 'conditions', 
+                                   'power_sources', 'gear_primary', 'gear_secondary', 'modifiers']:
+                            if dim in tokens and tokens[dim]:
+                                subject_parts.extend(tokens[dim])
+                    elif content_type == 'landscape':
+                        for dim in ['biomes', 'structures', 'atmosphere_mood', 'weather', 'time_of_day', 'special_fx']:
+                            if dim in tokens and tokens[dim]:
+                                subject_parts.extend(tokens[dim])
+                    
+                    # Get style components
+                    style_parts = []
+                    for dim in ['palettes', 'lighting', 'camera', 'media', 'depth_effects', 
+                               'framing', 'focus_styles', 'quality_combo']:
+                        if dim in tokens and tokens[dim]:
+                            style_parts.extend(tokens[dim])
+                    
+                    subject_prompt = ', '.join(subject_parts) if subject_parts else "character"
+                    style_prompt = ', '.join(style_parts) if style_parts else "detailed, high quality"
+                    
+                    if user_prompt:
+                        subject_prompt = f"{user_prompt}, {subject_prompt}"
+                    
+                    positive_output = f"SUBJECT: {subject_prompt}\nSTYLE: {style_prompt}"
+                else:
+                    # Full prompt format
+                    if user_prompt:
+                        positive_output = f"{user_prompt}, {prompt}"
+                    else:
+                        positive_output = prompt
+
+            # Handle negative prompts
+            final_negative = negative_prompt.strip() if negative_prompt else ""
+            
+            # Add model-specific negative prompts
+            if content_rating == "safe":
+                model_negatives = self._get_model_negatives(model_profile)
+                if model_negatives:
+                    if final_negative:
+                        final_negative = f"{final_negative}, {model_negatives}"
+                    else:
+                        final_negative = model_negatives
+
+            return (positive_output, final_negative)
 
         except Exception as e:
             print("[Synapse Engine][ERROR] Exception in generate_prompt:")
             traceback.print_exc()
-            return (f"Synapse Engine error: {e}",)
+            return (f"Synapse Engine error: {e}", negative_prompt if negative_prompt else "")
 
 
 NODE_CLASS_MAPPINGS = {

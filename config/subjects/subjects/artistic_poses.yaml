@@ -1,0 +1,85 @@
+artistic_poses:
+  # Safe artistic poses
+  - weight: 35
+    token: dynamic_pose
+    tags: [expressive, movement]
+    complexity_cost: 1
+  - weight: 30
+    token: heroic_stance
+    tags: [confident, powerful]
+    complexity_cost: 1
+  - weight: 25
+    token: contemplative_pose
+    tags: [thoughtful, serene]
+    complexity_cost: 1
+  - weight: 25
+    token: action_pose
+    tags: [dynamic, energetic]
+    complexity_cost: 1
+  - weight: 20
+    token: elegant_posture
+    tags: [graceful, refined]
+    complexity_cost: 1
+  - weight: 20
+    token: portrait_pose
+    tags: [classic, composed]
+    complexity_cost: 1
+  - weight: 18
+    token: dramatic_gesture
+    tags: [expressive, theatrical]
+    complexity_cost: 1
+  - weight: 15
+    token: relaxed_stance
+    tags: [casual, natural]
+    complexity_cost: 1
+  - weight: 15
+    token: defensive_posture
+    tags: [guarded, alert]
+    complexity_cost: 1
+  - weight: 12
+    token: flowing_movement
+    tags: [graceful, fluid]
+    rarity_min: rare
+    complexity_cost: 2
+  
+  # Mature/Artistic poses
+  - weight: 8
+    token: classical_pose
+    tags: [artistic, timeless]
+    rarity_min: rare
+    allow_content_ratings: [mature, artistic_r]
+    complexity_cost: 2
+  - weight: 6
+    token: sculptural_pose
+    tags: [artistic, statuesque]
+    rarity_min: rare
+    allow_content_ratings: [mature, artistic_r]
+    complexity_cost: 2
+  - weight: 4
+    token: renaissance_pose
+    tags: [classical, artistic]
+    rarity_min: epic
+    allow_content_ratings: [mature, artistic_r]
+    complexity_cost: 3
+  - weight: 3
+    token: artistic_nude_pose
+    tags: [artistic_r, fine_art]
+    rarity_min: epic
+    allow_content_ratings: [artistic_r]
+    safety_flags: [artistic_r]
+    complexity_cost: 3
+  - weight: 3
+    token: figure_study_pose
+    tags: [artistic_r, life_drawing]
+    rarity_min: epic
+    allow_content_ratings: [artistic_r]
+    safety_flags: [artistic_r]
+    complexity_cost: 3
+
+metadata:
+  version: 1
+  choose_min: 0
+  choose_max: 1
+  choose_probability: 0.4
+  second_pick_chance: 0.1
+  notes: "Artistic poses including safe, mature, and R-rated options"

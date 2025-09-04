@@ -1,0 +1,43 @@
+model_profiles:
+  sdxl:
+    formatter: tags
+    quality_tags: ["masterpiece", "best quality", "ultra detailed"]
+    emphasis_syntax: "(word)" # boost, [word] suppress
+    negative_essentials: ["ugly", "deformed", "bad hands", "worst quality", "lowres", "blurry"]
+    structure_order: ["quality", "subject", "environment", "mood", "style"]
+    
+  flux:
+    formatter: prose
+    quality_tags: [] # Uses natural language instead
+    emphasis_syntax: "[word]" # brackets for emphasis
+    negative_essentials: [] # Often not needed
+    structure_order: ["natural_description"]
+    prefer_sentences: true
+    
+  illustrious_xl:
+    formatter: tags
+    quality_tags: ["masterpiece", "amazing quality", "best quality"]
+    emphasis_syntax: "(word)"
+    negative_essentials: ["worst quality", "low quality", "bad anatomy", "bad hands", "text", "error"]
+    structure_order: ["quality", "rating", "subject", "pose", "background", "style", "enhancers"]
+    requires_rating_tags: true
+    
+  pony:
+    formatter: tags
+    quality_tags: ["score_9", "score_8_up", "score_7_up"]
+    emphasis_syntax: "(word)"
+    negative_essentials: ["low quality", "worst quality"]
+    structure_order: ["score", "rating", "subject", "style"]
+    special_tokens: ["source_anime", "source_pony", "rating_safe"]
+    focus_positive: true # Less use of negative prompts
+    
+  auto:
+    formatter: tags
+    quality_tags: ["best quality", "high quality"]
+    emphasis_syntax: "(word)"
+    negative_essentials: ["bad quality", "blurry"]
+    structure_order: ["quality", "subject", "style"]
+
+metadata:
+  version: 1
+  notes: "Model-specific formatting profiles for different AI models"

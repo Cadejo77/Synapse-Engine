@@ -1,6 +1,6 @@
 pipeline:
   mode_selector:
-    compositional_chance: 0.7
+    compositional_chance: 0.95
   order:
     - genre
     - rarity
@@ -14,6 +14,7 @@ pipeline:
     required: [species, archetypes]
     optional:
       - physiques
+      - artistic_poses
       - emotions
       - conditions
       - power_sources

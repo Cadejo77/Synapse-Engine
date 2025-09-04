@@ -17,12 +17,17 @@ from .prompt_assembler import assemble_prompt, assemble_style, make_tags_header
 class PromptGenerator:
     """Main prompt generator using YAML configuration"""
     
-    def __init__(self, config: Dict[str, Any], seed: Optional[int] = None):
+    def __init__(self, config: Dict[str, Any], seed: Optional[int] = None, context: Optional[Dict[str, Any]] = None):
         self.cfg = config
         self.rng = DeterministicRandom(seed)
+        self.context = context or {}
     
     def pick_genre(self) -> str:
-        """Pick a random genre"""
+        """Pick a random genre or use fixed genre from context"""
+        # Check if we have a fixed genre from context
+        if self.context.get('genre_control') == 'fixed' and self.context.get('fixed_genre'):
+            return self.context['fixed_genre']
+            
         genres = self.cfg.get('meta', {}).get('genres', {}).get('genres', [])
         if not genres:
             return 'fantasy'
@@ -92,7 +97,8 @@ class PromptGenerator:
         
         # Apply filters
         candidates = apply_rarity_and_genre_filters(candidates, context.get('rarity', 'common'), 
-                                                   context.get('genre', 'fantasy'))
+                                                   context.get('genre', 'fantasy'),
+                                                   context.get('content_rating', 'safe'))
         
         # Apply relational biases
         if dim == 'archetypes':
@@ -255,6 +261,7 @@ class PromptGenerator:
             'rarity': rarity,
             'vibe': vibe,
             'content_type': content_type,
+            'content_rating': self.context.get('content_rating', 'safe'),
             'tokens': {},
             'complexity_used': 0,
             'budget': get_rarity_budget(rarity, complexity_rules),

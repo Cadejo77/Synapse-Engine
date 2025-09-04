@@ -40,5 +40,41 @@ physiques:
     token: crystalline_framed
     rarity_min: epic
     complexity_cost: 2
+  - weight: 12
+    token: elegant_form
+    tags: [graceful, refined]
+    complexity_cost: 1
+  - weight: 10
+    token: statuesque
+    tags: [classical, imposing]
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 8
+    token: curvaceous
+    tags: [body_sensitive, mature]
+    allow_content_ratings: [mature, artistic_r]
+    safety_flags: [body_sensitive]
+    rarity_min: rare
+    complexity_cost: 2
+  - weight: 6
+    token: voluptuous
+    tags: [body_sensitive, mature]
+    allow_content_ratings: [mature, artistic_r]
+    safety_flags: [body_sensitive]
+    rarity_min: epic
+    complexity_cost: 2
+  - weight: 8
+    token: lean_muscled
+    tags: [athletic, defined]
+    complexity_cost: 1
+  - weight: 9
+    token: willowy
+    tags: [slender, elegant]
+    complexity_cost: 1
+  - weight: 7
+    token: powerfully_built
+    tags: [strong, imposing]
+    rarity_min: rare
+    complexity_cost: 1
 metadata:
   version: 2

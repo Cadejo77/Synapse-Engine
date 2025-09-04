@@ -4,8 +4,8 @@ Weighting functions for applying genre, rarity, and vibe filters
 from typing import List, Dict, Any, Optional
 import copy
 
-def apply_rarity_and_genre_filters(entries: List[Dict[str, Any]], rarity: str, genre: str) -> List[Dict[str, Any]]:
-    """Filter entries based on rarity and genre restrictions"""
+def apply_rarity_and_genre_filters(entries: List[Dict[str, Any]], rarity: str, genre: str, content_rating: str = 'safe') -> List[Dict[str, Any]]:
+    """Filter entries based on rarity, genre, and content rating restrictions"""
     filtered = []
     
     rarity_order = ['common', 'rare', 'epic']
@@ -34,6 +34,11 @@ def apply_rarity_and_genre_filters(entries: List[Dict[str, Any]], rarity: str, g
         # Check blocked genres
         block_genres = entry.get('block_genres', [])
         if block_genres and genre in block_genres:
+            continue
+        
+        # Check content rating restrictions
+        allow_content_ratings = entry.get('allow_content_ratings', [])
+        if allow_content_ratings and content_rating not in allow_content_ratings:
             continue
         
         filtered.append(entry)

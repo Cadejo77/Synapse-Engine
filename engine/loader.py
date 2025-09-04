@@ -33,6 +33,7 @@ def load_all_config(root_dir: str) -> Dict[str, Any]:
     subjects_dir = root_path / 'config' / 'subjects'
     env_dir = root_path / 'config' / 'environments'
     composition_dir = root_path / 'config' / 'composition'
+    model_profiles_dir = root_path / 'config' / 'model_profiles'
     plans_dir = root_path / 'plans'
     data_dir = root_path / 'data'
     
@@ -46,6 +47,7 @@ def load_all_config(root_dir: str) -> Dict[str, Any]:
         'safety': read_yaml(str(meta_dir / 'safety_flags.yaml')),
         'synonyms': read_yaml(str(meta_dir / 'synonyms.yaml')),
         'complexity': read_yaml(str(meta_dir / 'complexity_rules.yaml')),
+        'model_profiles': read_yaml(str(model_profiles_dir / 'model_formats.yaml')),
     }
     
     # Load relations
@@ -68,6 +70,7 @@ def load_all_config(root_dir: str) -> Dict[str, Any]:
         'gear_primary': 'gear_primary.yaml',
         'gear_secondary': 'gear_secondary.yaml',
         'modifiers': 'modifiers_general.yaml',
+        'artistic_poses': 'artistic_poses.yaml',
         'biomes': 'biomes.yaml',
         'structures': 'structures.yaml',
         'atmosphere_mood': 'atmosphere_mood.yaml',
@@ -95,7 +98,7 @@ def load_all_config(root_dir: str) -> Dict[str, Any]:
         elif key in ['depth_effects', 'framing', 'focus_styles']:
             base_dir = composition_dir
         elif key in ['species', 'archetypes', 'physiques', 'emotions', 'conditions', 
-                     'power_sources', 'gear_primary', 'gear_secondary', 'modifiers']:
+                     'power_sources', 'gear_primary', 'gear_secondary', 'modifiers', 'artistic_poses']:
             base_dir = subjects_dir / 'subjects'
         else:
             base_dir = composition_dir

@@ -5,6 +5,15 @@ flags:
     - lingerie
     - sensual
     - seductive
+  artistic_r:
+    - artistic_nude
+    - figure_study
+    - classical_nude
+    - renaissance_nude
+    - artistic_pose
+    - fine_art_nude
+    - sculptural_nude
+    - life_drawing
   gore:
     - eviscerated
     - gore_splattered
@@ -32,8 +41,13 @@ flags:
 policy:
   block_if_combination:
     - [explicit, age_sensitive]
+    - [artistic_r, age_sensitive]
   optional_strip_categories:
     - franchise
+  content_ratings:
+    safe: []
+    mature: [body_sensitive]
+    artistic_r: [artistic_r, body_sensitive]
 metadata:
   version: 1
-  notes: "Initial safety mapping."
+  notes: "Safety mapping with artistic R-rated content support."
