@@ -275,6 +275,11 @@ class SynapsePromptGenerator:
         probability = metadata.get('choose_probability', 1.0)
         second_chance = metadata.get('second_pick_chance', 0.0)
         
+        # For optional pools, if choose_min > 0 in metadata, that means it should be selected
+        # The 'required' parameter here is about pipeline requirements, not pool requirements
+        if not required and choose_min > 0:
+            required = True
+        
         if random.random() > probability:
             return []
         
@@ -348,6 +353,17 @@ class SynapsePromptGenerator:
             normalized.append(t)
         
         return normalized
+    
+    def assemble_style(self, context: Dict[str, Any]) -> str:
+        """Assemble style components from style tokens."""
+        parts = []
+        style_keys = ['palettes', 'lighting', 'camera', 'media', 'depth_effects', 'framing', 'focus_styles', 'quality_combo']
+        
+        for key in style_keys:
+            if context['tokens'].get(key):
+                parts.extend(context['tokens'][key])
+        
+        return "Style: " + ", ".join(parts) if parts else ""
     
     def assemble_prompt(self, context: Dict[str, Any]) -> str:
         """Assemble the final prompt from context tokens."""
@@ -428,19 +444,25 @@ class SynapsePromptGenerator:
     
     def make_tags_header(self, context: Dict[str, Any]) -> str:
         """Create metadata tags header."""
-        tags = []
-        tags.append(f"/genre:{context['genre']}/")
-        tags.append(f"/rarity:{context['rarity']}/")
-        tags.append(f"/vibe:{context['vibe']}/")
-        tags.append(f"/mode:{context.get('mode', 'compositional')}/")
-        tags.append(f"/type:{context['content_type']}/")
+        # Base tags
+        base_pairs = [
+            ('genre', context['genre']),
+            ('rarity', context['rarity']),
+            ('vibe', context['vibe']),
+            ('mode', context.get('mode', 'compositional')),
+            ('type', context['content_type'])
+        ]
         
-        # Add token tags for chosen items
+        base_tags = [f"/{k}:{v}/" for k, v in base_pairs]
+        
+        # Dimension tags
+        dim_tags = []
         for key, tokens in context['tokens'].items():
-            if tokens:
-                tags.append(f"/{key}:{','.join(tokens[:2])}/")  # Limit to first 2 tokens
+            for token in tokens:
+                dim_tags.append(f"/{key}:{token}/")
         
-        return ' '.join(tags)
+        header = " ".join(base_tags + dim_tags)
+        return header.strip()
     
     def generate_one(self) -> Dict[str, Any]:
         """Generate a single prompt with metadata."""
@@ -521,6 +543,13 @@ class SynapsePromptGenerator:
         
         # Assemble final prompt
         prompt_core = self.assemble_prompt(context)
+        
+        # Add style for compositional prompts
+        if context['mode'] == 'compositional':
+            style_str = self.assemble_style(context)
+            if style_str:
+                prompt_core += ". " + style_str
+        
         tags_header = self.make_tags_header(context)
         
         full_prompt = f"{tags_header} {prompt_core}".strip()
@@ -576,10 +605,18 @@ class SynapseGeneratorNode:
             
             # Return the first prompt (ComfyUI expects single string output)
             if results:
-                return (results[0]['prompt'],)
+                prompt = results[0]['prompt']
+                # Add any warnings as comments if present
+                warnings = results[0]['metadata'].get('warnings', [])
+                if warnings:
+                    warning_text = " [WARNINGS: " + "; ".join(warnings) + "]"
+                    prompt += warning_text
+                return (prompt,)
             else:
                 return ("Error: No prompt generated",)
                 
+        except FileNotFoundError as e:
+            return (f"Error: Missing configuration file - {str(e)}",)
         except Exception as e:
             return (f"Error: {str(e)}",)
 
