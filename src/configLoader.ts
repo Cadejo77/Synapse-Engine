@@ -26,7 +26,7 @@ export function loadAllConfig(rootDir: string): LoadedConfig {
   const meta = {
     genres: readYaml(path.join(metaDir, 'genre_selector.yaml')),
     rarities: readYaml(path.join(metaDir, 'rarity_tiers.yaml')),
-    rarity_overrides: readYaml(path.join(metaDir, 'rarity_overrides.yaml')),
+    rarity_overrides: readYaml(path.join(metaDir, 'rarity_override.yaml')),
     content_types: readYaml(path.join(metaDir, 'content_type_selector.yaml')),
     vibes: readYaml(path.join(metaDir, 'vibe_selector.yaml')),
     safety: readYaml(path.join(metaDir, 'safety_flags.yaml')),
@@ -35,11 +35,11 @@ export function loadAllConfig(rootDir: string): LoadedConfig {
   };
 
   const relations = {
-    species_archetype: readYaml(path.join(relationsDir, 'species_archetype_bias.yaml')),
-    archetype_power_source: readYaml(path.join(relationsDir, 'archetype_power_source_bias.yaml')),
-    biome_structure: readYaml(path.join(relationsDir, 'biome_structure_bias.yaml')),
-    vibe_palette: readYaml(path.join(relationsDir, 'vibe_palette_bias.yaml')),
-    conflicts: readYaml(path.join(relationsDir, 'negative_conflicts.yaml')),
+    species_archetype: readYaml(path.join(metaDir, 'relations_species_archetype_bias.yaml')),
+    archetype_power_source: readYaml(path.join(metaDir, 'relations_archetype_power_source_bias.yaml')),
+    biome_structure: readYaml(path.join(metaDir, 'relations_biome_structure_bias.yaml')),
+    vibe_palette: readYaml(path.join(metaDir, 'relations_vibe_palette_bias.yaml')),
+    conflicts: readYaml(path.join(metaDir, 'relations_negative_conflicts.yaml')),
   };
 
   const poolFiles: Record<string, string> = {
@@ -72,8 +72,10 @@ export function loadAllConfig(rootDir: string): LoadedConfig {
   for (const [key, filename] of Object.entries(poolFiles)) {
     const baseDir =
       ['biomes','structures','atmosphere_mood','weather','time_of_day','special_fx'].includes(key) ? envDir :
-      ['palettes','lighting','camera','media','depth_effects','framing','focus_styles','quality_combo'].includes(key) ? styleDir :
-      ['species','archetypes','physiques','emotions','conditions','power_sources','gear_primary','gear_secondary','modifiers'].includes(key) ? subjectsDir :
+      ['palettes','lighting','camera','media'].includes(key) ? path.join(styleDir, 'style') :
+      ['depth_effects','framing','focus_styles'].includes(key) ? compositionDir :
+      ['quality_combo'].includes(key) ? path.join(styleDir, 'style') :
+      ['species','archetypes','physiques','emotions','conditions','power_sources','gear_primary','gear_secondary','modifiers'].includes(key) ? path.join(subjectsDir, 'subjects') :
       compositionDir;
     pools[key] = readYaml(path.join(baseDir, filename));
   }
