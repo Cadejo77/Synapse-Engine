@@ -40,12 +40,49 @@ This repository contains a fully decomposed, compositional prompt generation sys
 3. Connect the output to your text input nodes (like CLIP Text Encode)
 
 ### Node Parameters
-- **count**: Number of prompts to generate (1-100)
-- **output_format**: "text" (clean prompt) or "json" (with metadata)  
-- **seed**: Seed for reproducible generation (-1 for random)
-- **custom_root**: Optional custom path to config files
 
-## 📋 Features
+**Required:**
+- **count**: Number of prompts to generate (1-100)
+- **output_format**: "text" (clean prompt), "json" (with metadata), "regional" (regional prompting), or "structured" (separated format)
+- **seed**: Seed for reproducible generation (-1 for random)
+- **model_profile**: Target AI model ("sdxl", "flux", "illustrious_xl", "pony")
+
+**Optional:**
+- **custom_root**: Optional custom path to config files
+- **user_prompt**: Your custom prompt text (integrates with generated content)
+- **genre_control**: Fix genre ("random", "fantasy", "dark_fantasy", "sci_fi", "cyberpunk", "steampunk", "post_apoc")
+- **negative_prompts**: Enable automatic negative prompts (Boolean)
+- **custom_negative**: Custom negative prompt text  
+- **explicit_content**: Adult content control ("disabled", "artistic_only", "full_explicit")
+- **regional_prompting**: Enable regional prompting format output (Boolean)
+
+**Outputs:** Returns 3 outputs: `positive_prompt`, `negative_prompt`, `metadata`
+
+## 📋 Enhanced Features (NEW!)
+
+The Synapse Engine now includes professional-grade enhancements:
+
+### 🎯 Model-Specific Formatting
+- **SDXL**: Tag-based prompts with quality prefixes and comprehensive negatives
+- **Flux**: Natural language prose with descriptive flow
+- **Illustrious XL**: Danbooru-style tags with precise ordering  
+- **Pony**: Score-based anime tokens with source indicators
+
+### 🎨 Advanced UI Controls
+- **User Prompt Integration**: Blend your prompts with AI-generated content
+- **Genre Control**: Lock to specific genres or use random selection
+- **Explicit Content**: Graduated controls (disabled → artistic only → full explicit)
+- **Multiple Output Formats**: Text, JSON, Regional Prompting, Structured
+
+### 🚀 Quality Improvements
+- **Automatic Negative Prompts**: Model-aware quality control
+- **Regional Prompting**: Advanced composition control for complex scenes  
+- **R-Rated Artistic Content**: Tasteful nudity for fine art generation
+- **Enhanced Variety**: Richer language and more diverse compositions
+
+See [ENHANCED_FEATURES.md](ENHANCED_FEATURES.md) for complete documentation.
+
+## 📋 Core Features
 
 The system supports:
 

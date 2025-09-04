@@ -5,6 +5,24 @@ flags:
     - lingerie
     - sensual
     - seductive
+  r_rated_artistic:
+    - "artistic nude"
+    - "figure study"
+    - "renaissance nude"
+    - "classical figure"
+    - "fine art nude"
+    - "tasteful nudity"
+    - "artistic anatomy"
+    - "marble statue nude"
+    - "oil painting nude"
+    - "charcoal figure study"
+  explicit_adult:
+    - erotic
+    - sultry
+    - provocative
+    - intimate
+    - suggestive pose
+    - alluring
   gore:
     - eviscerated
     - gore_splattered
@@ -32,8 +50,17 @@ flags:
 policy:
   block_if_combination:
     - [explicit, age_sensitive]
+    - [explicit_adult, age_sensitive]
   optional_strip_categories:
     - franchise
+  r_rated_chance:
+    common: 0.05  # 5% chance for common rarity
+    rare: 0.10    # 10% chance for rare rarity  
+    epic: 0.15    # 15% chance for epic rarity
+  artistic_nude_genres:
+    - fantasy
+    - dark_fantasy
+    - steampunk  # Allow in these genres more frequently
 metadata:
   version: 1
   notes: "Initial safety mapping."
