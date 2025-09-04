@@ -4,7 +4,7 @@
 
 ### Prerequisites
 - **ComfyUI** installed and working
-- **Node.js** (v16+) - [Download here](https://nodejs.org/)
+- **Python** (3.8+) - Usually already available with ComfyUI
 
 ### Installation Steps
 
@@ -22,7 +22,7 @@
 cd /path/to/ComfyUI/custom_nodes/
 git clone https://github.com/Cadejo77/Synapse-Engine.git
 cd Synapse-Engine
-python install.py
+pip install -r requirements.txt
 ```
 Then restart ComfyUI.
 
@@ -46,12 +46,12 @@ Then restart ComfyUI.
 **Node doesn't appear:**
 - Restart ComfyUI completely
 - Check the console for error messages
-- Make sure Node.js is installed (`node --version` in terminal)
+- Make sure PyYAML is installed (`pip install PyYAML>=6.0`)
 
-**"Node.js not found" error:**
-- Install Node.js from https://nodejs.org/
-- Restart your terminal/ComfyUI
-- Try installation again
+**"PyYAML not found" error:**
+- Install PyYAML: `pip install PyYAML>=6.0`
+- Restart ComfyUI
+- Try again
 
 **Generated prompts are too long:**
 - The node generates rich, detailed prompts
@@ -87,4 +87,11 @@ The prompts are designed to work well with Stable Diffusion and similar models.
 
 - [GitHub Issues](https://github.com/Cadejo77/Synapse-Engine/issues)
 - Check the main [README.md](README.md) for technical details
-- Run `python test_node.py` in the node directory to verify installation
+- Run `python test_engine.py` in the node directory to verify installation
+
+### Key Improvements in v1.1.0
+
+- **Pure Python**: No Node.js required - runs entirely in Python
+- **Deterministic Seeding**: Reproducible results with seed parameter
+- **Direct YAML Processing**: Fast loading with PyYAML
+- **Legacy Mode Preserved**: Original fused-line mode still available

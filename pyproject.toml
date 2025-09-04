@@ -4,12 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "synapse-engine-comfyui"
-version = "1.0.0"
-description = "Advanced compositional prompt generator for ComfyUI using YAML dimension system"
+version = "1.1.0"
+description = "Python-only compositional prompt generator for ComfyUI using YAML dimension system"
 authors = [{name = "Cadejo77", email = "noreply@github.com"}]
 license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.8"
+dependencies = ["PyYAML>=6.0"]
 keywords = ["comfyui", "prompt-generation", "ai", "stable-diffusion"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -33,7 +34,6 @@ Issues = "https://github.com/Cadejo77/Synapse-Engine/issues"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["*"]
-exclude = ["node_modules*", "dist*", "src*", "config*", "data*", "plans*"]
 
 [tool.setuptools.package-data]
-"*" = ["*.yaml", "*.yml", "*.json", "*.js", "*.ts"]
+"*" = ["*.yaml", "*.yml", "*.json"]
