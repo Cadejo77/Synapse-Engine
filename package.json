@@ -1,0 +1,21 @@
+{
+  "name": "prompt-gen-node",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Advanced compositional prompt generator for YAML dimension system",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "ts-node src/index.ts --count 3",
+    "gen": "node dist/index.js --count 3"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

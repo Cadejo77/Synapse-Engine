@@ -1,0 +1,26 @@
+focus_styles:
+  - weight: 32
+    token: sharp_primary_soft_background
+  - weight: 28
+    token: uniform_focus
+  - weight: 26
+    token: selective_face_focus
+  - weight: 24
+    token: texture_focus
+  - weight: 22
+    token: silhouette_focus
+  - weight: 18
+    token: layered_focus_shift
+  - weight: 14
+    token: focal_bloom
+    rarity_min: rare
+  - weight: 12
+    token: spectral_focus_split
+    rarity_min: epic
+  - weight: 10
+    token: shifting_focus_plane
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_min: 1
+  choose_max: 1

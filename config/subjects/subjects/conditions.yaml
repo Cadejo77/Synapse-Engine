@@ -1,0 +1,39 @@
+conditions:
+  - weight: 30
+    token: battle_scuffed
+  - weight: 26
+    token: pristine
+  - weight: 24
+    token: dust_laden
+  - weight: 22
+    token: rain_slick
+  - weight: 20
+    token: soot_marked
+  - weight: 18
+    token: frost_rimed
+  - weight: 17
+    token: sand_scoured
+  - weight: 16
+    token: ash_dusted
+  - weight: 15
+    token: rune_embossed
+    rarity_min: rare
+  - weight: 14
+    token: arcane_charged
+    rarity_min: rare
+  - weight: 12
+    token: bio_luminescent
+    rarity_min: rare
+  - weight: 11
+    token: static_flicker
+    allow_genres: [cyberpunk, sci_fi]
+    rarity_min: rare
+  - weight: 9
+    token: void_touched
+    rarity_min: epic
+  - weight: 7
+    token: temporal_ghosting
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_probability: 0.8

@@ -1,0 +1,40 @@
+atmosphere_mood:
+  - weight: 28
+    token: mist_laden
+  - weight: 26
+    token: twilight_glimmer
+  - weight: 24
+    token: storm_brewing
+  - weight: 23
+    token: luminous_spores
+    rarity_min: rare
+  - weight: 22
+    token: electro_static
+    allow_genres: [cyberpunk, sci_fi]
+  - weight: 21
+    token: hushed_reverent
+  - weight: 20
+    token: melancholic_echo
+  - weight: 18
+    token: ionized_haze
+    allow_genres: [sci_fi]
+  - weight: 17
+    token: phosphor_glow
+    rarity_min: rare
+  - weight: 15
+    token: cold_void_tension
+    rarity_min: rare
+  - weight: 12
+    token: spectral_quiet
+    rarity_min: rare
+  - weight: 10
+    token: void_resonant
+    rarity_min: epic
+  - weight: 8
+    token: chrono_drifted
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_min: 1
+  choose_max: 2
+  second_pick_chance: 0.45

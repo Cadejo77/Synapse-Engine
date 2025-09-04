@@ -1,0 +1,31 @@
+vibes:
+  - token: adventurous
+    weight: 120
+  - token: mysterious
+    weight: 95
+  - token: grim
+    weight: 80
+  - token: mystical
+    weight: 90
+  - token: ethereal
+    weight: 55
+  - token: melancholic
+    weight: 70
+  - token: heroic
+    weight: 65
+  - token: sinister
+    weight: 55
+  - token: hopeful
+    weight: 50
+  - token: whimsical
+    weight: 45
+  - token: serene
+    weight: 35
+  - token: romantic
+    weight: 25
+  - token: treasure
+    weight: 30
+  - token: other
+    weight: 10
+metadata:
+  version: 1

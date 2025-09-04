@@ -1,0 +1,14 @@
+overrides:
+  - match_type: token_equals
+    field: species
+    token: dragonborn_ember
+    multiplier: 0.85
+    reason: "Reduce temporary overuse."
+  - match_type: token_equals
+    field: archetype
+    token: chronomancer
+    multiplier: 1.15
+    reason: "Boost underrepresented archetype."
+metadata:
+  version: 1
+  policy: "Apply multiplicatively; min weight = 1."

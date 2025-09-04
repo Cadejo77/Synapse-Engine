@@ -1,0 +1,40 @@
+gear_secondary:
+  - weight: 30
+    token: buckler_shield
+  - weight: 26
+    token: potion_bandolier
+  - weight: 24
+    token: tool_satchel
+  - weight: 22
+    token: spellbook_cluster
+  - weight: 20
+    token: drone_orb
+    allow_genres: [sci_fi, cyberpunk]
+  - weight: 18
+    token: grapnel_spool
+  - weight: 17
+    token: throwing_axe_bundle
+  - weight: 16
+    token: relic_talisman
+    rarity_min: rare
+  - weight: 15
+    token: holo_interface
+    allow_genres: [sci_fi, cyberpunk]
+    rarity_min: rare
+  - weight: 14
+    token: sensor_brace
+    allow_genres: [sci_fi, cyberpunk]
+  - weight: 12
+    token: ritual_urn
+    rarity_min: rare
+  - weight: 11
+    token: dimensional_anchor
+    rarity_min: epic
+  - weight: 10
+    token: void_orb
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_min: 0
+  choose_max: 2
+  second_pick_chance: 0.4

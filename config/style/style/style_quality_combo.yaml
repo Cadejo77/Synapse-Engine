@@ -1,0 +1,31 @@
+combos:
+  - name: cinematic_grandiose
+    weight: 35
+    tags: [cinematic, grand_scale, sweeping, masterpiece]
+    rarity_min: rare
+    complexity_cost: 2
+  - name: painterly_layered
+    weight: 30
+    tags: [painterly, layered_textures, rich_brushwork]
+    complexity_cost: 1
+  - name: moody_lowkey
+    weight: 28
+    tags: [moody, low_key, shadow_depth]
+    complexity_cost: 1
+  - name: crisp_modern
+    weight: 24
+    tags: [clean, crisp, sharp_focus]
+    complexity_cost: 1
+  - name: surreal_dreamcore
+    weight: 15
+    tags: [surreal, dreamlike, liminal]
+    rarity_min: rare
+    complexity_cost: 2
+  - name: mythic_illumined
+    weight: 12
+    tags: [mythic, sacred_glow, radiant_accents]
+    rarity_min: epic
+    complexity_cost: 2
+metadata:
+  version: 2
+  choose_probability: 0.65

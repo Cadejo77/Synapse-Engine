@@ -1,0 +1,18 @@
+conflicts:
+  - tokens: [void_essence, holy]
+    strategy: suppress_second
+    reason: "Lore clash."
+  - tokens: [plasma_rifle, runic_blade]
+    strategy: allow_if_genre_multi
+    reason: "Genre mismatch except multi."
+  - tokens: [chronomancer, entropy_lance]
+    strategy: reduce_weight
+    factor: 0.5
+    reason: "Over-niche pairing."
+  - tokens: [ember_runes, frost_crystal_shards]
+    strategy: reduce_weight
+    factor: 0.6
+    reason: "Opposing elemental coherence."
+metadata:
+  version: 1
+  notes: "Engine must interpret 'strategy'."

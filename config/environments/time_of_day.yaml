@@ -1,0 +1,25 @@
+time_of_day:
+  - weight: 30
+    token: dawn
+  - weight: 26
+    token: midday
+  - weight: 24
+    token: dusk
+  - weight: 22
+    token: midnight
+  - weight: 20
+    token: high_noon
+  - weight: 18
+    token: pre_storm_glow
+  - weight: 16
+    token: eclipse
+    rarity_min: rare
+  - weight: 12
+    token: moonrise
+  - weight: 10
+    token: twin_moonrise
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_min: 1
+  choose_max: 1

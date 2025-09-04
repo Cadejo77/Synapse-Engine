@@ -1,0 +1,39 @@
+flags:
+  explicit:
+    - nude
+    - topless
+    - lingerie
+    - sensual
+    - seductive
+  gore:
+    - eviscerated
+    - gore_splattered
+    - blood_soaked
+  franchise:
+    - warhammer
+    - mandalorian
+    - stormtrooper
+    - covenant
+    - unsc
+    - cyberpunk2077
+  weapon_heavy:
+    - antimatter
+    - doomsday
+    - orbital_strike
+    - bioweapon
+  body_sensitive:
+    - voluptuous
+    - curvaceous
+    - emaciated
+    - gaunt
+  age_sensitive:
+    - childlike
+    - adolescent
+policy:
+  block_if_combination:
+    - [explicit, age_sensitive]
+  optional_strip_categories:
+    - franchise
+metadata:
+  version: 1
+  notes: "Initial safety mapping."

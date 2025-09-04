@@ -1,0 +1,12 @@
+complexity:
+  rarity_budgets:
+    common: 8
+    rare: 11
+    epic: 15
+  default_cost: 1
+  modifier_cost_scale:
+    diminishing_factor: 0.65
+  overflow_strategy: "truncate_optionals"
+metadata:
+  version: 1
+  notes: "Budget controls layering of optional dimensions."

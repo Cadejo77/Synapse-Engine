@@ -1,0 +1,79 @@
+# (Already provided corrected sample; trimmed for brevity—expand as needed.)
+species:
+  - weight: 40
+    token: human
+    tags: [baseline, adaptable]
+    complexity_cost: 1
+  - weight: 28
+    token: elf_high
+    alias: elf
+    allow_genres: [fantasy, dark_fantasy, multi]
+    tags: [graceful, arcane_affinity]
+    synergy_tags: [arcane, finesse]
+    complexity_cost: 1
+  - weight: 20
+    token: elf_wood
+    allow_genres: [fantasy, dark_fantasy]
+    tags: [nature_bound, agile]
+    synergy_tags: [nature, finesse]
+    complexity_cost: 1
+  - weight: 18
+    token: dwarf_mountain
+    tags: [resilient, smithcraft]
+    synergy_tags: [metalcraft, resilience]
+    complexity_cost: 1
+  - weight: 16
+    token: dwarf_deep
+    rarity_min: rare
+    tags: [ancient, subterranean]
+    synergy_tags: [dark, resilience]
+    complexity_cost: 1
+  - weight: 15
+    token: orc_tribal
+    tags: [brutal, warlike]
+    synergy_tags: [strength]
+    complexity_cost: 1
+  - weight: 12
+    token: fae_luminal
+    rarity_min: rare
+    tags: [ethereal, mischievous]
+    synergy_tags: [arcane, illusion]
+    complexity_cost: 1
+  - weight: 11
+    token: tiefling_ember
+    rarity_min: rare
+    tags: [infernal_lineage, charismatic]
+    synergy_tags: [fire, arcane]
+    complexity_cost: 1
+  - weight: 10
+    token: dragonborn_ember
+    rarity_min: rare
+    tags: [scaled, breath_weapon]
+    synergy_tags: [fire, strength]
+    complexity_cost: 2
+  - weight: 9
+    token: android_sleek
+    allow_genres: [sci_fi, cyberpunk]
+    tags: [synthetic]
+    synergy_tags: [tech, precision]
+    complexity_cost: 1
+  - weight: 9
+    token: cyborg_integrated
+    allow_genres: [sci_fi, cyberpunk, post_apoc]
+    tags: [augmented]
+    synergy_tags: [tech, hybrid_bio]
+    complexity_cost: 2
+  - weight: 7
+    token: void_entity_shrouded
+    rarity_min: epic
+    tags: [otherworldly, intangible]
+    synergy_tags: [void, eldritch]
+    complexity_cost: 3
+  - weight: 6
+    token: celestial_ascendant
+    rarity_min: epic
+    tags: [luminescent, exalted]
+    synergy_tags: [radiant, holy]
+    complexity_cost: 3
+metadata:
+  version: 3

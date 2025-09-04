@@ -1,0 +1,10 @@
+subjects:
+  - "5, /genre:fantasy/ /vibe:adventurous/ /content:figure/ lithe elven battlemage, ember runes swirling, focused gaze"
+  - "5, /genre:sci_fi/ /vibe:mysterious/ /content:figure/ adaptive cloaked scout, low-glow visor, hushed posture"
+  - "4, /genre:dark_fantasy/ /vibe:grim/ /content:figure/ tarnished knight, cracked sigil shield, dried maroon stains"
+  - "3, /genre:cyberpunk/ /vibe:sinister/ /content:figure/ chrome-faced enforcer, subsystem glyphs, violet haze"
+  - "2, /genre:steampunk/ /vibe:whimsical/ /content:figure/ brass-winged artificer, articulated optics, aether coils"
+  - "1, /genre:post_apoc/ /vibe:melancholic/ /content:figure/ lone scavenger, wind-scoured shawl, silent geiger ticks"
+metadata:
+  version: 1
+  source: "Legacy fused subject lines."

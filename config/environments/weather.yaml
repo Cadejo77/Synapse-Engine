@@ -1,0 +1,31 @@
+weather:
+  - weight: 32
+    token: clear
+  - weight: 26
+    token: drifting_fog
+  - weight: 24
+    token: light_rain
+  - weight: 22
+    token: overcast
+  - weight: 20
+    token: snow_flurry
+  - weight: 18
+    token: ash_fall
+    rarity_min: rare
+  - weight: 17
+    token: electric_storm
+    rarity_min: rare
+  - weight: 12
+    token: meteor_shower
+    rarity_min: epic
+  - weight: 11
+    token: aurora_surge
+    rarity_min: epic
+  - weight: 10
+    token: plasma_rain
+    allow_genres: [sci_fi]
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_min: 0
+  choose_max: 1
