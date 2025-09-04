@@ -51,16 +51,22 @@ The system supports:
 
 1. **Pure Python Implementation**: No Node.js required - runs entirely in Python with PyYAML
 2. **Deterministic Seeding**: Reproducible results using Python's random.Random(seed)
-3. **Mode Selection**: Compositional (dimension-driven) vs Legacy (pre-fused line)
-4. **Conditional Gating**: rarity_min/max, allow_genres/block_genres, vibe_bias
-5. **Relational Weight Adjustments**: species ↔ archetype, archetype ↔ power_source, biome ↔ structure, vibe ↔ palette
-6. **Conflict Handling** (negative_conflicts)
-7. **Complexity Budgeting** (complexity_rules.yaml)
-8. **Style & Composition Layers**
-9. **Safety Filtering** (safety_flags.yaml)
-10. **Synonym Normalization** (synonyms.yaml)
-11. **Rarity Overrides** (rarity_overrides.yaml)
-12. **Tag Emission**: Final prompt can prepend /genre:.../ /rarity:.../ /vibe:.../ etc.
+3. **Model-Specific Formatting**: Optimized prompts for SDXL, Flux, Illustrious XL, and Pony models
+4. **Mode Selection**: Compositional (dimension-driven) vs Legacy (pre-fused line)
+5. **Content Rating System**: Safe, mature, and artistic R-rated content with safety controls
+6. **Regional Prompting Support**: Split prompts into SUBJECT and STYLE components
+7. **User Prompt Integration**: Combine custom prompts with generated content
+8. **Enhanced UI Controls**: Genre control (fixed/random), model profiles, content ratings
+9. **Dual Output System**: Separate positive and negative prompt outputs
+10. **Conditional Gating**: rarity_min/max, allow_genres/block_genres, content_ratings
+11. **Relational Weight Adjustments**: species ↔ archetype, archetype ↔ power_source, biome ↔ structure, vibe ↔ palette
+12. **Conflict Handling** (negative_conflicts)
+13. **Complexity Budgeting** (complexity_rules.yaml)
+14. **Enhanced Style & Composition Layers**: Artistic poses, rich lighting, diverse mediums
+15. **Advanced Safety Filtering** with content-rating aware filtering
+16. **Synonym Normalization** (synonyms.yaml)
+17. **Rarity Overrides** (rarity_overrides.yaml)
+18. **Tag Emission**: Final prompt can prepend /genre:.../ /rarity:.../ /vibe:.../ etc.
 
 ## 🎯 Generation Flow (Recommended)
 

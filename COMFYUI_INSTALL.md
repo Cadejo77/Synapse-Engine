@@ -35,10 +35,29 @@ Then restart ComfyUI.
 ### Node Settings
 
 - **count**: How many prompts to generate (1-100)
-- **output_format**: 
-  - "text" = Clean prompt only
-  - "json" = Include metadata tags
+- **output_type**: 
+  - "full_prompt" = Complete formatted prompt
+  - "regional_components" = Split into SUBJECT and STYLE for regional prompting
+  - "json" = Include metadata and debug info
 - **seed**: For reproducible results (-1 for random)
+- **model_profile**: Target AI model for optimized formatting
+  - "auto" = General purpose
+  - "sdxl" = Stable Diffusion XL (tag-based with quality tags)
+  - "flux" = Flux.1 (natural language prose style)
+  - "illustrious_xl" = Illustrious XL (danbooru-style tags)
+  - "pony" = Pony Diffusion XL (score tags, anime-focused)
+- **genre_control**: 
+  - "random" = Randomly select genre each time
+  - "fixed" = Use the genre specified in fixed_genre
+- **content_rating**:
+  - "safe" = Family-friendly content only
+  - "mature" = Adult themes, sophisticated content
+  - "artistic_r" = Artistic nude studies, fine art R-rated content
+
+#### Optional Inputs
+- **user_prompt**: Your custom prompt text (will be combined with generated content)
+- **negative_prompt**: Custom negative prompts (combined with model-specific negatives)
+- **fixed_genre**: Genre to use when genre_control is "fixed" (fantasy, sci_fi, cyberpunk, etc.)
 - **custom_root**: Advanced - custom config path (leave empty normally)
 
 ### Troubleshooting
@@ -72,16 +91,25 @@ Then restart ComfyUI.
 
 ### Generated Prompt Examples
 
-**Fantasy:**
-> "A sturdy elf_high barbarian empowered by mundane twin_daggers + tool_satchel, grim (pristine)"
+**SDXL Format:**
+> "masterpiece, best quality, ultra detailed, sturdy elf ranger, longbow, leather armor, forest clearing, golden hour lighting, oil painting style"
 
-**Sci-Fi:**  
-> "chrome-faced enforcer, subsystem glyphs, violet haze :: storm-charged skyline, electric horizon arcs"
+**Flux Format:**  
+> "A sturdy elf ranger that is skilled and weathered, holding a longbow in a forest clearing. rendered with golden hour lighting, oil painting aesthetics"
 
-**Landscape:**
-> "ancient_forest scene with ruined_tower under electro_static at dawn featuring drifting_embers"
+**Pony Format:**
+> "score_9, score_8_up, rating_safe, source_anime, cute elf girl, bow weapon, fantasy forest, golden lighting"
 
-The prompts are designed to work well with Stable Diffusion and similar models.
+**Regional Components:**
+```
+SUBJECT: masterpiece, best quality, ultra detailed, elf ranger, sturdy build, longbow, leather armor
+STYLE: golden hour lighting, oil painting style, cinematic composition
+```
+
+**Artistic R-rated (when enabled):**
+> "masterpiece quality, classical nude study, figure drawing pose, renaissance lighting, fine art medium"
+
+The prompts are designed to work optimally with their target models and support both character portraits and landscape scenes.
 
 ### Support
 

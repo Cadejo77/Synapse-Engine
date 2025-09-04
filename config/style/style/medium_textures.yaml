@@ -47,5 +47,36 @@ media:
     token: neural_style_fusion
     rarity_min: epic
     complexity_cost: 2
+  - weight: 13
+    token: renaissance_sfumato
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 14
+    token: charcoal_atmospheric
+    complexity_cost: 1
+  - weight: 12
+    token: tempera_luminous
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 10
+    token: abstract_expressionist
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 11
+    token: art_nouveau_flowing
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 9
+    token: photorealistic_hyperdetail
+    rarity_min: epic
+    complexity_cost: 2
+  - weight: 8
+    token: impressionist_broken_color
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 7
+    token: mixed_media_collage
+    rarity_min: epic
+    complexity_cost: 2
 metadata:
   version: 2
