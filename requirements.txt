@@ -1,0 +1,6 @@
+# No additional Python dependencies required
+# The node uses only Python standard library modules:
+# - subprocess
+# - json  
+# - os
+# - pathlib
