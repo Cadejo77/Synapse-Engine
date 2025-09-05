@@ -94,7 +94,7 @@ class RegionalSynapseNode:
             # Metadata about the regional configuration
             metadata = self._build_metadata(enable_second_subject, enable_third_region, subject_weight, background_weight, region_separator)
             
-            return (
+                return (
                 full_prompt,
                 negative_prompt, 
                 region_1,
@@ -107,6 +107,30 @@ class RegionalSynapseNode:
         except Exception as e:
             print(f"[Regional Synapse Node][ERROR] Exception in generate_regional_prompt: {e}")
             return (f"Error: {e}", "", "", "", "", "", "")
+    
+    def split_regional_prompt(self, main_prompt, enable_second_subject=False, 
+                            custom_quality_tags="", custom_background="", custom_supporting=""):
+        """
+        Legacy method for backward compatibility.
+        Split the main prompt into regional components following the old structure.
+        """
+        try:
+            # Use the new method but return in old format
+            full, negative, region_1, region_2, region_3, quality, metadata = self.generate_regional_prompt(
+                main_prompt=main_prompt,
+                regional_mode=False,  # Use simple mode for legacy compatibility
+                enable_second_subject=enable_second_subject,
+                custom_quality_tags=custom_quality_tags,
+                custom_background=custom_background,
+                custom_supporting=custom_supporting
+            )
+            
+            # Convert to old format: (quality_tags, subject_description, background_location, supporting_tags, second_subject)
+            return (quality, region_1, region_2, "", region_3)
+            
+        except Exception as e:
+            print(f"[Regional Synapse Node][ERROR] Exception in split_regional_prompt: {e}")
+            return (f"Error: {e}", "", "", "", "")
     
     def _parse_prompt_components(self, main_prompt: str, enable_second_subject: bool, 
                                custom_quality_tags: str, custom_background: str, custom_supporting: str) -> Tuple[List[str], List[str], List[str], List[str], List[str]]:
@@ -331,30 +355,6 @@ class RegionalSynapseNode:
                 f"Subject Weight: {subject_weight:.1f}, "
                 f"Background Weight: {background_weight:.1f}, "
                 f"Separator: {region_separator}")
-    
-    def split_regional_prompt(self, main_prompt, enable_second_subject=False, 
-                            custom_quality_tags="", custom_background="", custom_supporting=""):
-        """
-        Legacy method for backward compatibility.
-        Split the main prompt into regional components following the old structure.
-        """
-        try:
-            # Use the new method but return in old format
-            full, negative, region_1, region_2, region_3, quality, metadata = self.generate_regional_prompt(
-                main_prompt=main_prompt,
-                regional_mode=False,  # Use simple mode for legacy compatibility
-                enable_second_subject=enable_second_subject,
-                custom_quality_tags=custom_quality_tags,
-                custom_background=custom_background,
-                custom_supporting=custom_supporting
-            )
-            
-            # Convert to old format: (quality_tags, subject_description, background_location, supporting_tags, second_subject)
-            return (quality, region_1, region_2, "", region_3)
-            
-        except Exception as e:
-            print(f"[Regional Synapse Node][ERROR] Exception in split_regional_prompt: {e}")
-            return (f"Error: {e}", "", "", "", "")
 
 
 NODE_CLASS_MAPPINGS = {

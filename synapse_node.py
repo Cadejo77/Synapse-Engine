@@ -21,7 +21,7 @@ class SynapsePromptGenerator:
         return {
             "required": {
                 "count": ("INT", {"default": 1, "min": 1, "max": 100}),
-                "output_format": (["text", "json", "structured"], {"default": "text"}),
+                "output_format": (["text", "json", "structured", "regional"], {"default": "text"}),
                 "seed": ("INT", {"default": -1}),
             },
             "optional": {
@@ -31,6 +31,8 @@ class SynapsePromptGenerator:
                 "negative_prompts": ("BOOLEAN", {"default": True}),
                 "custom_negative": ("STRING", {"default": "", "multiline": True}),
                 "explicit_content": (["disabled", "artistic_only", "full_explicit"], {"default": "disabled"}),
+                "regional_prompting": ("BOOLEAN", {"default": False}),
+                "enable_rich_descriptions": ("BOOLEAN", {"default": True}),
             }
         }
 
@@ -70,9 +72,10 @@ class SynapsePromptGenerator:
 
     def generate_prompt(self, count, output_format, seed, custom_root="", 
                        user_prompt="", genre_control="random", negative_prompts=True, 
-                       custom_negative="", explicit_content="disabled"):
+                       custom_negative="", explicit_content="disabled", regional_prompting=False,
+                       enable_rich_descriptions=True):
         """
-        Generate prompts using the Synapse Engine Python implementation.
+        Generate prompts using the Synapse Engine Python implementation with enhanced features.
         """
         try:
             if custom_root and Path(custom_root).exists():
@@ -115,8 +118,17 @@ class SynapsePromptGenerator:
                 if clean_parts:
                     clean_prompt = ' '.join(clean_parts)
             
-            # Apply universal formatting
-            formatted_prompt = format_universal_prompt(clean_prompt, first_result.get('metadata', {}), user_prompt)
+            # Apply universal formatting with rich descriptions if enabled
+            if enable_rich_descriptions:
+                formatted_prompt = format_universal_prompt(clean_prompt, first_result.get('metadata', {}), user_prompt)
+            else:
+                # Basic formatting for simple prompts
+                parts = []
+                if user_prompt.strip():
+                    parts.extend([part.strip() for part in user_prompt.split(',') if part.strip()])
+                if clean_prompt.strip():
+                    parts.extend([part.strip() for part in clean_prompt.split(',') if part.strip()])
+                formatted_prompt = ', '.join(parts) if parts else ""
             
             # Generate negative prompts if enabled
             negative_prompt = ""
@@ -134,13 +146,26 @@ class SynapsePromptGenerator:
                 json_output = {
                     "positive_prompt": formatted_prompt,
                     "negative_prompt": negative_prompt,
-                    "metadata": metadata_dict
+                    "metadata": metadata_dict,
+                    "regional_prompting": regional_prompting,
+                    "rich_descriptions": enable_rich_descriptions
                 }
                 return (json.dumps(json_output, indent=2), negative_prompt, metadata_str)
                 
             elif output_format == "structured":
                 structured_output = f"POSITIVE: {formatted_prompt}\n\nNEGATIVE: {negative_prompt}\n\nMETADATA: {metadata_str}"
+                if regional_prompting:
+                    structured_output += f"\n\nREGIONAL MODE: Enabled (use with Regional Synapse Node)"
                 return (structured_output, negative_prompt, metadata_str)
+                
+            elif output_format == "regional":
+                # Regional format provides structured output optimized for regional node
+                if regional_prompting:
+                    regional_header = "=== REGIONAL PROMPTING MODE ===\nUse this output with Regional Synapse Node for advanced regional control.\n\n"
+                    regional_output = f"{regional_header}MAIN: {formatted_prompt}\n\nNEGATIVE: {negative_prompt}\n\nMETADATA: {metadata_str}"
+                    return (regional_output, negative_prompt, metadata_str)
+                else:
+                    return (formatted_prompt, negative_prompt, metadata_str)
                 
             else:  # text format
                 return (formatted_prompt, negative_prompt, metadata_str)
