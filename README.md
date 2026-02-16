@@ -24,9 +24,20 @@ Synapse Engine is a prompt-generation and composition-control pack for ComfyUI. 
 
 4. **Synapse Color Palette Driver** *(optional)*
    - Adds deterministic, seed-driven palette/harmony conditioning with separate strength control.
+   - Best used when your composition is working but color grading is inconsistent across seeds.
+   - Typical uses:
+     - enforce a family (`cinematic`, `neon`, `earthy`, etc.)
+     - lock harmony mode (`analogous`, `complementary`, `triadic`)
+     - apply subtle style glue by keeping `palette_strength` around `0.35–1.0`
 
 5. **Synapse LoRA Style Mixer** *(optional)*
-   - Loads and applies up to 6 LoRAs.
+   - Text-driven LoRA loader with no fixed slot limit.
+   - Paste LoRA references as:
+     - `<lora:name:strength>`
+     - `<lora:name:model_strength:clip_strength>`
+     - `name`, `name:strength`, or `name|model|clip` per line
+   - Auto-generates a `LORA_STACK` output for compatibility with external stack/apply nodes.
+   - Extracts trigger words (from sidecar metadata when available) and exposes them as a string output.
    - Supports optional normalization and optional jitter for variation.
 
 ---
@@ -66,9 +77,13 @@ Synapse Engine is a prompt-generation and composition-control pack for ComfyUI. 
 
 - **Synapse Color Palette Driver**
   - `positive_conditioning` (from region node) → palette driver → `KSampler` positive
+  - Use when outputs need consistent palette identity while keeping prompt content flexible.
 
 - **Synapse LoRA Style Mixer**
   - `MODEL, CLIP` from checkpoint loader → LoRA mixer → downstream model/CLIP consumers
+  - Use when you want to paste a LoRA list quickly (instead of adding many fixed slots).
+  - Forward `lora_stack` to third-party LoRA stack/apply nodes if your workflow already uses that ecosystem.
+  - Forward `trigger_words` to prompt-combine/text nodes if the LoRA pack relies on activation phrases.
 
 ---
 
