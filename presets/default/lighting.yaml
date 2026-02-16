@@ -4,6 +4,7 @@ lighting_type:
 - /meta:loc:spacecraft/ 40, __scifi_ship_lighting__
 - /meta:genre:scifi/ 22, __scifi_neon_lighting__
 - /meta:genre:scifi/ 18, __scifi_console_glow__
+- /meta:genre:scifi/ 16, __holographic_lighting__
 - /meta:action:duel/ 30, __dramatic_lighting__
 - /meta:action:duel/ 25, __natural_lighting__
 - /meta:action:duel/ 20, __artificial_lighting__
@@ -28,6 +29,7 @@ lighting_type:
 - /meta:vibe:dark/ 35, __chiaroscuro_lighting__
 - /meta:vibe:dark/ 20, __moody_lighting__
 - /meta:vibe:dark/ 8, __artificial_lighting__
+- /meta:vibe:dark/ 12, __silhouette_lighting__
 - /meta:vibe:explicit/ 35, __romantic_lighting__
 - /meta:vibe:explicit/ 25, __soft_lighting__
 - /meta:vibe:explicit/ 20, __dramatic_lighting__
@@ -37,11 +39,13 @@ lighting_type:
 - /meta:vibe:romantic/ 30, __soft_lighting__
 - /meta:vibe:romantic/ 20, __natural_lighting__
 - /meta:vibe:romantic/ 10, __warm_lighting__
+- /meta:vibe:romantic/ 10, __moonlit_lighting__
 - /meta:vibe:adventurous/ 30, __natural_lighting__
 - /meta:vibe:adventurous/ 25, __dramatic_lighting__
 - /meta:vibe:adventurous/ 20, __atmospheric_lighting__
 - /meta:vibe:adventurous/ 15, __magical_lighting__
 - /meta:vibe:adventurous/ 10, __artificial_lighting__
+- /meta:vibe:adventurous/ 10, __volumetric_lighting__
 - 25, __natural_lighting__
 - 20, __dramatic_lighting__
 - 15, __artificial_lighting__
@@ -53,6 +57,8 @@ lighting_type:
 - 3, __contrasty_lighting__
 - 2, __chiaroscuro_lighting__
 - 1, __moody_lighting__
+- 2, __volumetric_lighting__
+- 1, __silhouette_lighting__
 - 15, soft window light
 - 10, candlelight
 - 10, neon glow
@@ -92,6 +98,9 @@ magical_lighting:
 - 15, mystical illumination
 - 10, spell light
 - 10, ethereal glow
+holographic_lighting:
+- 60, pulsing holographic projections casting cyan-magenta highlights
+- 40, translucent interface glow washing surfaces with shifting color
 atmospheric_lighting:
 - 30, atmospheric lighting
 - 25, mood lighting
@@ -111,10 +120,17 @@ chiaroscuro_lighting:
 - 100, chiaroscuro lighting
 moody_lighting:
 - 100, moody lighting
+silhouette_lighting:
+- 100, silhouette lighting
 dappled_lighting:
 - 100, dappled lighting
 warm_lighting:
 - 100, warm lighting
+moonlit_lighting:
+- 100, moonlit silver-blue lighting
+volumetric_lighting:
+- 60, volumetric shafts of light through smoke and dust
+- 40, crepuscular rays cutting across the scene
 lighting_quality:
 - /meta:vibe:dark/ 40, __harsh_quality__
 - /meta:vibe:dark/ 30, __dramatic_quality__

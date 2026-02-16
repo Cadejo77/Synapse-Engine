@@ -24,6 +24,7 @@ primary_mood:
 - /meta:vibe:dark/ 20, __oppressive_mood__
 - /meta:vibe:dark/ 15, __mysterious_mood__
 - /meta:vibe:dark/ 10, __desperate_mood__
+- /meta:vibe:dark/ 8, __paranoid_mood__
 - /meta:vibe:explicit/ 35, __passionate_mood__
 - /meta:vibe:explicit/ 25, __intense_mood__
 - /meta:vibe:explicit/ 20, __sensual_mood__
@@ -33,11 +34,13 @@ primary_mood:
 - /meta:vibe:romantic/ 30, __tender_mood__
 - /meta:vibe:romantic/ 20, __nostalgic_mood__
 - /meta:vibe:romantic/ 10, __hopeful_mood__
+- /meta:vibe:romantic/ 8, __dreamy_mood__
 - /meta:vibe:adventurous/ 35, __heroic_mood__
 - /meta:vibe:adventurous/ 25, __wonder_mood__
 - /meta:vibe:adventurous/ 20, __determined_mood__
 - /meta:vibe:adventurous/ 15, __excited_mood__
 - /meta:vibe:adventurous/ 5, __curious_mood__
+- /meta:vibe:adventurous/ 8, __triumphant_mood__
 - 20, __calm_mood__
 - 15, __peaceful_mood__
 - 12, __mysterious_mood__
@@ -52,6 +55,9 @@ primary_mood:
 - 1, __joyous_mood__
 - 1, __terrifying_mood__
 - 1, __oppressive_mood__
+- 2, __paranoid_mood__
+- 2, __dreamy_mood__
+- 2, __triumphant_mood__
 - 10, romantic feeling
 - 10, tranquil feeling
 - 10, tense feeling
@@ -155,6 +161,11 @@ hopeful_mood:
 - 30, optimistic mood
 - 20, promising feeling
 - 10, encouraging ambiance
+dreamy_mood:
+- 40, dreamy atmosphere
+- 30, ethereal mood
+- 20, floating feeling
+- 10, hazy reverie ambiance
 determined_mood:
 - 40, determined atmosphere
 - 30, resolute mood
@@ -170,6 +181,11 @@ curious_mood:
 - 30, inquisitive mood
 - 20, questioning feeling
 - 10, investigative ambiance
+paranoid_mood:
+- 40, paranoid atmosphere
+- 30, hyper-vigilant mood
+- 20, suspicious feeling
+- 10, uneasy ambient tension
 desperate_mood:
 - 40, desperate atmosphere
 - 30, frantic mood
@@ -178,8 +194,13 @@ desperate_mood:
 focused_mood:
 - 40, focused atmosphere
 - 30, concentrated mood
-- 20, attentive feeling
-- 10, intent ambiance
+- 20, locked-in feeling
+- 10, disciplined ambiance
+triumphant_mood:
+- 40, triumphant atmosphere
+- 30, victorious mood
+- 20, hard-won relief
+- 10, celebratory intensity
 serious_mood:
 - 40, serious atmosphere
 - 30, solemn mood
