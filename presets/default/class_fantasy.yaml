@@ -65,6 +65,14 @@ class:
 - 3, __witcher__, meta:gear_style:witcher, meta:weapon_style:witcher
 - 3, __monk__, meta:class:monk, meta:gear_style:monk, meta:weapon_style:monk, meta:cap:unarmed, meta:cap:light_armor, meta:cap:staff
 - 2, __bard__, meta:class:bard, meta:gear_style:bard, meta:weapon_style:bard, meta:cap:light_armor, meta:cap:instrument, meta:cap:dagger
+- 6, __fighter__, meta:class:fighter, meta:gear_style:warrior, meta:weapon_style:warrior, __dnd_heavy_armor_profile__, __dnd_action_economy__
+- 5, __paladin__, meta:class:paladin, meta:gear_style:paladin, meta:weapon_style:paladin, __dnd_heavy_armor_profile__, __dnd_action_economy__
+- 5, __ranger__, meta:class:ranger, meta:gear_style:ranger, meta:weapon_style:ranger, __dnd_medium_armor_profile__, __dnd_action_economy__
+- 5, __rogue__, meta:class:rogue, meta:gear_style:rogue, meta:weapon_style:rogue, __dnd_light_armor_profile__, __dnd_action_economy__
+- 4, __cleric__, meta:class:cleric, meta:gear_style:cleric, meta:weapon_style:cleric, __dnd_medium_armor_profile__, __dnd_action_economy__
+- 4, __mage__, meta:class:mage, meta:gear_style:mage, meta:weapon_style:mage, __dnd_spellcaster_profile__, __dnd_action_economy__
+- 4, __artificer__, meta:class:artificer, meta:gear_style:mage, meta:weapon_style:mage, __dnd_medium_armor_profile__, __dnd_action_economy__
+- 3, __barbarian__, meta:class:barbarian, meta:gear_style:barbarian, meta:weapon_style:barbarian, __dnd_unarmored_profile__, __dnd_action_economy__
 - /meta:vibe:dark/ 2, __paladin__, meta:class:paladin, meta:gear_style:paladin, meta:weapon_style:paladin, meta:cap:heavy_armor,
   meta:cap:sword, meta:cap:mace, meta:cap:holy
 - /meta:vibe:dark/ 1, __cleric__, meta:class:cleric, meta:gear_style:cleric, meta:weapon_style:cleric, meta:cap:medium_armor,
@@ -123,6 +131,38 @@ bard:
 - 50, bard, charismatic performer, storyteller, musician
 - 30, skald, warrior-poet, battle storyteller, inspiring
 - 20, lorekeeper, historian, knowledge preserver
+fighter:
+- 60, fighter, battle-master tactician, disciplined melee specialist
+- 40, champion, relentless frontliner with polished technique
+artificer:
+- 60, artificer, arcane engineer, runic gadgets and infusions
+- 40, alchemist, volatile concoctions, experimental caster
+
+dnd_heavy_armor_profile:
+- 50, meta:armor_class:18, plate armor with AC 18, disciplined frontline defender
+- 30, meta:armor_class:20, full plate and shield for AC 20, fortress-like stance
+- 20, meta:armor_class:16, chain mail and shield with AC 16, battle-tested build
+dnd_medium_armor_profile:
+- 45, meta:armor_class:15, breastplate setup with AC 15, mobile skirmisher style
+- 35, meta:armor_class:17, half plate and shield for AC 17, balanced offense and defense
+- 20, meta:armor_class:14, scale mail with AC 14, practical adventuring kit
+dnd_light_armor_profile:
+- 50, meta:armor_class:14, studded leather AC 14, agile duelist movement
+- 30, meta:armor_class:15, enchanted leather AC 15, evasive footwork
+- 20, meta:armor_class:13, reinforced leathers AC 13, stealth-first profile
+dnd_spellcaster_profile:
+- 55, meta:armor_class:12, mage armor AC 12 plus dexterity, runes orbiting the caster
+- 30, meta:armor_class:15, shield spell reaction pushes AC to 15 in a flash of force
+- 15, meta:armor_class:13, robes with warding sigils AC 13, cautious spell duelist
+dnd_unarmored_profile:
+- 60, meta:armor_class:15, unarmored defense AC 15, primal instincts and relentless momentum
+- 40, meta:armor_class:17, unarmored defense AC 17, hardened physique and battle focus
+dnd_action_economy:
+- 30, bonus action ready, off-hand strike or quick spell prepared
+- 25, reaction primed for an opportunity attack if enemies reposition
+- 20, action economy managed carefully, holding resources for the next round
+- 15, concentration maintained under pressure, tactical target selection
+- 10, initiative-focused stance, eager to act first
 warrior_gear_style:
 - /meta:race:elf/ 70, __elven_warrior_gear__
 - /meta:race:elf/ 30, __general_warrior_gear__
