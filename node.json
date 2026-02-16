@@ -1,6 +1,6 @@
 {
   "name": "Synapse-Engine",
-  "description": "Python-only compositional prompt generator for ComfyUI using YAML dimension system.",
+  "description": "ComfyUI node pack for procedural prompts, regional conditioning, palette steering, and text-driven LoRA mixing with trigger-word output.",
   "version": "1.1.0",
   "author": "Cadejo77",
   "license": "MIT",
