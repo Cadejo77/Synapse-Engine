@@ -1,0 +1,224 @@
+class:
+- /meta:vibe:dark/ 14, __knight__, meta:class:knight, meta:gear_style:warrior, meta:weapon_style:warrior, meta:cap:heavy_armor,
+  meta:cap:sword, meta:cap:shield
+- /meta:vibe:epic/ 18, __knight__, meta:class:knight, meta:gear_style:warrior, meta:weapon_style:warrior, meta:cap:heavy_armor,
+  meta:cap:sword, meta:cap:shield
+- /meta:vibe:dark/ 22, __warrior__, meta:class:warrior, meta:gear_style:warrior, meta:weapon_style:warrior, meta:cap:heavy_armor,
+  meta:cap:sword, meta:cap:shield
+- /meta:vibe:dark/ 18, __rogue__, meta:class:rogue, meta:gear_style:rogue, meta:weapon_style:rogue, meta:cap:light_armor,
+  meta:cap:dagger, meta:cap:bow, meta:cap:stealth
+- /meta:vibe:dark/ 16, __warlock__, meta:class:warlock, meta:gear_style:warlock, meta:weapon_style:warlock, meta:cap:robe,
+  meta:cap:staff, meta:cap:dark_magic
+- /meta:vibe:dark/ 16, __death_knight__, meta:class:death_knight, meta:gear_style:death_knight, meta:weapon_style:death_knight,
+  meta:cap:heavy_armor, meta:cap:greatsword, meta:cap:necromancy
+- /meta:vibe:dark/ 15, __necromancer__, meta:class:necromancer, meta:gear_style:necromancer, meta:weapon_style:necromancer,
+  meta:cap:robe, meta:cap:staff, meta:cap:necromancy
+- /meta:vibe:dark/ 8, __mage__, meta:class:mage, meta:gear_style:mage, meta:weapon_style:mage, meta:cap:robe, meta:cap:staff,
+  meta:cap:spellbook
+- /meta:vibe:dark/ 6, __ranger__, meta:class:ranger, meta:gear_style:ranger, meta:weapon_style:ranger, meta:cap:light_armor,
+  meta:cap:bow, meta:cap:dual_blades, meta:cap:tracking
+- /meta:vibe:dark/ 4, __barbarian__, meta:class:barbarian, meta:gear_style:barbarian, meta:weapon_style:barbarian, meta:cap:medium_armor,
+  meta:cap:axe, meta:cap:great_axe, meta:cap:brute_force
+- /meta:vibe:explicit/ 16, __rogue__, meta:class:rogue, meta:gear_style:rogue, meta:weapon_style:rogue, meta:cap:light_armor,
+  meta:cap:dagger, meta:cap:bow, meta:cap:stealth
+- /meta:vibe:explicit/ 14, __warlock__, meta:class:warlock, meta:gear_style:warlock, meta:weapon_style:warlock, meta:cap:robe,
+  meta:cap:staff, meta:cap:dark_magic
+- /meta:vibe:explicit/ 12, __bard__, meta:class:bard, meta:gear_style:bard, meta:weapon_style:bard, meta:cap:light_armor,
+  meta:cap:instrument, meta:cap:dagger
+- /meta:vibe:explicit/ 12, __ranger__, meta:class:ranger, meta:gear_style:ranger, meta:weapon_style:ranger, meta:cap:light_armor,
+  meta:cap:bow, meta:cap:dual_blades, meta:cap:tracking
+- /meta:vibe:explicit/ 10, __warrior__, meta:class:warrior, meta:gear_style:warrior, meta:weapon_style:warrior, meta:cap:heavy_armor,
+  meta:cap:sword, meta:cap:shield
+- /meta:vibe:explicit/ 10, __mage__, meta:class:mage, meta:gear_style:mage, meta:weapon_style:mage, meta:cap:robe, meta:cap:staff,
+  meta:cap:spellbook
+- /meta:vibe:explicit/ 8, __necromancer__, meta:class:necromancer, meta:gear_style:necromancer, meta:weapon_style:necromancer,
+  meta:cap:robe, meta:cap:staff, meta:cap:necromancy
+- /meta:vibe:explicit/ 7, __druid__, meta:class:druid, meta:gear_style:druid, meta:weapon_style:druid, meta:cap:robe, meta:cap:staff,
+  meta:cap:nature
+- /meta:vibe:explicit/ 6, __barbarian__, meta:class:barbarian, meta:gear_style:barbarian, meta:weapon_style:barbarian, meta:cap:medium_armor,
+  meta:cap:axe, meta:cap:great_axe, meta:cap:brute_force
+- /meta:vibe:explicit/ 5, __death_knight__, meta:class:death_knight, meta:gear_style:death_knight, meta:weapon_style:death_knight,
+  meta:cap:heavy_armor, meta:cap:greatsword, meta:cap:necromancy
+- 12, __warrior__, meta:class:warrior, meta:gear_style:warrior, meta:weapon_style:warrior, meta:cap:heavy_armor, meta:cap:sword,
+  meta:cap:shield
+- 9, __knight__, meta:class:knight, meta:gear_style:warrior, meta:weapon_style:warrior, meta:cap:heavy_armor, meta:cap:sword,
+  meta:cap:shield
+- 11, __rogue__, meta:class:rogue, meta:gear_style:rogue, meta:weapon_style:rogue, meta:cap:light_armor, meta:cap:dagger,
+  meta:cap:bow, meta:cap:stealth
+- 10, __mage__, meta:class:mage, meta:gear_style:mage, meta:weapon_style:mage, meta:cap:robe, meta:cap:staff, meta:cap:spellbook
+- 9, __warlock__, meta:class:warlock, meta:gear_style:warlock, meta:weapon_style:warlock, meta:cap:robe, meta:cap:staff, meta:cap:dark_magic
+- 10, __death_knight__, meta:class:death_knight, meta:gear_style:death_knight, meta:weapon_style:death_knight, meta:cap:heavy_armor,
+  meta:cap:greatsword, meta:cap:necromancy
+- 8, __ranger__, meta:class:ranger, meta:gear_style:ranger, meta:weapon_style:ranger, meta:cap:light_armor, meta:cap:bow,
+  meta:cap:dual_blades, meta:cap:tracking
+- 7, __paladin__, meta:class:paladin, meta:gear_style:paladin, meta:weapon_style:paladin, meta:cap:heavy_armor, meta:cap:sword,
+  meta:cap:mace, meta:cap:holy
+- 7, __barbarian__, meta:class:barbarian, meta:gear_style:barbarian, meta:weapon_style:barbarian, meta:cap:medium_armor, meta:cap:axe,
+  meta:cap:great_axe, meta:cap:brute_force
+- 6, __sorcerer__, meta:class:sorcerer, meta:gear_style:sorcerer, meta:weapon_style:sorcerer, meta:cap:robe, meta:cap:staff,
+  meta:cap:magic
+- 9, __necromancer__, meta:class:necromancer, meta:gear_style:necromancer, meta:weapon_style:necromancer, meta:cap:robe, meta:cap:staff,
+  meta:cap:necromancy
+- 5, __cleric__, meta:class:cleric, meta:gear_style:cleric, meta:weapon_style:cleric, meta:cap:medium_armor, meta:cap:mace,
+  meta:cap:holy
+- 4, __druid__, meta:class:druid, meta:gear_style:druid, meta:weapon_style:druid, meta:cap:robe, meta:cap:staff, meta:cap:nature
+- 3, __witcher__, meta:gear_style:witcher, meta:weapon_style:witcher
+- 3, __monk__, meta:class:monk, meta:gear_style:monk, meta:weapon_style:monk, meta:cap:unarmed, meta:cap:light_armor, meta:cap:staff
+- 2, __bard__, meta:class:bard, meta:gear_style:bard, meta:weapon_style:bard, meta:cap:light_armor, meta:cap:instrument, meta:cap:dagger
+- /meta:vibe:dark/ 2, __paladin__, meta:class:paladin, meta:gear_style:paladin, meta:weapon_style:paladin, meta:cap:heavy_armor,
+  meta:cap:sword, meta:cap:mace, meta:cap:holy
+- /meta:vibe:dark/ 1, __cleric__, meta:class:cleric, meta:gear_style:cleric, meta:weapon_style:cleric, meta:cap:medium_armor,
+  meta:cap:mace, meta:cap:holy
+warrior:
+- 40, warrior, skilled fighter, combat-trained
+- 30, fighter, versatile combatant, adaptable
+- 20, mercenary, hired blade, practical
+- 10, soldier, disciplined, regimented
+rogue:
+- 40, rogue, stealthy, cunning, deceptive
+- 25, thief, light-fingered, opportunistic
+- 20, assassin, deadly, precise, murderous
+- 15, scout, observant, quick, alert
+warlock:
+- 40, warlock, pact-bound, forbidden knowledge
+- 30, witch, intuitive magic, often feared
+- 20, hexblade, weapon-infused with dark power
+- 10, dark summoner, caller of fiends and spirits
+death_knight:
+- 100, death knight, rune-etched black plate armor, glowing blue eyes, frigid aura, unholy warrior
+mage:
+- 40, mage, studious, arcane knowledge
+- 25, wizard, methodical, spellbook user
+- 20, sorcerer, innate power, charismatic
+- 15, arcanist, theoretical, researcher
+ranger:
+- 40, ranger, wilderness expert, tracker
+- 30, hunter, prey-focused, patient
+- 20, beastmaster, animal companion, feral connection
+- 10, warden, protector of a specific realm
+necromancer:
+- 60, necromancer, pale, surrounded by a faint aura of decay, bone jewelry
+- 40, necromancer, corpse-stitcher, wears parts of former creations, macabre
+barbarian:
+- 50, barbarian, primal fury, animal pelts, war paint, tribal tattoos
+- 30, berserker, battle rage, frenzied, uncontrollable
+- 20, savage, untamed, brutal, from wild lands
+knight:
+- 60, knight, heraldic, honorable, chivalrous
+- 40, black knight, ominous, often dishonorable, menacing
+paladin:
+- 60, paladin, holy warrior, divine power, virtuous
+- 40, oathbreaker, fallen paladin, corrupted power, bitter
+cleric:
+- 50, cleric, pious healer, holy symbol, benevolent
+- 30, war priest, armored vestments, heavy mace, fierce
+- 20, orthodox priest, intricate ceremonial robes, strict
+druid:
+- 60, druid, wildshaper, animal skins, leaves and vines, feral
+- 40, druid, circle keeper, wooden armor, ancient symbols, calm
+monk:
+- 70, monk, disciplined, focused, unarmed combat
+- 30, martial artist, fluid movements, precise strikes
+bard:
+- 50, bard, charismatic performer, storyteller, musician
+- 30, skald, warrior-poet, battle storyteller, inspiring
+- 20, lorekeeper, historian, knowledge preserver
+warrior_gear_style:
+- /meta:race:elf/ 70, __elven_warrior_gear__
+- /meta:race:elf/ 30, __general_warrior_gear__
+- /meta:race:dwarf/ 70, __dwarven_warrior_gear__
+- /meta:race:dwarf/ 30, __general_warrior_gear__
+- /meta:race:orc/ 70, __orcish_warrior_gear__
+- /meta:race:orc/ 30, __general_warrior_gear__
+- /meta:race:human/ 80, __general_warrior_gear__
+- /meta:race:human/ 20, __exotic_warrior_gear__
+- __general_warrior_gear__
+rogue_gear_style:
+- /meta:vibe:explicit/ 40, __seductive_rogue_gear__
+- /meta:vibe:explicit/ 60, __standard_rogue_gear__
+- /meta:vibe:dark/ 70, __dark_rogue_gear__
+- /meta:vibe:dark/ 30, __standard_rogue_gear__
+- __standard_rogue_gear__
+warlock_gear_style:
+- 60, __standard_warlock_gear__
+- 25, __demonic_warlock_gear__
+- 15, __eldritch_warlock_gear__
+death_knight_gear_style:
+- 100, __standard_death_knight_gear__
+mage_gear_style:
+- /meta:race:elf/ 60, __elven_mage_gear__
+- /meta:race:elf/ 40, __general_mage_gear__
+- /meta:race:human/ 80, __general_mage_gear__
+- /meta:race:human/ 20, __scholarly_mage_gear__
+- __general_mage_gear__
+ranger_gear_style:
+- /meta:race:elf/ 60, __elven_ranger_gear__
+- /meta:race:elf/ 40, __general_ranger_gear__
+- /meta:race:human/ 70, __general_ranger_gear__
+- /meta:race:human/ 30, __wilderness_ranger_gear__
+- __general_ranger_gear__
+necromancer_gear_style:
+- 100, __standard_necromancer_gear__
+barbarian_gear_style:
+- 100, __standard_barbarian_gear__
+sorcerer:
+- 60, sorcerer, innate magic user, raw power
+- 40, elementalist, master of elemental forces
+sorcerer_gear_style:
+- 100, __standard_sorcerer_gear__
+witcher:
+- 80, witcher, monster hunter, mutant
+- 20, monster slayer, professional hunter
+witcher_gear_style:
+- 100, __standard_witcher_gear__
+dark_rogue_gear:
+- 60, shadowy leathers, hood, throwing knives
+- 40, matte armor, concealed straps, silent boots
+demonic_warlock_gear:
+- 60, infernal talismans, scorched robes, brimstone accents
+- 40, ritual chains, horned ornament, ember glow
+dwarven_warrior_gear:
+- 60, dwarven plate armor, iron pauldrons, runic belt
+- 40, heavy mail, reinforced gauntlets, war cloak
+eldritch_warlock_gear:
+- 60, void-touched robes, eldritch sigils, whispering trinkets
+- 40, tattered cloak, forbidden glyphs, smoke-like aura
+elven_mage_gear:
+- 60, embroidered robes, arcane sash, crystal pendant
+- 40, silken robes, elven runes, ornate collar
+elven_ranger_gear:
+- 60, elven leaf-pattern cloak, light leather armor
+- 40, sleek green-brown leathers, woodland cloak
+exotic_warrior_gear:
+- 60, foreign lamellar armor, ornate sash, trophy belt
+- 40, ceremonial armor plates, gilded trims
+orcish_warrior_gear:
+- 60, scarred hide armor, bone charms, spiked pauldrons
+- 40, brutal iron plating, tribal war paint
+scholarly_mage_gear:
+- 60, scholar robes, ink-stained gloves, spellbook
+- 40, layered robes, arcane notes, satchel of scrolls
+seductive_rogue_gear:
+- 60, sleek leather outfit, high boots, subtle jewelry
+- 40, tight stealth suit, cloaklet, dagger harness
+standard_barbarian_gear:
+- 60, fur cloak, leather straps, bone talismans
+- 40, rough hide armor, war braids, tribal ornaments
+standard_death_knight_gear:
+- 60, blackened armor, rune-etched plates, cold aura
+- 40, heavy armor, dark heraldry, battle cloak
+standard_necromancer_gear:
+- 60, grave-stained robes, bone beads, ritual pouches
+- 40, ashen cloak, skull motifs, antique staff strap
+standard_sorcerer_gear:
+- 60, flowing robes, arcane jewelry, glowing sigils
+- 40, elegant cloak, talisman, ornate cuffs
+standard_warlock_gear:
+- 60, dark robes, occult talismans, rune-etched accessories
+- 40, hooded cloak, eldritch charms, ritual cords
+standard_witcher_gear:
+- 60, practical leather armor, travel cloak, utility pouches
+- 40, worn gambeson, monster hunter straps, silver medallion
+wilderness_ranger_gear:
+- 60, leather jerkin, cloak, utility belt
+- 40, hooded mantle, bracers, travel satchel

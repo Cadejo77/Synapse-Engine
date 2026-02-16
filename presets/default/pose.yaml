@@ -1,0 +1,225 @@
+pose:
+- /meta:style:pinup/ 70, __pinup_pose__
+- /meta:action:pinup_pose/ 100, __pinup_pose__
+- /meta:content:nude/ 40, __glamour_pose__
+- /meta:action:boarding_action/ 70, __combat_pose__
+- /meta:action:boarding_action/ 40, __cover_pose__
+- /meta:action:duel/ 40, __combat_stance__
+- /meta:action:duel/ 30, __aggressive_action_pose__
+- /meta:action:duel/ 20, __clashing_weapons_pose__
+- /meta:action:duel/ 10, __victorious_pose__
+- /meta:action:conversation/ 50, __conversational_pose__
+- /meta:action:conversation/ 30, __expressive_gesture__
+- /meta:action:conversation/ 20, __thoughtful_pose__
+- /meta:action:casting/ 60, __spellcasting_pose__
+- /meta:action:casting/ 40, __channeling_power_pose__
+- /meta:action:aiming/ 100, aiming a __ranged_weapon__, focused
+- /meta:action:sneaking/ 100, sneaking, moving stealthily, low to the ground
+- /meta:action:chase/ 70, running at full speed, dynamic motion
+- /meta:action:chase/ 30, looking back while running, panicked
+- /meta:action:celebrating/ 40, cheering, arms raised triumphantly
+- /meta:action:celebrating/ 30, laughing joyously
+- /meta:action:celebrating/ 20, dancing playfully
+- /meta:action:celebrating/ 10, embracing another character
+- /meta:action:resting/ 50, sitting comfortably, relaxed
+- /meta:action:resting/ 30, leaning against a wall, tired
+- /meta:action:resting/ 20, lying down, resting
+- /meta:content:nude/ /meta:gender:female/ 40, bathing in hot springs, relaxed
+- /meta:content:nude/ /meta:gender:female/ 30, artistic nude pose, graceful
+- /meta:content:nude/ /meta:gender:female/ 20, reclining elegantly, sensual
+- /meta:content:nude/ /meta:gender:female/ 10, standing confidently, natural beauty
+- /meta:vibe:adventurous/ 30, __heroic_pose__
+- /meta:vibe:adventurous/ 25, __exploring_pose__
+- /meta:vibe:adventurous/ 20, __determined_pose__
+- /meta:vibe:adventurous/ 15, __ready_for_action__
+- /meta:vibe:adventurous/ 10, __looking_at_horizon__
+- /meta:vibe:dark/ 30, __menacing_pose__
+- /meta:vibe:dark/ 25, __crouching_threatening__
+- /meta:vibe:dark/ 20, __exhausted_despair_pose__
+- /meta:vibe:dark/ 15, __brooding_pose__
+- /meta:vibe:dark/ 10, __kneeling_in_grief__
+- /meta:vibe:romantic/ 40, __intimate_pose__
+- /meta:vibe:romantic/ 30, __longing_gaze_pose__
+- /meta:vibe:romantic/ 20, __tender_embrace__
+- /meta:vibe:romantic/ 10, __dancing_together__
+- /meta:vibe:explicit/ 50, __seductive_pose__
+- /meta:vibe:explicit/ 30, __inviting_pose__
+- /meta:vibe:explicit/ 20, __dominant_pose__
+- /meta:vibe:calm/ 40, __peaceful_pose__
+- /meta:vibe:calm/ 30, __meditative_pose__
+- /meta:vibe:calm/ 20, __casual_standing__
+- /meta:vibe:calm/ 10, __reading_or_studying__
+- 15, standing, confident stance
+- 10, walking, mid-stride
+- 8, looking at the viewer
+- 7, looking away, contemplative
+combat_stance:
+- 40, in a defensive fighting stance, weapon ready
+- 30, in an aggressive fighting stance, poised to strike
+- 20, circling an opponent, looking for an opening
+- 10, battered but standing, refusing to yield
+aggressive_action_pose:
+- 50, swinging a __melee_weapon__ in a powerful arc
+- 30, lunging forward to attack
+- 20, kicking an opponent off balance
+clashing_weapons_pose:
+- 100, blades locked in a fierce struggle, face to face with opponent
+victorious_pose:
+- 60, standing over a fallen foe, victorious
+- 40, raising a weapon in triumph
+conversational_pose:
+- 40, talking with hands, gesturing
+- 30, arms crossed, listening intently
+- 20, leaning in to make a point
+- 10, hand on chin, considering
+expressive_gesture:
+- 40, pointing for emphasis
+- 30, throwing hands up in exasperation
+- 20, holding hands out pleadingly
+- 10, clapping hands together with a realization
+thoughtful_pose:
+- 60, hand on chin, thinking deeply
+- 40, looking down, lost in thought
+spellcasting_pose:
+- 50, hands outstretched, arcane energy crackling between fingers
+- 30, chanting, eyes glowing with power
+- 20, holding a staff aloft, channeling magic
+channeling_power_pose:
+- 70, surrounded by an aura of magical energy
+- 30, kneeling, drawing power from the earth
+heroic_pose:
+- 60, standing tall, chest out, heroic
+- 40, one foot on a rock, looking out boldly
+exploring_pose:
+- 50, crouching down, examining something on the ground
+- 30, holding a map, looking around
+- 20, pushing aside foliage, moving forward
+determined_pose:
+- 100, clenched fist, determined expression
+ready_for_action:
+- 100, hand on weapon hilt, ready to draw
+looking_at_horizon:
+- 100, gazing into the distance
+menacing_pose:
+- 40, cracking knuckles, menacing
+- 30, shadow obscuring face, menacing
+- 20, standing over another character, intimidating
+- 10, grinning wickedly
+crouching_threatening:
+- 100, crouched like a predator, ready to pounce
+exhausted_despair_pose:
+- 60, on knees, head bowed, exhausted
+- 40, slumped against a wall, defeated
+brooding_pose:
+- 100, arms crossed, brooding in a dark corner
+kneeling_in_grief:
+- 100, kneeling, head in hands, grieving
+intimate_pose:
+- 40, gently holding another character's face
+- 30, leaning head on another character's shoulder
+- 20, whispering in another character's ear
+- 10, offering a hand to help them up
+longing_gaze_pose:
+- 100, looking at another character with a longing gaze
+tender_embrace:
+- 100, in a tender embrace with another character
+dancing_together:
+- 100, dancing together with another character
+seductive_pose:
+- /1girl/ 60, lying on her side, provocative pose
+- /1girl/ 40, looking back over shoulder, seductive
+- /1boy/ 70, sitting shirtless, confident pose
+- /1boy/ 30, leaning against doorway, smoldering
+- 30, boudoir pose, silk robe slipping off one shoulder
+- 25, lingerie pose, sitting on bed edge, soft smile
+- 25, over-the-shoulder glance, back arched slightly
+- 20, playful teasing, fingertip on lips
+- 20, hands tracing collarbone, warm candlelight
+- 15, sheer dress, gentle sway, intimate mood
+- 15, towel wrap, stepping out of bath, fogged mirror
+inviting_pose:
+- /1girl/ 70, arms open, inviting embrace
+- /1girl/ 30, biting lip, inviting
+- /1boy/ 100, gesturing to come closer, inviting
+- 25, beckoning gesture, relaxed posture
+- 20, open arms, welcoming smile
+- 20, leaning forward slightly, attentive
+- 15, hand extended, offering help
+- 15, sitting with legs crossed, friendly vibe
+dominant_pose:
+- 60, sitting on a throne, commanding presence
+- 40, gripping another character's chin, dominant
+- 20, upright stance, steady gaze, commanding presence
+- 15, hand on hip, confident posture
+- 10, pointing forward, issuing orders
+peaceful_pose:
+- 50, sitting peacefully, smiling softly
+- 30, lying in a field of flowers, serene
+- 20, gently holding a small animal
+meditative_pose:
+- 100, sitting in a meditative pose, eyes closed
+casual_standing:
+- 100, standing casually, relaxed
+reading_or_studying:
+- 70, reading a book intently
+- 30, studying a scroll
+melee_weapon:
+- sword
+- axe
+- mace
+- dagger
+ranged_weapon:
+- bow
+- crossbow
+- rifle
+- pistol
+combat_pose:
+- 35, aiming a sidearm, tense stance
+- 25, braced against recoil, firing
+- 20, sprinting through smoke, urgent motion
+- 20, grappling an opponent at close range
+cover_pose:
+- 40, taking cover behind debris, peeking out
+- 30, crouched low, ready to move
+- 30, back against a bulkhead, scanning for threats
+portrait_pose:
+- 25, relaxed shoulders, natural stance
+- 20, hand resting on cheek, thoughtful
+- 20, looking over shoulder, soft smile
+- 20, leaning against a wall, casual
+- 15, sitting on a windowsill, contemplative
+- 15, chin tilted up, confident
+- 15, one hand in hair, playful
+- 15, holding a cup, cozy vibe
+- 10, turning mid-step, candid moment
+- 10, arms behind back, shy posture
+action_pose:
+- 20, mid-stride sprint, dynamic motion
+- 15, jumping, cloak billowing
+- 15, bracing for impact, tense posture
+- 15, dodging, twisted torso, motion blur
+- 10, landing from a leap, dust rising
+- 10, sliding to a stop, sparks
+- 10, quick draw stance, ready
+nude_pose:
+- 35, naked, large breast, thick thighs, big ass, wide hips, thin waist
+- 30, nude, wrapped in satin sheets, reclining on a bed large breast, thick thighs, big ass, wide hips, thin waist
+- 25, artistic nude, side-profile silhouette with rim light large breast, thick thighs, big ass, wide hips, thin waist
+- 25, nude figure study pose, contrapposto stance large breast, thick thighs, big ass, wide hips, thin waist
+- 20, nude, sitting in a bathtub, arms around knees, steam in the air, large breast, thick thighs, big ass, wide hips, thin waist
+- 20, nude, back turned, looking over shoulder, soft window light, large breast, thick thighs, big ass, wide hips, thin waist
+- 15, nude, standing with a towel loosely wrapped at the hips, large breast, thick thighs, big ass, wide hips, thin waist
+- 15, nude, kneeling on a bed, sheets gathered at the waist, large breast, thick thighs, big ass, wide hips, thin waist
+- 15, nude, seated on a chair, legs crossed, modest pose, large breast, thick thighs, big ass, wide hips, thin waist
+- 10, nude, lying on a chaise lounge, classical figure-study pose, large breast, thick thighs, big ass, wide hips, thin waist
+pinup_pose:
+- 25, classic pin-up pose, hand on hip, arched back, confident smile, sexy pose
+- 20, seated pin-up pose, legs crossed, playful wink, sexy pose
+- 20, over-the-shoulder pose, coy glance, hair falling to one side, sexy pose
+- 20, lying on side, elbow propped, relaxed and teasing, sexy pose
+- 15, standing pose, one leg forward, subtle hip tilt, poster-ready silhouette, sexy pose
+glamour_pose:
+- 30, elegant glamour pose, soft shoulders, gentle curve, calm breathing
+- 25, draped pose with fabric, strategic covering, tasteful
+- 25, sitting on edge of bed or chair, relaxed posture, warm gaze
+- 20, slow stretch, arms above head, soft light on skin

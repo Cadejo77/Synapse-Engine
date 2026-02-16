@@ -1,0 +1,358 @@
+outfit:
+- /meta:gear_style:warrior/ 100, __general_warrior_gear__
+- /meta:gear_style:rogue/ 100, __general_rogue_gear__
+- /meta:gear_style:mage/ 100, __general_mage_gear__
+- /meta:gear_style:warlock/ 100, __general_warlock_gear__
+- /meta:gear_style:ranger/ 100, __general_ranger_gear__
+- /meta:gear_style:barbarian/ 100, __general_barbarian_gear__
+- /meta:gear_style:paladin/ 100, __general_paladin_gear__
+- /meta:gear_style:cleric/ 100, __general_cleric_gear__
+- /meta:gear_style:death_knight/ 100, __general_death_knight_gear__
+- /meta:gear_style:necromancer/ 100, __general_necromancer_gear__
+- /meta:gear_style:druid/ 100, __general_druid_gear__
+- /meta:gear_style:knight/ 100, __general_knight_gear__
+- /meta:gear_style:monk/ 100, __general_monk_gear__
+- /meta:gear_style:bard/ 100, __general_bard_gear__
+- /meta:gear_style:sorcerer/ 100, __general_sorcerer_gear__
+- /meta:gear_style:witcher/ 100, __general_witcher_gear__
+- 100, __default_outfit__
+general_warrior_gear:
+- /meta:content:nude/ /meta:gender:female/ 100, __warrior_nude__
+- /meta:content:nude/ /meta:gender:male/ 100, __warrior_standard__
+- /meta:vibe:explicit/ /meta:gender:female/ 20, __warrior_sexy__
+- /meta:vibe:explicit/ /meta:gender:female/ 80, __warrior_standard__
+- /meta:vibe:explicit/ /meta:gender:male/ 100, __warrior_standard__
+- /meta:vibe:dark/ 30, __warrior_damaged__
+- /meta:vibe:dark/ 70, __warrior_standard__
+- /meta:vibe:romantic/ /meta:gender:female/ 10, __warrior_sexy__
+- /meta:vibe:romantic/ 90, __warrior_standard__
+- 75, __warrior_standard__
+- 25, __warrior_clothing__
+warrior_standard:
+- /meta:cap:heavy_armor/ 50, wearing practical plate armor, dented and battle-worn, tabard
+- /meta:cap:light_armor/ /meta:cap:medium_armor/ 30, wearing a chainmail hauberk over padded leather, functional
+- /meta:cap:heavy_armor/ 20, wearing gleaming, well-maintained plate armor, heraldic symbols
+warrior_clothing:
+- /meta:cap:light_armor/ 60, wearing a durable tunic, leather breeches, and travel boots
+- 40, wearing noble's clothes, fine fabric, impractical for battle
+warrior_damaged:
+- /meta:cap:heavy_armor/ 60, wearing battle-damaged plate armor, torn tabard, bloodstains
+- /meta:cap:medium_armor/ 40, wearing broken chainmail, makeshift repairs, grim appearance
+warrior_sexy:
+- /meta:gender:female/ 80, wearing a revealing steel bikini armor, more decorative than protective
+- /meta:gender:female/ 20, wearing strategically torn and cut armor, showing skin
+- /meta:cap:light_armor/ /meta:gender:male/ 100, wearing minimal leather harness, muscular and attractive
+warrior_nude:
+- /meta:gender:female/ 60, completely nude, warrior goddess, natural beauty, bathing after battle
+- /meta:gender:female/ 30, nude with strategically placed armor pieces, artistic nudity
+- /meta:gender:female/ 10, nude in hot springs, relaxing, steam rising
+elven_warrior_gear:
+- /meta:vibe:explicit/ 15, __elven_warrior_sexy__
+- /meta:vibe:explicit/ 85, __elven_warrior_standard__
+- 70, __elven_warrior_standard__
+- 30, __elven_warrior_clothing__
+elven_warrior_standard:
+- /meta:cap:heavy_armor/ 70, wearing elegant, mastercrafted elven plate armor, flowing designs, enchanted
+- /meta:cap:medium_armor/ 30, wearing light, silent elven chainmail, allowing agile movement
+elven_warrior_clothing:
+- /meta:cap:robe/ 100, wearing elegant silken robes, elven craftsmanship, graceful
+elven_warrior_sexy:
+- /1girl/ 100, wearing a revealing gown of living leaves and silk, alluring and mystical
+standard_rogue_gear:
+- /meta:vibe:explicit/ 40, __rogue_sexy__
+- /meta:vibe:explicit/ 60, __rogue_standard__
+- /meta:vibe:dark/ 80, __rogue_standard__
+- /meta:vibe:dark/ 20, __rogue_dark__
+- 90, __rogue_standard__
+- 10, __rogue_disguise__
+rogue_standard:
+- /meta:cap:light_armor/ 60, wearing dark, practical leather armor, hood up, concealed
+- /meta:cap:robe/ 40, wearing a worn traveler's cloak, nondescript clothes, blending in
+rogue_dark:
+- /meta:cap:light_armor/ /meta:cap:robe/ 100, wearing dark leather armor, hooded cloak, concealed weapons, shadowy
+rogue_sexy:
+- /meta:cap:light_armor/ /1girl/ 80, wearing revealing leather armor, form-fitting, alluring thief
+- /1girl/ 20, wearing a short dark outfit, exposed skin, seductive rogue
+- /meta:cap:light_armor/ /1boy/ 100, wearing minimal leather gear, attractive and dangerous, roguish charm
+rogue_disguise:
+- 100, wearing a noble's disguise, slightly ill-fitting, perfect for infiltration
+sexy_clothing:
+- /1girl/ 40, wearing a sheer, revealing silk dress
+- /meta:cap:light_armor/ /1girl/ 30, wearing a leather harness and shorts
+- /meta:cap:medium_armor/ /1girl/ 20, wearing a chainmail bikini
+- /1girl/ 10, wearing strategically placed bandages and scraps of cloth
+- /meta:cap:light_armor/ /1boy/ 60, wearing tight leather pants, no shirt
+- /meta:cap:robe/ /1boy/ 40, wearing a open robe, revealing chest
+nude:
+- /meta:vibe:explicit/ 70, completely nude, full frontal, explicit
+- /meta:vibe:explicit/ 30, completely nude, artistic nudity
+- /meta:vibe:romantic/ 100, partially nude, tastefully covered, artistic
+general_rogue_gear:
+- /meta:vibe:explicit/ 40, __rogue_sexy__
+- /meta:vibe:explicit/ 60, __rogue_standard__
+- /meta:vibe:dark/ 80, __rogue_standard__
+- /meta:vibe:dark/ 20, __rogue_dark__
+- 90, __rogue_standard__
+- 10, __rogue_clothing__
+rogue_clothing:
+- 60, wearing dark traveling clothes, practical boots, subtle gear
+- 40, wearing common clothes, blending in with crowds, unremarkable
+general_mage_gear:
+- /meta:vibe:explicit/ 30, __mage_sexy__
+- /meta:vibe:explicit/ 70, __mage_standard__
+- /meta:vibe:dark/ 20, __mage_dark__
+- /meta:vibe:dark/ 80, __mage_standard__
+- 85, __mage_standard__
+- 15, __mage_clothing__
+mage_standard:
+- /meta:cap:robe/ 50, wearing flowing robes, arcane symbols, staff or wand
+- /meta:cap:robe/ 30, wearing practical robes, spell component pouches, scholarly
+- /meta:cap:robe/ 20, wearing ornate robes, magical jewelry, prestigious
+mage_clothing:
+- 60, wearing scholar's clothes, practical for study, ink-stained
+- 40, wearing noble's attire, refined appearance, well-educated
+mage_dark:
+- /meta:cap:robe/ 60, wearing dark robes, ominous symbols, forbidden knowledge
+- /meta:cap:robe/ 40, wearing tattered robes, sinister aura, corrupted magic
+mage_sexy:
+- /meta:cap:robe/ /1girl/ 80, wearing a revealing robe, strategically open, alluring sorceress
+- /1girl/ 20, wearing a tight-fitting magical outfit, form-fitting, enchanting
+- /meta:cap:robe/ /1boy/ 100, wearing an open robe, muscular chest visible, charismatic wizard
+general_warlock_gear:
+- /meta:vibe:explicit/ 35, __warlock_sexy__
+- /meta:vibe:explicit/ 65, __warlock_standard__
+- /meta:vibe:dark/ 90, __warlock_dark__
+- /meta:vibe:dark/ 10, __warlock_standard__
+- 70, __warlock_standard__
+- 30, __warlock_dark__
+warlock_standard:
+- /meta:cap:robe/ 50, wearing dark robes, eldritch symbols, pact-bound appearance
+- 30, wearing practical dark clothing, subtle magical items, mysterious
+- 20, wearing ornate dark attire, patron's influence visible, imposing
+warlock_dark:
+- /meta:cap:robe/ 60, wearing corrupted robes, unholy symbols, tainted by dark power
+- 40, wearing shadow-wreathed garments, otherworldly influence, ominous
+warlock_sexy:
+- /1girl/ 80, wearing a seductive dark dress, revealing and mystical, tempting
+- /meta:cap:light_armor/ /1girl/ 20, wearing form-fitting dark leather, alluring and dangerous
+- /1boy/ 100, wearing an open dark coat, charismatic and mysterious, attractive
+general_ranger_gear:
+- /meta:vibe:explicit/ 25, __ranger_sexy__
+- /meta:vibe:explicit/ 75, __ranger_standard__
+- /meta:vibe:dark/ 30, __ranger_dark__
+- /meta:vibe:dark/ 70, __ranger_standard__
+- 80, __ranger_standard__
+- 20, __ranger_clothing__
+ranger_standard:
+- /meta:cap:light_armor/ 50, wearing leather armor, forest colors, bow and quiver
+- 30, wearing practical hunting gear, camouflaged, wilderness-ready
+- /meta:cap:light_armor/ 20, wearing studded leather, travel-worn, experienced tracker
+ranger_clothing:
+- 60, wearing woodsman's clothes, practical boots, outdoor gear
+- 40, wearing hunter's attire, earth tones, functional
+ranger_dark:
+- /meta:cap:light_armor/ 60, wearing dark leather armor, grim hunter, predatory appearance
+- 40, wearing shadow-colored gear, sinister tracker, ominous presence
+ranger_sexy:
+- /meta:cap:light_armor/ /1girl/ 80, wearing revealing leather armor, form-fitting, wild beauty
+- /1girl/ 20, wearing a short hunting outfit, exposed skin, alluring archer
+- /meta:cap:light_armor/ /1boy/ 100, wearing minimal leather gear, rugged and attractive, primal appeal
+general_barbarian_gear:
+- /meta:vibe:explicit/ 40, __barbarian_sexy__
+- /meta:vibe:explicit/ 60, __barbarian_standard__
+- /meta:vibe:dark/ 20, __barbarian_dark__
+- /meta:vibe:dark/ 80, __barbarian_standard__
+- 85, __barbarian_standard__
+- 15, __barbarian_clothing__
+barbarian_standard:
+- /meta:cap:light_armor/ 50, wearing fur and leather, tribal markings, primitive weapons
+- 30, wearing animal hide armor, bone ornaments, wild appearance
+- 20, wearing minimal armor, battle scars, fierce demeanor
+barbarian_clothing:
+- 60, wearing tribal clothes, simple materials, practical
+- 40, wearing rough-spun garments, uncivilized appearance
+barbarian_dark:
+- 60, wearing blood-stained furs, skull trophies, savage appearance
+- 40, wearing dark war paint, intimidating presence, brutal
+barbarian_sexy:
+- /1girl/ 80, wearing minimal fur bikini, wild and alluring, primal beauty
+- /1girl/ 20, wearing strategically placed animal hide, exposed skin, fierce
+- /1boy/ 100, wearing fur loincloth, muscular and primitive, savage appeal
+general_paladin_gear:
+- /meta:vibe:explicit/ 15, __paladin_sexy__
+- /meta:vibe:explicit/ 85, __paladin_standard__
+- /meta:vibe:dark/ 10, __paladin_fallen__
+- /meta:vibe:dark/ 90, __paladin_standard__
+- 90, __paladin_standard__
+- 10, __paladin_clothing__
+paladin_standard:
+- /meta:cap:heavy_armor/ 50, wearing gleaming plate armor, holy symbols, righteous appearance
+- /meta:cap:medium_armor/ 30, wearing blessed chainmail, divine markings, noble bearing
+- 20, wearing ceremonial armor, religious iconography, inspiring
+paladin_clothing:
+- /meta:cap:robe/ 60, wearing white robes, holy symbols, pure appearance
+- 40, wearing noble attire, refined bearing, virtuous
+paladin_fallen:
+- 60, wearing tarnished armor, corrupted symbols, fallen from grace
+- /meta:cap:medium_armor/ /meta:cap:heavy_armor/ 40, wearing dark plate mail, twisted holy symbols, corrupted
+paladin_sexy:
+- /1girl/ 80, wearing revealing blessed armor, holy and alluring, divine beauty
+- /1girl/ 20, wearing form-fitting white garments, pure and tempting
+- /1boy/ 100, wearing minimal blessed armor, righteous and attractive, divine appeal
+general_cleric_gear:
+- /meta:vibe:explicit/ 20, __cleric_sexy__
+- /meta:vibe:explicit/ 80, __cleric_standard__
+- /meta:vibe:dark/ 15, __cleric_dark__
+- /meta:vibe:dark/ 85, __cleric_standard__
+- 85, __cleric_standard__
+- 15, __cleric_clothing__
+cleric_standard:
+- /meta:cap:robe/ 50, wearing holy robes, religious symbols, divine focus
+- 30, wearing practical vestments, healing supplies, caring
+- 20, wearing ceremonial garb, blessed items, devout
+cleric_clothing:
+- /meta:cap:robe/ 60, wearing simple robes, humble appearance, pious
+- 40, wearing common clothes, unassuming, faithful
+cleric_dark:
+- 60, wearing dark vestments, corrupted symbols, fallen faith
+- /meta:cap:robe/ 40, wearing shadow-touched robes, twisted divine power
+cleric_sexy:
+- /1girl/ 80, wearing revealing holy garments, blessed and alluring
+- /1girl/ 20, wearing form-fitting vestments, divine and tempting
+- /meta:cap:robe/ /1boy/ 100, wearing open holy robes, blessed and attractive
+general_death_knight_gear:
+- /meta:vibe:explicit/ 25, __death_knight_sexy__
+- /meta:vibe:explicit/ 75, __death_knight_standard__
+- /meta:vibe:dark/ 95, __death_knight_dark__
+- /meta:vibe:dark/ 5, __death_knight_standard__
+- 80, __death_knight_standard__
+- 20, __death_knight_dark__
+death_knight_standard:
+- /meta:cap:heavy_armor/ 50, wearing dark plate armor, unholy symbols, undead aura
+- /meta:cap:medium_armor/ 30, wearing corrupted mail, necromantic power, grim
+- 20, wearing bone-adorned armor, death magic, intimidating
+death_knight_dark:
+- 60, wearing shadow-wreathed armor, skull decorations, terrifying
+- /meta:cap:heavy_armor/ 40, wearing blood-stained plate, necromantic runes, horrifying
+death_knight_sexy:
+- /1girl/ 80, wearing revealing dark armor, undead and alluring, death's beauty
+- /meta:cap:heavy_armor/ /1girl/ 20, wearing form-fitting black plate, dark and tempting
+- /1boy/ 100, wearing minimal dark armor, undead and attractive, grim appeal
+general_necromancer_gear:
+- /meta:vibe:explicit/ 30, __necromancer_sexy__
+- /meta:vibe:explicit/ 70, __necromancer_standard__
+- /meta:vibe:dark/ 90, __necromancer_dark__
+- /meta:vibe:dark/ 10, __necromancer_standard__
+- 75, __necromancer_standard__
+- 25, __necromancer_dark__
+necromancer_standard:
+- /meta:cap:robe/ 50, wearing dark robes, bone ornaments, death magic focus
+- 30, wearing practical black garments, necromantic tools, scholarly
+- /meta:cap:robe/ 20, wearing ornate death robes, skull jewelry, powerful
+necromancer_dark:
+- /meta:cap:robe/ 60, wearing corpse-adorned robes, rotting materials, horrifying
+- 40, wearing shadow-touched garments, undead aura, terrifying
+necromancer_sexy:
+- /meta:cap:robe/ /1girl/ 80, wearing revealing dark robes, death and allure, necromantic beauty
+- /1girl/ 20, wearing form-fitting black garments, dark and tempting
+- /meta:cap:robe/ /1boy/ 100, wearing open dark robes, death magic and attraction
+general_druid_gear:
+- /meta:vibe:explicit/ 35, __druid_sexy__
+- /meta:vibe:explicit/ 65, __druid_standard__
+- /meta:vibe:dark/ 20, __druid_dark__
+- /meta:vibe:dark/ 80, __druid_standard__
+- 80, __druid_standard__
+- 20, __druid_clothing__
+druid_standard:
+- 50, wearing natural materials, leaves and bark, nature-bound
+- 30, wearing animal hide, wooden jewelry, wild appearance
+- 20, wearing living plants, nature magic, organic
+druid_clothing:
+- 60, wearing simple natural clothes, earth tones, humble
+- 40, wearing rough-spun garments, practical, rustic
+druid_dark:
+- 60, wearing withered plants, corrupted nature, twisted
+- 40, wearing shadow-touched natural materials, dark druidism
+druid_sexy:
+- /1girl/ 80, wearing minimal natural materials, wild and alluring, primal beauty
+- /1girl/ 20, wearing living vines, nature and temptation, organic appeal
+- /1boy/ 100, wearing minimal hide, natural and attractive, wild charm
+general_knight_gear:
+- /meta:vibe:explicit/ 15, __knight_sexy__
+- /meta:vibe:explicit/ 85, __knight_standard__
+- /meta:vibe:dark/ 10, __knight_fallen__
+- /meta:vibe:dark/ 90, __knight_standard__
+- 90, __knight_standard__
+- 10, __knight_clothing__
+knight_standard:
+- /meta:cap:heavy_armor/ 50, wearing full plate armor, heraldic symbols, noble bearing
+- /meta:cap:medium_armor/ 30, wearing polished mail, knightly regalia, honorable
+- 20, wearing ceremonial armor, royal insignia, prestigious
+knight_clothing:
+- 60, wearing noble attire, fine materials, aristocratic
+- 40, wearing courtly garments, refined appearance, dignified
+knight_fallen:
+- 60, wearing tarnished armor, broken oaths, dishonored
+- /meta:cap:heavy_armor/ 40, wearing damaged plate, lost honor, fallen from grace
+knight_sexy:
+- /meta:cap:heavy_armor/ /1girl/ 80, wearing revealing plate armor, noble and alluring, knightly beauty
+- /meta:cap:medium_armor/ /1girl/ 20, wearing form-fitting mail, honorable and tempting
+- /1boy/ 100, wearing minimal knightly armor, noble and attractive
+general_monk_gear:
+- /meta:vibe:explicit/ 25, __monk_sexy__
+- /meta:vibe:explicit/ 75, __monk_standard__
+- /meta:vibe:dark/ 15, __monk_dark__
+- /meta:vibe:dark/ 85, __monk_standard__
+- 85, __monk_standard__
+- 15, __monk_clothing__
+monk_standard:
+- /meta:cap:robe/ 50, wearing simple robes, martial arts focus, disciplined
+- 30, wearing practical gi, training gear, athletic
+- 20, wearing monastery garb, spiritual symbols, serene
+monk_clothing:
+- 60, wearing humble clothes, simple materials, modest
+- 40, wearing peasant garments, unassuming, peaceful
+monk_dark:
+- /meta:cap:robe/ 60, wearing dark robes, corrupted discipline, fallen monk
+- 40, wearing shadow-touched garments, twisted martial arts
+monk_sexy:
+- /1girl/ 80, wearing revealing martial arts outfit, disciplined and alluring
+- /1girl/ 20, wearing form-fitting gi, athletic and tempting
+- /1boy/ 100, wearing minimal training gear, disciplined and attractive
+general_bard_gear:
+- /meta:vibe:explicit/ 40, __bard_sexy__
+- /meta:vibe:explicit/ 60, __bard_standard__
+- /meta:vibe:dark/ 20, __bard_dark__
+- /meta:vibe:dark/ 80, __bard_standard__
+- 80, __bard_standard__
+- 20, __bard_clothing__
+bard_standard:
+- 50, wearing colorful performer's clothes, musical instrument, charismatic
+- 30, wearing traveling minstrel gear, practical and artistic
+- 20, wearing court attire, refined appearance, sophisticated
+bard_clothing:
+- 60, wearing common traveler's clothes, unassuming, versatile
+- 40, wearing entertainer's outfit, eye-catching, flamboyant
+bard_dark:
+- 60, wearing dark performer's garb, sinister entertainment, corrupted art
+- 40, wearing shadow-touched clothes, dark charisma, twisted music
+bard_sexy:
+- /1girl/ 80, wearing revealing performer's outfit, charismatic and alluring
+- /1girl/ 20, wearing form-fitting entertainer's garb, artistic and tempting
+- /1boy/ 100, wearing minimal performer's clothes, charismatic and attractive
+
+default_outfit:
+- 15, wearing layered travel clothes with a hooded cloak
+- 15, wearing fitted jacket with utility straps
+- 15, wearing ceremonial robes with ornate embroidery
+- 10, wearing weathered armor with cloth wrap
+- 10, wearing elegant formal attire
+- 10, wearing rugged boots and fingerless gloves
+
+general_sorcerer_gear:
+- 60, elegant robes, arcane jewelry
+- 40, flowing cloak, talisman, embroidered cuffs
+
+general_witcher_gear:
+- 60, practical leather armor, travel cloak
+- 40, utility pouches, worn gloves, sturdy boots

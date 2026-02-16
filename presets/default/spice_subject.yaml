@@ -1,0 +1,67 @@
+spice_subject:
+- __common_subject_spice__
+- /meta:vibe:dark/ 35, __dark_subject_spice__
+- /meta:vibe:romantic/ 25, __romantic_subject_spice__
+- /meta:style:pinup/ 35, __pinup_subject_spice__
+- /meta:vibe:adventurous/ 25, __adventure_subject_spice__
+- /meta:vibe:explicit/ 25, __explicit_subject_spice__
+- /meta:content:portrait/ 20, __portrait_subject_spice__
+- /meta:content:action/ 20, __action_subject_spice__
+- 15, __rare_subject_spice__
+common_subject_spice:
+- 40, subtle freckles
+- 30, a small scar on the cheek
+- 30, faint under-eye shadows
+dark_subject_spice:
+- 35, soot-stained skin and tired eyes
+- 25, ritual markings faintly visible
+- 20, dried blood on knuckles
+- 20, cold breath in the air
+romantic_subject_spice:
+- 40, soft blush and gentle gaze
+- 30, loose strands of hair framing the face
+- 30, delicate jewelry catching the light
+adventure_subject_spice:
+- 35, dust and grit on clothes
+- 30, a travel-worn satchel
+- 20, scuffed boots and practical gear
+- 15, a map case slung over the shoulder
+explicit_subject_spice:
+- 40, damp skin with a soft sheen
+- 30, towel or loose cloth slipping from the shoulder
+- 30, warm steam clinging to hair
+- 25, silk robe loosely draped, slipping off the shoulder
+- 20, lace lingerie details, tasteful
+- 20, bedsheet draped over the body, implied nudity
+- 15, wet hair, water droplets on skin
+- 15, soft blush, warm skin tones
+- 15, delicate collarbone highlight, intimate lighting
+- 10, sheer fabric catching rim light
+portrait_subject_spice:
+- 40, sharp facial features with clear expression
+- 30, defined eyes with subtle eyeliner
+- 30, crisp focus on face and hair texture
+action_subject_spice:
+- 35, motion blur hints on the edges
+- 35, tense posture and ready stance
+- 30, debris and particles kicked up mid-move
+rare_subject_spice:
+- 10, bioluminescent tattoos faintly glowing
+- 10, intricate embroidery with hidden sigils
+- 8, a cracked mask held in one hand
+- 7, a crown of thorns made of metal wire
+- 5, shimmering dust motes orbiting the body
+- 3, an impossible shadow moving a beat late
+subject_spice:
+- 10, subtle scar across the eyebrow
+- 10, freckles across the nose
+- 10, faint smudge of grease or soot
+- 10, wind-tossed hair strands
+- 10, jewelry catching the light
+- 10, gloved hands with intricate stitching
+pinup_subject_spice:
+- 30, glossy lips, soft blush, subtle highlight on cheeks
+- 25, stockings and heels, clean silhouette, tasteful glamour
+- 20, loose hair framing the face, soft curls, gentle movement
+- 15, playful smirk, confident eye contact
+- 10, satin fabric catching the light, smooth folds

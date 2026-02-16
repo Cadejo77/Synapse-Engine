@@ -1,0 +1,19 @@
+negative_packs:
+- 60, __negative_sdxl_safe__
+- 25, __negative_anime_safe__
+- 15, __negative_photo_safe__
+negative_sdxl_safe:
+- lowres, blurry, jpeg artifacts, watermark, text, logo
+- bad anatomy, malformed hands, extra fingers, missing fingers
+- disfigured, deformed, fused fingers, long neck
+- oversaturated, underexposed, overexposed
+negative_anime_safe:
+- lowres, blurry, jpeg artifacts, watermark, text, logo
+- bad anatomy, bad hands, extra fingers, missing fingers
+- poorly drawn face, poorly drawn hands
+- exaggerated perspective, wonky proportions
+negative_photo_safe:
+- lowres, blurry, jpeg artifacts, watermark, text, logo
+- overprocessed, plastic skin, waxy, overly smooth
+- bad anatomy, malformed hands, extra fingers
+- lens distortion, chromatic aberration, heavy noise

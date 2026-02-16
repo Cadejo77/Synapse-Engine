@@ -1,0 +1,180 @@
+composition:
+- __composition_style__, __depth_technique__, __framing_technique__
+composition_style:
+- /meta:action:duel/ 40, __dynamic_composition__
+- /meta:action:duel/ 30, __balanced_composition__
+- /meta:action:duel/ 20, __focused_composition__
+- /meta:action:duel/ 10, __chaotic_composition__
+- /meta:action:boss_battle/ 35, __epic_composition__
+- /meta:action:boss_battle/ 30, __dynamic_composition__
+- /meta:action:boss_battle/ 20, __asymmetrical_composition__
+- /meta:action:boss_battle/ 15, __balanced_composition__
+- /meta:action:conversation/ 50, __balanced_composition__
+- /meta:action:conversation/ 30, __intimate_composition__
+- /meta:action:conversation/ 20, __focused_composition__
+- /meta:action:exploration/ 40, __rule_of_thirds__
+- /meta:action:exploration/ 30, __balanced_composition__
+- /meta:action:exploration/ 20, __leading_lines__
+- /meta:action:exploration/ 10, __epic_composition__
+- /meta:vibe:dark/ 28, __asymmetrical_composition__
+- /meta:vibe:dark/ 22, __dramatic_composition__
+- /meta:vibe:dark/ 20, __chaotic_composition__
+- /meta:vibe:dark/ 15, __focused_composition__
+- /meta:vibe:dark/ 10, __claustrophobic_composition__
+- /meta:vibe:explicit/ 40, __focused_composition__
+- /meta:vibe:explicit/ 30, __intimate_composition__
+- /meta:vibe:explicit/ 20, __balanced_composition__
+- /meta:vibe:explicit/ 10, __shallow_composition__
+- /meta:vibe:romantic/ 40, __balanced_composition__
+- /meta:vibe:romantic/ 30, __soft_composition__
+- /meta:vibe:romantic/ 20, __intimate_composition__
+- /meta:vibe:romantic/ 10, __shallow_composition__
+- /meta:vibe:adventurous/ 30, __dynamic_composition__
+- /meta:vibe:adventurous/ 25, __epic_composition__
+- /meta:vibe:adventurous/ 20, __rule_of_thirds__
+- /meta:vibe:adventurous/ 15, __balanced_composition__
+- /meta:vibe:adventurous/ 10, __leading_lines__
+- 25, __balanced_composition__
+- 20, __rule_of_thirds__
+- 15, __dynamic_composition__
+- 10, __focused_composition__
+- 8, __epic_composition__
+- 7, __asymmetrical_composition__
+- 5, __intimate_composition__
+- 4, __leading_lines__
+- 3, __dramatic_composition__
+- 2, __chaotic_composition__
+- 1, __minimalist_composition__
+- 10, centered composition
+- 10, rule of thirds composition
+- 10, leading lines composition
+balanced_composition:
+- 40, balanced composition
+- 30, symmetrical composition
+- 20, centered composition
+- 10, harmonious arrangement
+rule_of_thirds:
+- 100, rule of thirds
+dynamic_composition:
+- 40, dynamic composition
+- 30, diagonal composition
+- 20, action-oriented framing
+- 10, movement-filled arrangement
+focused_composition:
+- 50, focused composition
+- 30, subject-centric framing
+- 20, emphasis on main element
+epic_composition:
+- 40, epic composition
+- 30, grand scale framing
+- 20, monumental arrangement
+- 10, vast scope composition
+asymmetrical_composition:
+- 100, asymmetrical composition
+intimate_composition:
+- 60, intimate composition
+- 40, personal space framing
+dramatic_composition:
+- 50, dramatic composition
+- 30, intense framing
+- 20, high-impact arrangement
+chaotic_composition:
+- 100, chaotic composition
+claustrophobic_composition:
+- 100, claustrophobic composition
+soft_composition:
+- 100, soft composition
+minimalist_composition:
+- 100, minimalist composition
+shallow_composition:
+- 100, shallow composition
+leading_lines:
+- 100, leading lines
+depth_technique:
+- /meta:vibe:romantic/ 40, __selective_focus__
+- /meta:vibe:romantic/ 30, __layered_composition__
+- /meta:vibe:romantic/ 20, __foreground_framing__
+- /meta:vibe:romantic/ 10, __atmospheric_perspective__
+- /meta:vibe:adventurous/ 35, __layered_composition__
+- /meta:vibe:adventurous/ 30, __atmospheric_perspective__
+- /meta:vibe:adventurous/ 20, __foreground_framing__
+- /meta:vibe:adventurous/ 15, __scale_cues__
+- /meta:vibe:dark/ 35, __foreground_framing__
+- /meta:vibe:dark/ 30, __layered_composition__
+- /meta:vibe:dark/ 20, __atmospheric_perspective__
+- /meta:vibe:dark/ 15, __negative_space_depth__
+- /meta:action:exploration/ 40, __atmospheric_perspective__
+- /meta:action:exploration/ 35, __layered_composition__
+- /meta:action:exploration/ 15, __scale_cues__
+- /meta:action:exploration/ 10, __foreground_framing__
+- 35, __layered_composition__
+- 25, __atmospheric_perspective__
+- 20, __foreground_framing__
+- 10, __scale_cues__
+- 10, __negative_space_depth__
+framing_technique:
+- /meta:vibe:dark/ 15, __tight_framing__
+- /meta:vibe:dark/ 18, __unconventional_framing__
+- /meta:vibe:dark/ 22, __foreground_framing__
+- /meta:vibe:dark/ 18, __negative_space__
+- /meta:vibe:dark/ 27, __open_framing__
+- /meta:vibe:romantic/ 40, __soft_framing__
+- /meta:vibe:romantic/ 30, __natural_framing__
+- /meta:vibe:romantic/ 20, __balanced_framing__
+- /meta:vibe:romantic/ 10, __open_framing__
+- /meta:vibe:adventurous/ 30, __dynamic_framing__
+- /meta:vibe:adventurous/ 25, __open_framing__
+- /meta:vibe:adventurous/ 20, __foreground_framing__
+- /meta:vibe:adventurous/ 15, __natural_framing__
+- /meta:vibe:adventurous/ 10, __unconventional_framing__
+- /meta:action:exploration/ 40, __open_framing__
+- /meta:action:exploration/ 30, __natural_framing__
+- /meta:action:exploration/ 20, __foreground_framing__
+- /meta:action:exploration/ 10, __balanced_framing__
+- 30, __balanced_framing__
+- 25, __open_framing__
+- 15, __natural_framing__
+- 10, __foreground_framing__
+- 8, __tight_framing__
+- 7, __dynamic_framing__
+- 3, __unconventional_framing__
+- 2, __negative_space__
+- 10, negative space framing
+- 10, silhouette framing
+- 10, natural frame through doorway
+balanced_framing:
+- 100, balanced framing
+open_framing:
+- 100, open framing
+natural_framing:
+- 60, natural framing
+- 40, environmental framing
+foreground_framing:
+- 60, foreground framing
+- 40, frame within frame
+tight_framing:
+- 100, tight framing
+dynamic_framing:
+- 100, dynamic framing
+unconventional_framing:
+- 100, unconventional framing
+negative_space:
+- 100, negative space
+soft_framing:
+- 100, soft framing
+layered_composition:
+- 50, layered composition
+- 30, foreground, midground, background layers
+- 20, depth layering, strong separation of planes
+selective_focus:
+- 60, selective focus
+- 40, focus on subject, background softly blurred
+atmospheric_perspective:
+- 60, atmospheric perspective
+- 40, distant haze, depth cues
+scale_cues:
+- 60, strong scale cues
+- 40, scale reference elements, sense of size
+negative_space_depth:
+- 60, negative space with depth
+- 40, spacious negative space, deep scene

@@ -1,0 +1,6 @@
+scene_situation:
+- /meta:action:trading/ /meta:count:multiple/ 45, two operators trading hardware and ammo under flickering signage
+- /meta:action:trading/ /meta:count:single/ 30, lone courier haggling with a dealer beside a humming generator
+- /meta:action:infiltration/ 40, security beams sweep the hall, alarms one mistake away
+- /meta:action:hack/ 45, a locked blast door cycles as code finally yields
+- /meta:action:negotiation/ 30, tense talks in a glass office above the city, drones watching silently

@@ -1,0 +1,48 @@
+ambience:
+- __ambient_sound__ __ambient_scent__ __ambient_feel__
+ambient_sound:
+- /meta:location:tavern/ 70, the roar of conversation and clinking mugs
+- /meta:location:forest/ 60, the chirping of crickets and rustling of leaves
+- /meta:location:city/ 50, the distant hustle and bustle of the crowd
+- /meta:location:castle/ 40, the echo of footsteps on stone
+- /meta:location:wilderness/ 50, the call of distant wildlife
+- /meta:action:combat/ 60, the clang of steel and battle cries
+- /meta:action:combat/ 40, the eerie silence after a battle
+- /meta:action:celebrating/ 80, the sound of music and laughter
+- /meta:vibe:dark/ 30, an eerie, unsettling silence
+- /meta:vibe:dark/ 20, distant, unidentifiable scratching
+- /meta:vibe:dark/ 20, faint, ghostly whispers
+- 30, the gentle sigh of the wind
+- 20, a profound, peaceful silence
+- 15, distant thunder
+- 15, soft rain on rooftops
+- 10, crackling fireplace
+- 10, murmuring crowd
+- 10, footsteps in a hallway
+ambient_scent:
+- /meta:location:tavern/ 70, the smell of stew, ale, and woodsmoke
+- /meta:location:forest/ 60, the fresh scent of pine, damp earth, and decaying leaves
+- /meta:location:city/ 50, the smell of rain on cobblestones, baked bread, and refuse
+- /meta:location:forge/ 80, the smell of soot, oil, and hot metal
+- /meta:location:library/ 90, the smell of old parchment and dust
+- /meta:action:combat/ 50, the coppery scent of blood
+- /meta:action:combat/ 30, the smell of sweat and leather
+- /meta:action:magic/ 70, the sharp smell of ozone
+- /meta:vibe:dark/ 40, the smell of damp rot and mildew
+- /meta:vibe:dark/ 30, the acrid smell of smoke
+- 30, the clean smell of fresh air after rain
+- 20, the faint, floral scent on the breeze
+- 10, the scent of old books and ink
+- 10, salt air and sea spray
+- 10, warm vanilla and incense
+ambient_feel:
+- /meta:weather:stormy/ 80, a cold, biting wind
+- /meta:weather:oppressive_heat/ 90, the oppressive, sweltering heat
+- /meta:vibe:dark/ 40, a cold chill that runs down your spine
+- /meta:vibe:dark/ 30, a clammy, uncomfortable dampness
+- /meta:vibe:calm/ 50, a gentle, comforting warmth
+- /meta:vibe:calm/ 30, a soft, cool breeze
+- /meta:vibe:romantic/ 60, a warm, gentle breeze
+- 40, a cold chill in the air
+- 30, the oppressive heat
+- 30, a gentle, comforting warmth

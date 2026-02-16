@@ -1,0 +1,169 @@
+location:
+- /meta:action:boarding_action/ 70, meta:scene:indoor, meta:loc:spacecraft, __spacecraft_locations__
+- /meta:loc:spacecraft/ 60, meta:scene:indoor, meta:loc:spacecraft, __spacecraft_locations__
+- /meta:vibe:dark/ 25, meta:scene:outdoor, meta:loc:urban, __urban_futuristic_varieties__
+- /meta:vibe:dark/ 20, meta:scene:indoor, meta:loc:station, __space_station_varieties__
+- /meta:vibe:dark/ 18, meta:scene:outdoor, meta:loc:dystopian, __dystopian_varieties__
+- /meta:vibe:dark/ 15, meta:scene:indoor, meta:loc:derelict, __derelict_varieties__
+- /meta:vibe:dark/ 12, meta:loc:military, __military_varieties__
+- /meta:vibe:dark/ 10, meta:scene:outdoor, meta:loc:alien_planet, __alien_planet_varieties__
+- /meta:vibe:explicit/ 30, meta:scene:outdoor, meta:loc:urban, __urban_futuristic_varieties__
+- /meta:vibe:explicit/ 25, meta:scene:indoor, meta:loc:luxury, __luxury_varieties__
+- /meta:vibe:explicit/ 20, meta:scene:indoor, meta:loc:entertainment, __entertainment_varieties__
+- /meta:vibe:explicit/ 15, meta:scene:indoor, meta:loc:station, __space_station_varieties__
+- /meta:vibe:explicit/ 10, meta:scene:indoor, meta:loc:starship, __starship_varieties__
+- /meta:vibe:adventurous/ 25, meta:scene:outdoor, meta:loc:alien_planet, __alien_planet_varieties__
+- /meta:vibe:adventurous/ 20, meta:scene:outdoor, meta:loc:exploration, __exploration_varieties__
+- /meta:vibe:adventurous/ 18, meta:scene:indoor, meta:loc:starship, __starship_varieties__
+- /meta:vibe:adventurous/ 15, meta:scene:indoor, meta:loc:station, __space_station_varieties__
+- /meta:vibe:adventurous/ 12, meta:loc:military, __military_varieties__
+- /meta:vibe:adventurous/ 10, meta:scene:outdoor, meta:loc:frontier, __frontier_varieties__
+- 20, meta:scene:outdoor, meta:loc:urban, __urban_futuristic_varieties__
+- 15, meta:scene:outdoor, meta:loc:alien_planet, __alien_planet_varieties__
+- 15, meta:scene:indoor, meta:loc:station, __space_station_varieties__
+- 12, meta:scene:indoor, meta:loc:starship, __starship_varieties__
+- 10, meta:loc:military, __military_varieties__
+- 8, meta:scene:indoor, meta:loc:research, __research_varieties__
+- 7, meta:scene:indoor, meta:loc:industrial, __industrial_varieties__
+- 5, meta:scene:indoor, meta:loc:derelict, __derelict_varieties__
+- 4, meta:scene:indoor, meta:loc:luxury, __luxury_varieties__
+- 2, meta:scene:indoor, meta:loc:digital, __digital_varieties__
+- 2, meta:scene:outdoor, meta:loc:frontier, __frontier_varieties__
+- 8, orbital shipyard with towering scaffolds and docking clamps
+- 6, neon-lit megacity rooftop with rain and signage
+- 5, icy moon surface with research domes and antenna arrays
+urban_futuristic_varieties:
+- 25, meta:franchise:blade_runner, rain-slicked neo-noir city with towering skyscrapers,
+  holographic advertisements, and crowded streets
+- 20, meta:franchise:mass_effect, Citadel-style clean futuristic metropolis with sleek
+  architecture and diverse alien species
+- 18, cyberpunk dystopia with extreme wealth disparity and visible technological augmentation
+- 15, ecumenopolis planet-wide city with countless levels and perpetual urban sprawl
+- 12, arcology city with self-contained ecosystems and integrated infrastructure
+- 10, floating city with anti-gravity foundations and aerial transportation
+alien_planet_varieties:
+- 20, __garden_worlds__
+- 20, __extreme_environments__
+- 20, __exotic_biospheres__
+- 15, __dead_worlds__
+- 15, __artificial_structures__
+- 10, __gas_giants__
+- 10, crystalline desert under twin moons
+- 10, fungal jungle with bioluminescent spores
+- 10, icy canyon world with auroras
+garden_worlds:
+- 30, lush jungle world with massive flora and diverse fauna
+- 25, temperate world with familiar-looking biomes in alien configurations
+- 20, arid world with vast deserts and resilient lifeforms
+- 15, archipelago world with extensive water coverage and island civilizations
+- 10, fungal forest world with towering mushrooms and spore-based ecosystems
+extreme_environments:
+- 25, volcanic world with rivers of lava and constant seismic activity
+- 20, ice planet with frozen landscapes and cryogenic temperatures
+- 20, high-gravity world with dense atmosphere and massive lifeforms
+- 15, radioactive wasteland with mutated life and hazardous zones
+- 10, crystal world with geometric formations and reflective surfaces
+- 10, gas giant upper atmosphere with floating cities and storm systems
+exotic_biospheres:
+- 30, silicon-based life world with crystalline organisms
+- 25, ammonia-based ecosystem with exotic biochemistry
+- 20, plasma life forms in stellar atmosphere
+- 15, energy beings in nebular environments
+- 10, non-carbon life with strange metabolic processes
+dead_worlds:
+- 40, airless moon with cratered surface and stark shadows
+- 30, barren rock planet with minimal geological activity
+- 20, toxic atmosphere world with corrosive environment
+- 10, tidally locked planet with extreme temperature gradients
+artificial_structures:
+- 40, ringworld with artificial sun and vast interior surface
+- 30, Dyson sphere with interior ecosystem and controlled climate
+- 20, orbital habitat with rotating sections and simulated gravity
+- 10, matrioshka brain with computational layers and energy collection
+gas_giants:
+- 100, gas giant upper atmosphere with cloud cities and floating installations
+space_station_varieties:
+- 25, meta:franchise:mass_effect, Citadel-style massive space station with multiple
+  arms and diverse districts
+- 20, meta:franchise:babylon5, Babylon 5-style rotating station with diplomatic facilities
+- 20, orbital research station with scientific facilities and observation decks
+- 15, military outpost with defensive systems and barracks
+- 10, trading hub with merchant quarters and docking facilities
+- 10, generation ship with self-contained society and historical architecture
+starship_varieties:
+- 25, meta:franchise:halo, UNSC warship with gray corridors and military efficiency
+- 20, meta:franchise:mass_effect, Normandy-style sleek frigate with advanced technology
+- 20, meta:franchise:expanse, Rocinante-style practical spacecraft with realistic
+  design
+- 15, generation ship with centuries-old architecture and recycled systems
+- 10, luxury liner with opulent accommodations and entertainment facilities
+- 10, science vessel with laboratories and sensor arrays
+military_varieties:
+- 30, military base with landing pads and barracks
+- 25, orbital defense platform with heavy weapons and sensor arrays
+- 20, bunker complex with reinforced structures and emergency systems
+- 15, training facility with obstacle courses and simulation rooms
+- 10, shipyard with construction docks and repair facilities
+research_varieties:
+- 30, research outpost with laboratories and living quarters
+- 25, astronomical observatory with telescope arrays and data centers
+- 20, xenobiology facility with containment units and study areas
+- 15, archaeological dig site with ancient ruins and excavation equipment
+- 10, zero-g research facility with experimental equipment
+industrial_varieties:
+- 30, mining operation with extraction equipment and processing plants
+- 25, manufacturing complex with assembly lines and robotics
+- 20, refinery with distillation towers and storage tanks
+- 15, power plant with energy generation and distribution systems
+- 10, waste processing facility with recycling systems and containment
+derelict_varieties:
+- 30, derelict spacecraft with broken systems and zero gravity
+- 25, abandoned colony with overgrown structures and decay
+- 20, ruined outpost with battle damage and destroyed equipment
+- 15, ghost station with functioning systems but no crew
+- 10, crashed ship with torn hull and scattered debris
+luxury_varieties:
+- 30, luxury resort with elegant accommodations and recreational facilities
+- 25, executive suite with expensive furnishings and advanced amenities
+- 20, pleasure district with entertainment venues and nightlife
+- 15, spa facility with relaxation treatments and rejuvenation technology
+- 10, VIP lounge with exclusive access and premium services
+digital_varieties:
+- 40, cyberspace with data streams and virtual architecture
+- 30, simulation environment with programmable reality
+- 20, AI core with processing units and memory banks
+- 10, neural interface with direct brain-computer connection
+frontier_varieties:
+- 30, frontier colony with basic infrastructure and rough conditions
+- 25, mining town with practical buildings and industrial equipment
+- 20, agricultural settlement with farming equipment and storage facilities
+- 15, trading post with merchant stalls and traveler accommodations
+- 10, remote outpost with limited resources and isolation
+dystopian_varieties:
+- 30, oppressed district with surveillance and poverty
+- 25, corporate enclave with private security and exclusive access
+- 20, slum area with makeshift structures and overcrowding
+- 15, police state with checkpoints and control measures
+- 10, disaster zone with destruction and emergency response
+entertainment_varieties:
+- 30, casino complex with gambling tables and entertainment shows
+- 25, virtual reality arena with immersive experiences and spectators
+- 20, sports stadium with playing field and audience seating
+- 15, concert hall with stage and audio-visual equipment
+- 10, theme park with rides and themed areas
+exploration_varieties:
+- 30, unknown region with uncharted territory and discovery potential
+- 25, anomaly site with strange phenomena and scientific interest
+- 20, boundary area with frontier conditions and limited mapping
+- 15, deep space with void and distant stars
+- 10, dimensional rift with unstable physics and exotic energy
+spacecraft_locations:
+- 30, starship corridor with warning lights and smoke-filled airlocks
+- 25, cramped cockpit with holographic controls and instrument glow
+- 20, cargo hold stacked with sealed containers and magnetic clamps
+- 15, engineering bay with exposed conduits, sparks, and coolant vapor
+- 10, docking bay with massive doors, industrial floodlights, and drifting mist
+urban_locations:
+- 10, neon-lit megacity street, rain
+- 10, orbital station promenade, glass panels
+- 10, industrial refinery deck, steam vents
