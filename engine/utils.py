@@ -2,7 +2,7 @@
 Utility functions for random selection with deterministic seeding
 """
 import random
-from typing import List, TypeVar, Dict, Any
+from typing import List, TypeVar, Dict, Any, Optional
 
 T = TypeVar('T')
 
@@ -24,18 +24,26 @@ class DeterministicRandom:
     def shuffle(self, seq):
         return self._rng.shuffle(seq)
 
-def weighted_random(items: List[Dict[str, Any]], rng: DeterministicRandom) -> Dict[str, Any]:
+def weighted_random(items: List[Dict[str, Any]], rng: Optional[DeterministicRandom] = None) -> Dict[str, Any]:
     """Select a weighted random item from a list"""
     if not items:
         return None
+
+    rng_obj = rng or DeterministicRandom()
+
+    def _weight(item: Dict[str, Any]) -> float:
+        try:
+            return max(0.0, float(item.get('weight', 1)))
+        except (TypeError, ValueError):
+            return 0.0
     
-    total = sum(item.get('weight', 1) for item in items)
+    total = sum(_weight(item) for item in items)
     if total <= 0:
         return items[-1] if items else None
     
-    r = rng.random() * total
+    r = rng_obj.random() * total
     for item in items:
-        r -= item.get('weight', 1)
+        r -= _weight(item)
         if r <= 0:
             return item
     

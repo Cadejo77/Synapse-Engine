@@ -1,7 +1,7 @@
 """
 Complexity budget management
 """
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 
 def get_cost(entry: Dict[str, Any], complexity_rules: Dict[str, Any]) -> int:
     """Get the complexity cost for an entry"""

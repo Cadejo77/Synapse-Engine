@@ -1,7 +1,7 @@
 """
 Safety filtering and content moderation
 """
-from typing import List, Dict, Any, Set
+from typing import List, Dict, Any
 
 def categorize_tokens(tokens: List[str], safety_config: Dict[str, Any]) -> Dict[str, List[str]]:
     """Categorize tokens according to safety flags"""

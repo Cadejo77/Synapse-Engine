@@ -1,6 +1,6 @@
 import os
 import re
-import time
+import html as _html
 import yaml
 import random
 import json
@@ -530,8 +530,6 @@ class ProceduralPromptGraph:
 # v2 + companion nodes
 # ============================
 
-import html as _html
-
 def _safe_unescape(s: str) -> str:
     try:
         return _html.unescape(s)
@@ -638,9 +636,11 @@ def _resolve_time_conflicts(tokens: List[str]) -> Tuple[List[str], List[str]]:
             is_night = any(re.search(p,t,re.I) for p in _ONEOF_GROUPS["timeofday_night"])
             is_day = any(re.search(p,t,re.I) for p in _ONEOF_GROUPS["timeofday_day"])
             if prefer_night and is_day:
-                removed.append(t); continue
+                removed.append(t)
+                continue
             if (not prefer_night) and is_night:
-                removed.append(t); continue
+                removed.append(t)
+                continue
             kept.append(t)
         return kept, removed
     return tokens, []
@@ -1028,5 +1028,4 @@ class PPGRegionPlanBuilder:
         plan = {"layout_mode": layout_mode, "global": {"prompt": global_prompt, "weight": global_weight}, "regions": regions}
         dbg = f"Regions: {len(regions)} | Global prompt length: {len(global_prompt)}"
         return (json.dumps(plan, ensure_ascii=False), dbg)
-
 

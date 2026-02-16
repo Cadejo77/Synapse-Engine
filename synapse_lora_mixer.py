@@ -1,6 +1,6 @@
 import json
 import random
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
 
 def _safe_import_folder_paths():

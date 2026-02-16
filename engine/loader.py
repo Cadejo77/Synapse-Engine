@@ -1,10 +1,9 @@
 """
 Configuration loader for YAML files
 """
-import os
 import yaml
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 
 def read_yaml(file_path: str) -> Dict[str, Any]:
     """Read and parse a YAML file"""

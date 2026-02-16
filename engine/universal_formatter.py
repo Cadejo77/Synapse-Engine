@@ -3,7 +3,7 @@ Universal prompt formatting for standardized output structure
 Following the requested format: quality tags → subject → background → supporting tags
 Generates rich, descriptive prompts with detailed composition elements
 """
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 def format_universal_prompt(prompt: str, context: Dict[str, Any], user_prompt: str = "") -> str:
     """

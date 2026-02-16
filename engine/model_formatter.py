@@ -1,7 +1,7 @@
 """
 Model-specific prompt formatting utilities
 """
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 def format_prompt_for_model(prompt: str, context: Dict[str, Any], model_profile: str, 
                            cfg: Dict[str, Any], user_prompt: str = "") -> str:
