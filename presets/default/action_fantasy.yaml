@@ -8,10 +8,10 @@ action:
 - /meta:vibe:dark/ 12, __dynamic_actions__
 - /meta:vibe:dark/ 8, __adventure_actions__
 - /meta:vibe:dark/ 10, __special_actions__
-- /meta:vibe:explicit/ 30, __social_actions__
-- /meta:vibe:explicit/ 25, __combat_actions__
-- /meta:vibe:explicit/ 20, __dynamic_actions__
-- /meta:vibe:explicit/ 15, __adventure_actions__
+- /meta:vibe:explicit/ 45, __explicit_actions__
+- /meta:vibe:explicit/ 20, __social_actions__
+- /meta:vibe:explicit/ 15, __combat_actions__
+- /meta:vibe:explicit/ 10, __dynamic_actions__
 - /meta:vibe:explicit/ 10, __magic_actions__
 - /meta:vibe:romantic/ 40, __social_actions__
 - /meta:vibe:romantic/ 25, __adventure_actions__
@@ -30,6 +30,7 @@ action:
 - 10, __magic_actions__
 - 10, __stealth_actions__
 - 10, __special_actions__
+- /meta:genre:fantasy/ 15, __dnd_tactical_actions__
 - /meta:vibe:epic/ 15, dragon swoop overhead, panic below
 - /meta:vibe:serene/ 10, sparring practice at dawn
 - /meta:vibe:dark/ 15, assassination attempt in candlelit halls
@@ -96,3 +97,26 @@ sensual_actions:
 - 20, meta:action:resting, reclining comfortably, silk sheets, relaxed breathing
 - 20, meta:action:after_battle, post-adventure downtime, cloak loosely draped, confident calm
 - 15, meta:action:festival, playful dance, coin jewelry, swaying fabric
+
+
+dnd_tactical_actions:
+- 14, meta:action:dodge, shield raised in a guarded stance, waiting for an opening
+- 12, meta:action:dash, sprinting through collapsing ruins, cloak whipping behind
+- 10, meta:action:disengage, slipping out of melee range with careful footwork
+- 10, meta:action:help, calling targets and creating an opening for an ally
+- 9, meta:action:grapple, locking an opponent in close quarters, strength contest
+- 9, meta:action:shove, shield bash pushing an enemy toward the ledge
+- 8, meta:action:ready_action, holding a prepared strike for the perfect trigger
+- 8, meta:action:opportunity_attack, punishing a retreat with a swift attack
+- 8, meta:action:sneak_attack, exploiting distraction with precise burst damage
+- 6, meta:action:counterspell, arcane sigils cancel an enemy spell mid-cast
+- 6, meta:action:divine_smite, holy radiance erupts on impact against evil
+
+explicit_actions:
+- 22, meta:action:explicit_oral, explicit oral sex, eager pace, tangled sheets
+- 20, meta:action:explicit_penetration, explicit penetrative sex, intense eye contact, flushed skin
+- 16, meta:action:explicit_riding, straddling and riding partner, dominant rhythm, heated breath
+- 14, meta:action:explicit_missionary, bodies pressed together, explicit thrusting, candlelit room
+- 12, meta:action:explicit_doggystyle, bent-over pose, explicit rear-entry sex, arched back
+- 10, meta:action:explicit_mutual_touch, explicit mutual touching, slick skin, hungry expressions
+- 6, meta:action:explicit_aftercare, exhausted embrace after sex, sweat and soft kisses

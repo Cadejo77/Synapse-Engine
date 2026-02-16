@@ -4,6 +4,7 @@ spice_scene:
 - /meta:scene:indoor/ 25, __indoor_scene_spice__
 - /meta:loc:dungeon/ 25, __dungeon_scene_spice__
 - /meta:loc:station/ 25, __station_scene_spice__
+- /meta:vibe:explicit/ 35, __explicit_scene_spice__
 - 12, __rare_scene_spice__
 common_scene_spice:
 - 40, dust motes visible in the light
@@ -37,8 +38,11 @@ scene_spice:
 - 10, distant bells echoing
 - 10, a faint hum of machinery
 explicit_scene_spice:
-- 25, rumpled sheets and soft pillows, boudoir atmosphere
-- 20, steam in the bathroom, fogged mirror
-- 20, candlelight flicker, warm shadows
-- 15, silk curtains swaying by an open window
-- 15, scattered rose petals, romantic setup
+- 20, rumpled sheets and soft pillows, boudoir atmosphere
+- 16, steam in the bathroom, fogged mirror and wet tile reflections
+- 15, candlelight flicker, warm shadows across bare skin
+- 14, silk curtains swaying by an open window, moonlit bedframe
+- 12, scattered rose petals, overturned goblets, post-passion disarray
+- 10, heavy breathing in a private chamber, armor and belts discarded nearby
+- 8, secret dungeon alcove lit by lantern glow, explicit rendezvous atmosphere
+- 5, enchanted privacy ward humming softly around the room
