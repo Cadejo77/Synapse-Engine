@@ -1,0 +1,9 @@
+content_types:
+  - type: figure
+    weight: 55
+  - type: landscape
+    weight: 40
+  - type: hybrid
+    weight: 5
+metadata:
+  version: 1

@@ -1,0 +1,76 @@
+negative_prompts:
+  # Common negative prompts for most models
+  quality_issues:
+    - token: "worst quality"
+      weight: 20
+    - token: "low quality" 
+      weight: 15
+    - token: "lowres"
+      weight: 12
+    - token: "blurry"
+      weight: 10
+    - token: "out of focus"
+      weight: 8
+      
+  anatomy_issues:
+    - token: "bad anatomy"
+      weight: 18
+    - token: "bad proportions"
+      weight: 15
+    - token: "bad hands"
+      weight: 20
+    - token: "missing fingers"
+      weight: 12
+    - token: "extra fingers"
+      weight: 12
+    - token: "mutated hands"
+      weight: 10
+    - token: "deformed"
+      weight: 15
+    - token: "disfigured"
+      weight: 12
+      
+  facial_issues:
+    - token: "bad face"
+      weight: 15
+    - token: "ugly face"
+      weight: 12
+    - token: "asymmetric eyes"
+      weight: 10
+    - token: "crossed eyes"
+      weight: 8
+    - token: "malformed face"
+      weight: 10
+      
+  technical_issues:
+    - token: "jpeg artifacts"
+      weight: 8
+    - token: "watermark"
+      weight: 10
+    - token: "text"
+      weight: 12
+    - token: "signature"
+      weight: 8
+    - token: "username"
+      weight: 6
+    - token: "error"
+      weight: 10
+      
+  style_issues:
+    - token: "oversaturated"
+      weight: 6
+    - token: "undersaturated"
+      weight: 4
+    - token: "overexposed"
+      weight: 6
+    - token: "underexposed"
+      weight: 6
+    - token: "noise"
+      weight: 8
+
+metadata:
+  version: 1
+  choose_min: 3
+  choose_max: 8
+  choose_probability: 1.0
+  notes: "Negative prompt pools for quality control across different models"

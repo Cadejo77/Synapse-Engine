@@ -1,0 +1,36 @@
+special_fx:
+  - weight: 30
+    token: drifting_embers
+  - weight: 28
+    token: motes_of_light
+  - weight: 26
+    token: arc_sparks
+    allow_genres: [sci_fi, cyberpunk]
+  - weight: 24
+    token: pollen_glow
+  - weight: 22
+    token: spectral_trails
+    rarity_min: rare
+  - weight: 21
+    token: rune_pulses
+    rarity_min: rare
+  - weight: 18
+    token: temporal_shear
+    rarity_min: rare
+  - weight: 16
+    token: ion_streamers
+    allow_genres: [sci_fi]
+  - weight: 15
+    token: micro_meteor_streaks
+    rarity_min: epic
+  - weight: 14
+    token: gravity_distortion
+    rarity_min: epic
+  - weight: 13
+    token: cosmic_filaments
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_min: 0
+  choose_max: 2
+  second_pick_chance: 0.38

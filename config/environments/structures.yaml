@@ -1,0 +1,39 @@
+structures:
+  - weight: 30
+    token: ruined_tower
+  - weight: 26
+    token: watch_fort
+  - weight: 24
+    token: arcane_obelisk
+    rarity_min: rare
+  - weight: 22
+    token: derelict_freighter
+    allow_genres: [sci_fi]
+  - weight: 21
+    token: holo_bazaar
+    allow_genres: [cyberpunk]
+  - weight: 20
+    token: clockwork_foundry
+    allow_genres: [steampunk]
+  - weight: 18
+    token: submerged_shrine
+    rarity_min: rare
+  - weight: 16
+    token: crystalline_spire
+    rarity_min: rare
+  - weight: 15
+    token: reactor_skeleton
+    allow_genres: [post_apoc, sci_fi]
+  - weight: 12
+    token: bio_dome_fragment
+    allow_genres: [sci_fi]
+  - weight: 10
+    token: astral_gate
+    rarity_min: epic
+  - weight: 8
+    token: temporal_waystation
+    rarity_min: epic
+metadata:
+  version: 2
+  choose_min: 0
+  choose_max: 1

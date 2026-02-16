@@ -1,0 +1,10 @@
+landscapes:
+  - "5, /genre:fantasy/ /vibe:mystical/ /content:landscape/ silverwood glade, pollen halos, rune roots pulsing"
+  - "5, /genre:sci_fi/ /vibe:mysterious/ /content:landscape/ abandoned orbital dock, hull husks drifting"
+  - "4, /genre:dark_fantasy/ /vibe:grim/ /content:landscape/ sunken chapel, peat fog swallowing arches"
+  - "3, /genre:cyberpunk/ /vibe:sinister/ /content:landscape/ rain-stratified megablock canyon, billboard ghosts"
+  - "2, /genre:post_apoc/ /vibe:melancholic/ /content:landscape/ collapsed overpass, dune-choked riverbed"
+  - "1, /genre:steampunk/ /vibe:whimsical/ /content:landscape/ brass observatory, rotating astrolabe ring"
+metadata:
+  version: 1
+  source: "Legacy fused landscape lines."

@@ -1,0 +1,44 @@
+physiques:
+  - weight: 30
+    token: athletic
+    complexity_cost: 1
+  - weight: 28
+    token: lithe
+    complexity_cost: 1
+  - weight: 24
+    token: sturdy
+    complexity_cost: 1
+  - weight: 20
+    token: towering
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 20
+    token: compact
+    complexity_cost: 1
+  - weight: 18
+    token: gaunt
+    complexity_cost: 1
+  - weight: 16
+    token: broad_shouldered
+    complexity_cost: 1
+  - weight: 15
+    token: dense_muscled
+    complexity_cost: 1
+  - weight: 14
+    token: graceful
+    complexity_cost: 1
+  - weight: 13
+    token: augmented_frame
+    allow_genres: [sci_fi, cyberpunk, post_apoc]
+    rarity_min: rare
+    complexity_cost: 2
+  - weight: 11
+    token: etherial_outline
+    rarity_min: epic
+    complexity_cost: 2
+  - weight: 10
+    token: crystalline_framed
+    rarity_min: epic
+    complexity_cost: 2
+metadata:
+  version: 2

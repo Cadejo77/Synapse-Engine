@@ -1,0 +1,68 @@
+lighting:
+  - weight: 30
+    token: soft_volumetric
+    complexity_cost: 1
+  - weight: 28
+    token: rim_high_contrast
+    complexity_cost: 1
+  - weight: 26
+    token: golden_hour
+    complexity_cost: 1
+  - weight: 24
+    token: overcast_diffuse
+    complexity_cost: 1
+  - weight: 22
+    token: bioluminescent
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 21
+    token: neon_reflective
+    allow_genres: [cyberpunk, sci_fi]
+    complexity_cost: 1
+  - weight: 20
+    token: candlelit_chiaroscuro
+    allow_genres: [fantasy, dark_fantasy, steampunk]
+    complexity_cost: 1
+  - weight: 19
+    token: spectral_backlit
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 18
+    token: storm_flash
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 17
+    token: radiant_rim_fill
+    complexity_cost: 1
+  - weight: 16
+    token: eclipse_glow
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 15
+    token: molten_core_glow
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 14
+    token: void_edge_glow
+    rarity_min: epic
+    complexity_cost: 2
+  - weight: 13
+    token: prismatic_scatter
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 12
+    token: aurora_wash
+    rarity_min: epic
+    complexity_cost: 2
+  - weight: 11
+    token: subsurface_soft_bounce
+    rarity_min: rare
+    complexity_cost: 1
+  - weight: 10
+    token: chrono_shifted_lumens
+    rarity_min: epic
+    complexity_cost: 2
+metadata:
+  version: 2
+  choose_min: 1
+  choose_max: 1

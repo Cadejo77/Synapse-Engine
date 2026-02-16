@@ -1,0 +1,39 @@
+power_sources:
+  - weight: 34
+    token: mundane
+  - weight: 28
+    token: arcane
+  - weight: 26
+    token: elemental
+  - weight: 22
+    token: psionic
+    rarity_min: rare
+  - weight: 20
+    token: techno_arcane
+    rarity_min: rare
+    allow_genres: [steampunk, sci_fi, cyberpunk, multi]
+  - weight: 18
+    token: bioadaptive
+    rarity_min: rare
+    allow_genres: [post_apoc, sci_fi]
+  - weight: 16
+    token: necrotic
+    rarity_min: rare
+    allow_genres: [dark_fantasy]
+  - weight: 14
+    token: astral
+    rarity_min: rare
+  - weight: 12
+    token: void_essence
+    rarity_min: epic
+  - weight: 11
+    token: stellar
+    rarity_min: epic
+  - weight: 10
+    token: quantum_flux
+    rarity_min: epic
+    allow_genres: [sci_fi, multi]
+metadata:
+  version: 2
+  choose_min: 1
+  choose_max: 1

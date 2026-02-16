@@ -1,0 +1,10 @@
+overrides:
+  - token: dragonborn_ember
+    weight_multiplier: 0.85
+    reason: "Reduce temporary overuse."
+  - token: chronomancer
+    weight_multiplier: 1.15
+    reason: "Boost underrepresented archetype."
+metadata:
+  version: 1
+  policy: "Apply multiplicatively; min weight = 1."
