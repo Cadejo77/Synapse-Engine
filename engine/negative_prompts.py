@@ -1,7 +1,7 @@
 """
 Negative prompt generation utilities
 """
-from typing import Dict, Any, List
+from typing import Dict, Any
 from .utils import weighted_random
 
 def generate_negative_prompts(context: Dict[str, Any], cfg: Dict[str, Any], 

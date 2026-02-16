@@ -1,7 +1,7 @@
 """
 Relational weight adjustments between different dimensions
 """
-from typing import List, Dict, Any, Optional, Set
+from typing import List, Dict, Any
 import copy
 
 def apply_species_archetype(entries: List[Dict[str, Any]], context: Dict[str, Any], 

@@ -1,7 +1,7 @@
 """
 Weighting functions for applying genre, rarity, and vibe filters
 """
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 import copy
 
 def apply_rarity_and_genre_filters(entries: List[Dict[str, Any]], rarity: str, genre: str) -> List[Dict[str, Any]]:

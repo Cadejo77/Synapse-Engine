@@ -1,6 +1,6 @@
 import json
 import re
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
 
 def _get_node_class(name: str):

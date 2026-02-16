@@ -1,7 +1,7 @@
 """
 Prompt assembly functions
 """
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 def assemble_prompt(context: Dict[str, Any]) -> str:
     """Assemble the main prompt from selected tokens"""

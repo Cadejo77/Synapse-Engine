@@ -1,7 +1,7 @@
 """
 Conflict resolution between incompatible tokens
 """
-from typing import List, Dict, Any, Set
+from typing import List, Dict, Any
 import copy
 
 def apply_conflict_rules(entries: List[Dict[str, Any]], context: Dict[str, Any],

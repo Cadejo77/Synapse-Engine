@@ -3,7 +3,6 @@ Main prompt generator class
 """
 from typing import Dict, Any, List, Optional
 import copy
-import math
 
 from .utils import DeterministicRandom, weighted_random
 from .weighting import apply_rarity_and_genre_filters, apply_vibe_bias, apply_overrides
@@ -13,8 +12,6 @@ from .complexity import get_cost, get_rarity_budget, check_budget_available, con
 from .safety import categorize_tokens, violates_policy, apply_safety_filter
 from .synonyms import normalize_all
 from .prompt_assembler import assemble_prompt, assemble_style, make_tags_header
-from .negative_prompts import generate_negative_prompts
-from .model_formatter import format_prompt_for_model, create_regional_prompt_format
 
 class PromptGenerator:
     """Main prompt generator using YAML configuration"""
@@ -269,7 +266,8 @@ class PromptGenerator:
             'warnings': [],
             'relations_applied': [],
             'conflicts_applied': [],
-            'mode': 'compositional' if is_compositional else 'legacy'
+            'mode': 'compositional' if is_compositional else 'legacy',
+            'rng': self.rng,
         }
         
         if not is_compositional:
@@ -308,9 +306,18 @@ class PromptGenerator:
         all_tokens = []
         for dim_tokens in context.get('tokens', {}).values():
             all_tokens.extend(dim_tokens)
-        
-        safety_map = categorize_tokens(all_tokens, self.cfg.get('meta', {}).get('safety', {}))
-        if violates_policy(safety_map, self.cfg.get('meta', {}).get('safety', {})):
+
+        safety_cfg = self.cfg.get('meta', {}).get('safety', {})
+        filtered_tokens = apply_safety_filter(all_tokens, context, safety_cfg)
+        if filtered_tokens != all_tokens:
+            allowed_tokens = set(filtered_tokens)
+            context['tokens'] = {
+                dim: [t for t in dim_tokens if t in allowed_tokens]
+                for dim, dim_tokens in context.get('tokens', {}).items()
+            }
+
+        safety_map = categorize_tokens(filtered_tokens, safety_cfg)
+        if violates_policy(safety_map, safety_cfg):
             context.setdefault('warnings', []).append('Safety violation: blocked category combination')
         
         # Add explicit content if enabled
