@@ -1,6 +1,0 @@
-depth_of_field:
-- 35, shallow depth of field
-- 25, cinematic bokeh
-- 15, deep focus
-- 15, crisp foreground focus
-- 10, soft background blur

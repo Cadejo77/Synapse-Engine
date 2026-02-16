@@ -1,7 +1,0 @@
-scene_situation:
-- /meta:action:trading/ /meta:count:multiple/ 45, two armed travelers trading loot and supplies across a rough wooden stall
-- /meta:action:trading/ /meta:count:single/ 30, a lone adventurer bargaining with a merchant beneath hanging lanterns
-- /meta:action:negotiation/ /meta:count:multiple/ 30, tense contract talks at a long table, hands hovering near weapons
-- /meta:action:sneaking/ 30, torchlight sweeps the corridor while someone slips past unseen
-- /meta:action:ritual/ /meta:count:multiple/ 35, a group gathered around a glowing circle, chanting building in rhythm
-- /meta:action:summoning/ 35, a portal tears open above etched stone, wind rushing inward
