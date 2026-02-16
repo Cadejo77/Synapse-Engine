@@ -1,0 +1,235 @@
+lighting:
+- __lighting_type__ with __lighting_quality__, __lighting_direction__
+lighting_type:
+- /meta:loc:spacecraft/ 40, __scifi_ship_lighting__
+- /meta:genre:scifi/ 22, __scifi_neon_lighting__
+- /meta:genre:scifi/ 18, __scifi_console_glow__
+- /meta:genre:scifi/ 16, __holographic_lighting__
+- /meta:action:duel/ 30, __dramatic_lighting__
+- /meta:action:duel/ 25, __natural_lighting__
+- /meta:action:duel/ 20, __artificial_lighting__
+- /meta:action:duel/ 15, __contrasty_lighting__
+- /meta:action:duel/ 10, __magical_lighting__
+- /meta:action:boss_battle/ 35, __dramatic_lighting__
+- /meta:action:boss_battle/ 25, __magical_lighting__
+- /meta:action:boss_battle/ 20, __artificial_lighting__
+- /meta:action:boss_battle/ 15, __contrasty_lighting__
+- /meta:action:boss_battle/ 5, __natural_lighting__
+- /meta:action:conversation/ 40, __natural_lighting__
+- /meta:action:conversation/ 25, __soft_lighting__
+- /meta:action:conversation/ 20, __artificial_lighting__
+- /meta:action:conversation/ 15, __romantic_lighting__
+- /meta:action:exploration/ 35, __natural_lighting__
+- /meta:action:exploration/ 25, __atmospheric_lighting__
+- /meta:action:exploration/ 20, __dappled_lighting__
+- /meta:action:exploration/ 15, __magical_lighting__
+- /meta:action:exploration/ 5, __artificial_lighting__
+- /meta:vibe:dark/ 30, __low_key_lighting__
+- /meta:vibe:dark/ 25, __dramatic_lighting__
+- /meta:vibe:dark/ 35, __chiaroscuro_lighting__
+- /meta:vibe:dark/ 20, __moody_lighting__
+- /meta:vibe:dark/ 8, __artificial_lighting__
+- /meta:vibe:dark/ 12, __silhouette_lighting__
+- /meta:vibe:explicit/ 35, __romantic_lighting__
+- /meta:vibe:explicit/ 25, __soft_lighting__
+- /meta:vibe:explicit/ 20, __dramatic_lighting__
+- /meta:vibe:explicit/ 15, __natural_lighting__
+- /meta:vibe:explicit/ 5, __artificial_lighting__
+- /meta:vibe:romantic/ 40, __romantic_lighting__
+- /meta:vibe:romantic/ 30, __soft_lighting__
+- /meta:vibe:romantic/ 20, __natural_lighting__
+- /meta:vibe:romantic/ 10, __warm_lighting__
+- /meta:vibe:romantic/ 10, __moonlit_lighting__
+- /meta:vibe:adventurous/ 30, __natural_lighting__
+- /meta:vibe:adventurous/ 25, __dramatic_lighting__
+- /meta:vibe:adventurous/ 20, __atmospheric_lighting__
+- /meta:vibe:adventurous/ 15, __magical_lighting__
+- /meta:vibe:adventurous/ 10, __artificial_lighting__
+- /meta:vibe:adventurous/ 10, __volumetric_lighting__
+- 25, __natural_lighting__
+- 20, __dramatic_lighting__
+- 15, __artificial_lighting__
+- 10, __soft_lighting__
+- 8, __magical_lighting__
+- 7, __atmospheric_lighting__
+- 5, __romantic_lighting__
+- 4, __low_key_lighting__
+- 3, __contrasty_lighting__
+- 2, __chiaroscuro_lighting__
+- 1, __moody_lighting__
+- 2, __volumetric_lighting__
+- 1, __silhouette_lighting__
+- 15, soft window light
+- 10, candlelight
+- 10, neon glow
+- 10, moonlight
+- 10, studio softbox lighting
+natural_lighting:
+- /meta:time:day/ 45, daylight
+- /meta:time:day/ 35, sunlight
+- /meta:time:dawn/ 20, soft morning light
+- /meta:time:dusk/ 20, golden hour light
+- /meta:time:night/ /meta:night:nomoon/ 35, near-total darkness, faint rim light
+- /meta:time:night/ /meta:night:nomoon/ 25, low-key lighting
+- /meta:time:night/ 35, moonlight
+- /meta:time:night/ 20, starlight
+- 10, overcast light
+dramatic_lighting:
+- 40, dramatic lighting
+- 30, theatrical lighting
+- 20, intense lighting
+- 10, high-contrast lighting
+artificial_lighting:
+- 25, candlelight
+- 20, torchlight
+- 20, lantern light
+- 15, fireplace light
+- 10, oil lamp light
+- 10, magical light sources
+soft_lighting:
+- 40, soft lighting
+- 30, diffused lighting
+- 20, gentle lighting
+- 10, flattering lighting
+magical_lighting:
+- 25, magical glow
+- 20, enchanted light
+- 20, arcane lighting
+- 15, mystical illumination
+- 10, spell light
+- 10, ethereal glow
+holographic_lighting:
+- 60, pulsing holographic projections casting cyan-magenta highlights
+- 40, translucent interface glow washing surfaces with shifting color
+atmospheric_lighting:
+- 30, atmospheric lighting
+- 25, mood lighting
+- 20, environmental lighting
+- 15, weather-affected lighting
+- 10, time-of-day lighting
+romantic_lighting:
+- 40, romantic lighting
+- 30, intimate lighting
+- 20, candlelit
+- 10, soft glow
+low_key_lighting:
+- 100, low-key lighting
+contrasty_lighting:
+- 100, contrasty lighting
+chiaroscuro_lighting:
+- 100, chiaroscuro lighting
+moody_lighting:
+- 100, moody lighting
+silhouette_lighting:
+- 100, silhouette lighting
+dappled_lighting:
+- 100, dappled lighting
+warm_lighting:
+- 100, warm lighting
+moonlit_lighting:
+- 100, moonlit silver-blue lighting
+volumetric_lighting:
+- 60, volumetric shafts of light through smoke and dust
+- 40, crepuscular rays cutting across the scene
+lighting_quality:
+- /meta:vibe:dark/ 40, __harsh_quality__
+- /meta:vibe:dark/ 30, __dramatic_quality__
+- /meta:vibe:dark/ 20, __moody_quality__
+- /meta:vibe:dark/ 10, __soft_quality__
+- /meta:vibe:explicit/ 40, __soft_quality__
+- /meta:vibe:explicit/ 30, __warm_quality__
+- /meta:vibe:explicit/ 20, __dramatic_quality__
+- /meta:vibe:explicit/ 10, __harsh_quality__
+- /meta:vibe:romantic/ 50, __soft_quality__
+- /meta:vibe:romantic/ 30, __warm_quality__
+- /meta:vibe:romantic/ 20, __gentle_quality__
+- /meta:vibe:adventurous/ 30, __natural_quality__
+- /meta:vibe:adventurous/ 25, __dramatic_quality__
+- /meta:vibe:adventurous/ 20, __clear_quality__
+- /meta:vibe:adventurous/ 15, __harsh_quality__
+- /meta:vibe:adventurous/ 10, __soft_quality__
+- 30, __natural_quality__
+- 25, __soft_quality__
+- 20, __dramatic_quality__
+- 15, __harsh_quality__
+- 10, __warm_quality__
+- 15, soft
+- 10, diffused
+- 10, dramatic chiaroscuro
+- 10, rim-lit
+natural_quality:
+- 100, natural-looking
+soft_quality:
+- 60, soft
+- 40, diffused
+dramatic_quality:
+- 100, dramatic
+harsh_quality:
+- 60, harsh
+- 40, sharp
+warm_quality:
+- 60, warm
+- 40, golden
+gentle_quality:
+- 100, gentle
+moody_quality:
+- 100, moody
+clear_quality:
+- 100, clear
+lighting_direction:
+- /meta:vibe:dark/ 35, __side_lighting__
+- /meta:vibe:dark/ 25, __back_lighting__
+- /meta:vibe:dark/ 20, __top_lighting__
+- /meta:vibe:dark/ 15, __rim_lighting__
+- /meta:vibe:dark/ 5, __front_lighting__
+- /meta:vibe:explicit/ 40, __front_lighting__
+- /meta:vibe:explicit/ 25, __side_lighting__
+- /meta:vibe:explicit/ 20, __soft_lighting_direction__
+- /meta:vibe:explicit/ 15, __back_lighting__
+- /meta:vibe:romantic/ 40, __front_lighting__
+- /meta:vibe:romantic/ 30, __soft_lighting_direction__
+- /meta:vibe:romantic/ 20, __side_lighting__
+- /meta:vibe:romantic/ 10, __back_lighting__
+- /meta:vibe:adventurous/ 30, __side_lighting__
+- /meta:vibe:adventurous/ 25, __front_lighting__
+- /meta:vibe:adventurous/ 20, __back_lighting__
+- /meta:vibe:adventurous/ 15, __top_lighting__
+- /meta:vibe:adventurous/ 10, __rim_lighting__
+- 30, __front_lighting__
+- 25, __side_lighting__
+- 20, __back_lighting__
+- 15, __top_lighting__
+- 7, __rim_lighting__
+- 3, __bottom_lighting__
+front_lighting:
+- 100, frontal lighting
+side_lighting:
+- 60, side lighting
+- 40, three-quarter lighting
+back_lighting:
+- 60, back lighting
+- 40, contre-jour
+top_lighting:
+- 100, top lighting
+rim_lighting:
+- 100, rim lighting
+bottom_lighting:
+- 100, bottom lighting
+soft_lighting_direction:
+- 100, soft directional lighting
+scifi_console_glow:
+- /meta:genre:scifi/ console glow, instrument panel spill, LED indicators, soft screen light
+- /meta:genre:scifi/ holographic UI glow, translucent panels, cyan highlights, subtle bloom
+- /meta:genre:scifi/ control room glow, monitor spill, status lights, dim ambient
+- /meta:genre:scifi/ cockpit glow, avionics panels, soft blue-white screens, low-key
+- /meta:genre:scifi/ reactor interface glow, warning LEDs, soft red accents, moody
+scifi_neon_lighting:
+- /meta:genre:scifi/ neon rim light, cyan-magenta accents, wet reflections, nightlife
+- /meta:genre:scifi/ neon signage glow, saturated highlights, bokeh, cinematic haze
+- /meta:genre:scifi/ underglow lighting, RGB accents, glossy surfaces, high contrast
+- /meta:genre:scifi/ holographic ad glow, vibrant spill light, noir atmosphere
+scifi_ship_lighting:
+- /meta:genre:scifi/ starship interior lighting, practical strips, cool white, utilitarian
+- /meta:genre:scifi/ corridor strip lights, soft falloff, metallic reflections, sterile
+- /meta:genre:scifi/ hangar bay floodlights, volumetric dust, industrial
+- /meta:genre:scifi/ emergency lighting, red strobes, smoke, high tension

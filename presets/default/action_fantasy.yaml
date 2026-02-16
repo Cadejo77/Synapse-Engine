@@ -1,0 +1,122 @@
+action:
+- /meta:style:pinup/ 60, __pinup_actions__
+- /meta:content:nude/ 25, __sensual_actions__
+- /meta:vibe:dark/ 35, __combat_actions__
+- /meta:vibe:dark/ 25, __magic_actions__
+- /meta:vibe:dark/ 20, __stealth_actions__
+- /meta:vibe:dark/ 6, __social_actions__
+- /meta:vibe:dark/ 12, __dynamic_actions__
+- /meta:vibe:dark/ 8, __adventure_actions__
+- /meta:vibe:dark/ 10, __special_actions__
+- /meta:vibe:explicit/ 45, __explicit_actions__
+- /meta:vibe:explicit/ 20, __social_actions__
+- /meta:vibe:explicit/ 15, __combat_actions__
+- /meta:vibe:explicit/ 10, __dynamic_actions__
+- /meta:vibe:explicit/ 10, __magic_actions__
+- /meta:vibe:romantic/ 40, __social_actions__
+- /meta:vibe:romantic/ 25, __adventure_actions__
+- /meta:vibe:romantic/ 20, __dynamic_actions__
+- /meta:vibe:romantic/ 15, __special_actions__
+- /meta:vibe:adventurous/ 25, __combat_actions__
+- /meta:vibe:adventurous/ 20, __adventure_actions__
+- /meta:vibe:adventurous/ 20, __dynamic_actions__
+- /meta:vibe:adventurous/ 15, __social_actions__
+- /meta:vibe:adventurous/ 10, __magic_actions__
+- /meta:vibe:adventurous/ 10, __stealth_actions__
+- 20, __combat_actions__
+- 20, __social_actions__
+- 15, __adventure_actions__
+- 15, __dynamic_actions__
+- 10, __magic_actions__
+- 10, __stealth_actions__
+- 10, __special_actions__
+- /meta:genre:fantasy/ 15, __dnd_tactical_actions__
+- /meta:vibe:epic/ 15, dragon swoop overhead, panic below
+- /meta:vibe:serene/ 10, sparring practice at dawn
+- /meta:vibe:dark/ 15, assassination attempt in candlelit halls
+combat_actions:
+- 30, meta:action:duel, locked in combat, weapons clashing
+- 25, meta:action:skirmish, small-scale battle, chaotic fighting
+- 20, meta:action:boss_battle, fighting a powerful enemy, epic struggle
+- 15, meta:action:siege, assaulting a fortress, large-scale conflict
+- 10, meta:action:ambush, surprise attack, sudden violence
+- 15, sword duel, sparks, clashing steel
+- 12, arrow volley from the battlements
+- 12, spell clash, arcane light, swirling runes
+- 10, beast hunt in the misty woods
+- 10, rooftop chase in a crowded bazaar
+- 10, shield wall advance, war drums
+- 12, meta:action:boss_battle, hacked through a horde of undead, black ichor spraying
+- 10, meta:action:duel, blade-to-blade under torchlight, sparks, bloodied armor
+- 10, meta:action:ritual, circle of candles, chanting, something answers from the dark
+- 8, meta:action:ambush, arrows from the fog, panic, muffled screams
+magic_actions:
+- 40, meta:action:spellcasting, casting a spell, magical energy swirling
+- 30, meta:action:ritual, performing a magical ritual, arcane symbols glowing
+- 20, meta:action:summoning, calling a creature, portal opening
+- 10, meta:action:enchanting, imbuing an object with magic, glowing runes
+stealth_actions:
+- 40, meta:action:sneaking, moving silently, staying in shadows
+- 30, meta:action:infiltration, breaking into a secure location
+- 20, meta:action:assassination, eliminating a target, silent kill
+- 10, meta:action:theft, stealing an object, avoiding detection
+social_actions:
+- 30, meta:action:conversation, talking, exchanging words
+- 25, meta:action:negotiation, discussing terms, bargaining
+- 20, meta:action:celebration, feasting, merrymaking
+- 15, meta:action:ceremony, formal event, ritual observance
+- 10, meta:action:trading, buying and selling, marketplace interaction
+dynamic_actions:
+- 30, meta:action:chase, pursuing, running after
+- 25, meta:action:escape, fleeing, getting away
+- 20, meta:action:rescue, saving someone, heroic effort
+- 15, meta:action:race, competing in speed, urgent movement
+- 10, meta:action:hunt, tracking prey, stalking
+adventure_actions:
+- 30, meta:action:exploration, discovering new places, mapping unknown areas
+- 25, meta:action:travel, journeying, moving between locations
+- 20, meta:action:resting, taking a break, camping
+- 15, meta:action:discovery, finding something important, revelation
+- 10, meta:action:puzzle_solving, figuring out a mechanism, intellectual challenge
+special_actions:
+- 25, meta:action:transformation, changing form, metamorphosis
+- 20, meta:action:divine_intervention, gods influencing events, miracle
+- 20, meta:action:prophecy, seeing the future, vision
+- 15, meta:action:possession, being controlled by another entity
+- 10, meta:action:resurrection, returning from death, rebirth
+- 10, meta:action:curse, being afflicted by magic, suffering
+pinup_actions:
+- 30, meta:action:pinup_pose, striking a pin-up pose, playful smile
+- 25, meta:action:lounging, lounging on a chaise or bed, legs crossed, teasing glance
+- 20, meta:action:dressing, adjusting stockings or lacing a corset, half-dressed moment
+- 15, meta:action:bath, stepping out of a bath, towel wrap, steam and candlelight
+- 10, meta:action:mirror, checking makeup in a mirror, lipstick touch-up
+sensual_actions:
+- 25, meta:action:flirt, flirtatious stance, fingers tracing a necklace, warm candlelight
+- 20, meta:action:teasing, teasing smile, over-the-shoulder glance, soft fabric slipping
+- 20, meta:action:resting, reclining comfortably, silk sheets, relaxed breathing
+- 20, meta:action:after_battle, post-adventure downtime, cloak loosely draped, confident calm
+- 15, meta:action:festival, playful dance, coin jewelry, swaying fabric
+
+
+dnd_tactical_actions:
+- 14, meta:action:dodge, shield raised in a guarded stance, waiting for an opening
+- 12, meta:action:dash, sprinting through collapsing ruins, cloak whipping behind
+- 10, meta:action:disengage, slipping out of melee range with careful footwork
+- 10, meta:action:help, calling targets and creating an opening for an ally
+- 9, meta:action:grapple, locking an opponent in close quarters, strength contest
+- 9, meta:action:shove, shield bash pushing an enemy toward the ledge
+- 8, meta:action:ready_action, holding a prepared strike for the perfect trigger
+- 8, meta:action:opportunity_attack, punishing a retreat with a swift attack
+- 8, meta:action:sneak_attack, exploiting distraction with precise burst damage
+- 6, meta:action:counterspell, arcane sigils cancel an enemy spell mid-cast
+- 6, meta:action:divine_smite, holy radiance erupts on impact against evil
+
+explicit_actions:
+- 22, meta:action:explicit_oral, explicit oral sex, eager pace, tangled sheets
+- 20, meta:action:explicit_penetration, explicit penetrative sex, intense eye contact, flushed skin
+- 16, meta:action:explicit_riding, straddling and riding partner, dominant rhythm, heated breath
+- 14, meta:action:explicit_missionary, bodies pressed together, explicit thrusting, candlelit room
+- 12, meta:action:explicit_doggystyle, bent-over pose, explicit rear-entry sex, arched back
+- 10, meta:action:explicit_mutual_touch, explicit mutual touching, slick skin, hungry expressions
+- 6, meta:action:explicit_aftercare, exhausted embrace after sex, sweat and soft kisses

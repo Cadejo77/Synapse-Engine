@@ -1,0 +1,212 @@
+race:
+- 22, __human__, meta:type:humanoid
+- 13, __elf__, meta:type:humanoid
+- 10, __dwarf__, meta:type:humanoid
+- 9, __orc__, meta:type:humanoid
+- 5, __halfling__, meta:type:humanoid
+- 4, __gnome__, meta:type:humanoid
+- 5, __tiefling__, meta:type:humanoid
+- 6, demon, demonic, hellspawn, horns, meta:type:monster
+- 6, undead, corpse-like, hollow gaze, meta:type:monster
+- 8, __goblinoid__, meta:type:monster
+- 6, __ogre__, meta:type:monster
+- 5, __troll__, meta:type:monster
+- 5, __lizardfolk__, meta:type:monster
+- 4, __werebeast__, meta:type:monster
+- 4, __minotaur__, meta:type:monster
+- 2, __giant__, meta:type:monster
+- 1.5, __dragon__, meta:type:monster
+- 0.5, __griffon_hippogriff__, meta:type:monster
+- 1.5, __vampire__, meta:type:monster
+- 0.5, __lich__, meta:type:monster
+- 0.5, __ghost__, meta:type:monster
+- 0.25, __formless_horror__, meta:type:monster
+- 0.25, __mummy__, meta:type:monster
+- 20, high elf, elegant, ancient bloodline
+- 20, wood elf, ranger, forest-born
+- 20, dark elf, undercity noble, pale
+- 15, dwarf, stout, braided beard
+- 15, halfling, small, cheerful
+- 15, gnome, tinkerer, curious
+- 15, tiefling, infernal heritage, horns
+- 10, aasimar, radiant aura
+- 10, orc, strong, battle-scarred
+- 10, goblin, sly, quick
+- 10, lizardfolk, scaled, cold-blooded
+- 10, catfolk, feline grace, sharp eyes
+- 10, dragonborn, draconic scales
+- 10, undead, pale, eerie
+human:
+- 70, human, versatile, adaptable, __human_skin__ __human_eyes__ __human_hair__
+- 10, nordic human, fair skin, blonde hair, blue eyes, tall, fair skin, blue eyes, blonde hair
+- 10, southern human, olive skin, dark hair, brown eyes, olive skin, brown eyes, dark brown hair
+- 5, eastern human, pale skin, black hair, dark eyes, sophisticated, pale skin, dark brown eyes, black hair
+- 5, tribal human, dark skin, ritual scars, painted patterns, fierce, dark skin, brown eyes, black hair
+elf:
+- 35, high elf, pale skin, silver or gold hair, elegant, haughty, pale skin, bright blue eyes, silver hair
+- 30, wood elf, tanned skin, brown or green hair, green eyes, feral, tanned skin, green eyes, brown hair
+- 25, dark elf (drow), obsidian skin, white hair, red eyes, cunning, obsidian skin, crimson eyes, white hair
+- 10, half-elf, mixed features, melancholic, outsider, __human_skin__ __elf_eyes__ __human_or_elf_hair__
+dwarf:
+- 60, mountain dwarf, pale skin, thick red or brown beard, stout, pale skin, steel blue eyes, red hair
+- 30, hill dwarf, sturdy, braided beard, stocky build, meta:race:dwarf, meta:type:humanoid
+- 10, duergar (gray dwarf), gray skin, bald, red eyes, grim, gray skin, red eyes, bald
+orc:
+- 70, orc, green skin,粗野, muscular, tusked, aggressive, green skin, red eyes, black hair
+- 20, orc berserker, scarred green skin, war paint, frothing, green skin, yellow eyes, black hair
+- 10, orc chieftain, larger, black plate armor, commanding presence, dark green skin, orange eyes, black hair
+halfling:
+- 80, halfling, curly brown hair, cheerful, bare feet, fair skin, green eyes, curly brown hair
+- 10, tallfellow halfling, slightly taller, adventurous, tanned skin, hazel eyes, brown hair
+- 10, stoutheart halfling, broader, stubborn, rosy skin, blue eyes, blonde hair
+gnome:
+- 60, forest gnome, earthy tones, mischievous, bright eyes, tanned skin, bright green eyes, brown hair
+- 30, rock gnome, inventor's goggles, leather apron, curious, fair skin, blue eyes, red hair
+- 10, deep gnome (svirfneblin), gray skin, pale eyes, cautious, gray skin, pale blue eyes, white hair
+tiefling:
+- 40, tiefling, red skin, horns, tail, yellow eyes, charismatic, red skin, yellow eyes, black hair
+- 30, tiefling, purple skin, curved horns, sharp teeth, mysterious, purple skin, silver eyes, white hair
+- 20, tiefling, ashen skin, vestigial wings, silver eyes, aloof, ashen skin, silver eyes, black hair
+- 10, tiefling, black skin, glowing runes, infernal aura, powerful, black skin, fiery orange eyes, smoldering red hair
+human_skin:
+- 40, fair skin
+- 30, tanned skin
+- 20, olive skin
+- 10, brown skin
+elf_eyes:
+- 40, bright blue eyes
+- 30, green eyes
+- 20, silver eyes
+- 10, violet eyes
+human_or_elf_hair:
+- 50, __human_hair__
+- 50, __elf_hair__
+human_hair:
+- 30, brown hair
+- 25, black hair
+- 20, blonde hair
+- 15, red hair
+- 10, auburn hair
+elf_hair:
+- 40, silver hair
+- 30, golden hair
+- 20, white hair
+- 10, black hair
+goblinoid:
+- 50, goblin, small, green-yellow skin, large ears, cowardly, cunning, green-yellow skin, yellow eyes, black hair
+- 30, hobgoblin, tall, orange-red skin, disciplined, militaristic, orange-red skin, red eyes, black hair
+- 20, bugbear, large, hairy, brown fur, brutish, stealthy, brown fur, black eyes, shaggy black hair
+ogre:
+- 70, ogre, huge, fat, dull green skin, club, stupid, dull green skin, small black eyes, wispy black hair
+- 20, ogre bruiser, heavily muscled, scarred, spiked armor, dark green skin, bloodshot eyes, mohawk
+- 10, ogre magi, taller, thinner, single horn, casts simple spells, blue-tinged skin, glowing white eyes, long white hair
+troll:
+- 50, troll, lanky, green hide, warty, regenerating, green hide, beady eyes, stringy black hair
+- 25, rock troll, gray stony skin, slower, tougher, gray skin, black eyes, bald
+- 15, swamp troll, moss-covered, foul stench, slimy, green-brown skin, yellow eyes, matted hair
+- 10, dire troll, massive, two heads, incredibly violent, dark green skin, four raging eyes, two hairy manes
+lizardfolk:
+- 60, lizardfolk, black scales, dorsal fin, primitive weapons, neutral, black scales, yellow reptilian eyes, no hair
+- 25, lizardfolk shaman, older, feathers and bones, glowing eyes, green scales, glowing orange eyes, feathered headdress
+- 15, poisoned-dart lizardfolk, bright colors, agile, blowgun, bright blue scales, black eyes, no hair
+werebeast:
+- 50, werewolf, muscular hybrid form, fur-covered, snarling wolf-like head, clawed hands, bipedal, brown fur, yellow eyes,
+  snarling
+- 30, werebear, massive, thick fur, powerful claws, bearlike features, intimidating, dark brown fur, black eyes, roaring
+- 20, weretiger, sleek, powerfully built, striped fur, feline eyes, predatory, orange and black fur, green eyes, slitted pupils
+minotaur:
+- 80, minotaur, humanoid bull, powerful horns, fur-covered legs, hooves, aggressive, brown fur, red eyes, snorting
+- 20, minotaur chieftain, larger, ornate armor, trophy necklaces, battle-scarred, dark brown fur, intelligent red eyes, commanding
+giant:
+- 40, hill giant, large, fat, filthy animal hides, crude club, stupid, pale skin, small dull eyes, matted black hair
+- 30, frost giant, huge, pale blue skin, white hair, furs, icy aura, cruel, pale blue skin, blue eyes, white hair
+- 20, fire giant, massive, dark red skin, black hair, obsidian armor, volcanic aura, dark red skin, fiery orange eyes, black
+  hair
+- 10, cloud giant, tall, elegant, peachy or violet skin, fine clothes, aloof, peachy skin, silver eyes, gold hair
+dragon:
+- 100, a mighty dragon, scales, wings, long neck, tail, terrifying, __dragon_scale_color__ scales, __dragon_eye_color__ eyes,
+  no hair
+griffon_hippogriff:
+- 60, griffon, eagle head and wings, lion body, majestic, golden brown feathers, eagle eyes, leonine body
+- 40, hippogriff, eagle head and front legs, horse body and rear legs, proud, brown feathers, intelligent eyes, equine body
+vampire:
+- 50, vampire noble, pale, beautiful, aristocratic, hypnotic eyes, cruel, deathly pale skin, hypnotic red eyes, dark hair
+- 30, feral vampire, bestial features, claws, blood-stained, monstrous, gray skin, feral yellow eyes, matted hair
+- 20, vampire spawn, gaunt, underling, hungry, pale skin, hungry red eyes, lank hair
+lich:
+- 70, lich, skeletal, glowing eyes, tattered robes, phylactery, powerful magic, exposed bone, glowing blue eyes, no hair
+- 20, demilich, floating skull, gem-eyed, soul-trapping, polished skull, gemstone eyes, no hair
+- 10, archlich, skeletal, but good-aligned, radiant magic, white bone, glowing white eyes, no hair
+ghost:
+- 60, ghost, translucent, mournful, chains, wailing, translucent white form, sad white eyes, ethereal hair
+- 25, specter, black smoky form, life-draining touch, malevolent, smoky black form, glowing white eyes, no hair
+- 15, wraith, more powerful specter, armored, commands others, armored shadow form, burning red eyes, no hair
+formless_horror:
+- 100, formless horror, shifting mass of darkness, eyes, mouths, tentacles, indescribable, __horror_color__ shifting form,
+  multiple glowing eyes, no form
+mummy:
+- 100, mummy, ancient desiccated corpse, wrapped in burial linens, sand, cursed, dried brown skin, glowing green eyes, no
+  hair
+dragon_scale_color:
+- 20, red
+- 20, green
+- 15, blue
+- 15, black
+- 10, white
+- 10, bronze
+- 5, gold
+- 5, silver
+dragon_eye_color:
+- 25, red
+- 20, yellow
+- 20, green
+- 15, blue
+- 10, orange
+- 10, ancient and wise
+horror_color:
+- 40, black
+- 30, purple
+- 20, green
+- 10, iridescent
+race_fantasy:
+- 25, __human__, meta:type:humanoid
+- 15, __elf__, meta:type:humanoid
+- 12, __dwarf__, meta:type:humanoid
+- 10, __orc__, meta:type:humanoid
+- 5, __halfling__, meta:type:humanoid
+- 4, __gnome__, meta:type:humanoid
+- 4, __tiefling__, meta:type:humanoid
+- 5, __goblinoid__, meta:type:monster
+- 4, __ogre__, meta:type:monster
+- 3, __troll__, meta:type:monster
+- 3, __lizardfolk__, meta:type:monster
+- 2, __werebeast__, meta:type:monster
+- 2, __minotaur__, meta:type:monster
+- 1.5, __giant__, meta:type:monster
+- 1, __dragon__, meta:type:monster
+- 0.5, __griffon_hippogriff__, meta:type:monster
+- 1.5, __vampire__, meta:type:monster
+- 0.5, __lich__, meta:type:monster
+- 0.5, __ghost__, meta:type:monster
+- 0.25, __formless_horror__, meta:type:monster
+- 0.25, __mummy__, meta:type:monster
+- 20, high elf, elegant, ancient bloodline
+- 20, wood elf, ranger, forest-born
+- 20, dark elf, undercity noble, pale
+- 15, dwarf, stout, braided beard
+- 15, halfling, small, cheerful
+- 15, gnome, tinkerer, curious
+- 15, tiefling, infernal heritage, horns
+- 10, aasimar, radiant aura
+- 10, orc, strong, battle-scarred
+- 10, goblin, sly, quick
+- 10, lizardfolk, scaled, cold-blooded
+- 10, catfolk, feline grace, sharp eyes
+- 10, dragonborn, draconic scales
+- 10, undead, pale, eerie
+human_eyes:
+- 20, brown eyes
+- 20, blue eyes
+- 20, green eyes
+- 20, hazel eyes
+- 20, gray eyes

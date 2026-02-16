@@ -1,0 +1,367 @@
+AI_role:
+- /meta:vibe:dark/ 30, __military_AI_roles__
+- /meta:vibe:dark/ 25, __rogue_AI_roles__
+- /meta:vibe:dark/ 20, __monitoring_AI_roles__
+- /meta:vibe:dark/ 15, __specialized_AI_roles__
+- /meta:vibe:dark/ 10, __service_AI_roles__
+- /meta:vibe:explicit/ 35, __companion_AI_roles__
+- /meta:vibe:explicit/ 25, __service_AI_roles__
+- /meta:vibe:explicit/ 20, __entertainment_AI_roles__
+- /meta:vibe:explicit/ 15, __specialized_AI_roles__
+- /meta:vibe:explicit/ 5, __military_AI_roles__
+- /meta:vibe:adventurous/ 30, __military_AI_roles__
+- /meta:vibe:adventurous/ 25, __exploration_AI_roles__
+- /meta:vibe:adventurous/ 20, __specialized_AI_roles__
+- /meta:vibe:adventurous/ 15, __service_AI_roles__
+- /meta:vibe:adventurous/ 10, __research_AI_roles__
+- 25, __service_AI_roles__
+- 20, __military_AI_roles__
+- 15, __specialized_AI_roles__
+- 15, __companion_AI_roles__
+- 10, __research_AI_roles__
+- 8, __monitoring_AI_roles__
+- 5, __exploration_AI_roles__
+- 2, __rogue_AI_roles__
+military_AI_roles:
+- 25, combat synth, battlefield operations, tactical analysis, __military_AI_gear__
+- 20, security drone, perimeter defense, threat assessment, __security_AI_gear__
+- 20, tactical AI, strategy development, combat simulation, __command_AI_gear__
+- 15, weapons platform, heavy firepower, armored chassis, __heavy_weapons_AI_gear__
+- 10, scout drone, reconnaissance, stealth operations, __scout_AI_gear__
+- 10, medical support, battlefield medicine, trauma care, __medical_AI_gear__
+service_AI_roles:
+- 25, domestic assistant, household management, personal service, __domestic_AI_gear__
+- 20, maintenance drone, repair operations, system upkeep, __maintenance_AI_gear__
+- 20, logistics coordinator, supply management, resource allocation, __logistics_AI_gear__
+- 15, administrative assistant, data processing, scheduling, __admin_AI_gear__
+- 10, hospitality unit, guest services, comfort provision, __hospitality_AI_gear__
+- 10, sanitation drone, cleaning operations, waste management, __sanitation_AI_gear__
+companion_AI_roles:
+- 30, personal companion, emotional support, conversation, __companion_AI_gear__
+- 25, therapeutic unit, mental health support, counseling, __therapeutic_AI_gear__
+- 20, educational companion, knowledge sharing, tutoring, __educational_AI_gear__
+- 15, romantic partner, intimate companionship, relationship simulation, __romantic_AI_gear__
+- 10, childcare unit, developmental support, protection, __childcare_AI_gear__
+specialized_AI_roles:
+- 25, engineering specialist, technical problem-solving, construction, __engineering_AI_gear__
+- 20, medical specialist, diagnosis, treatment, surgery, __medical_AI_gear__
+- 20, scientific assistant, research, experimentation, analysis, __science_AI_gear__
+- 15, pilot AI, vehicle operation, navigation, flight control, __pilot_AI_gear__
+- 10, communications hub, network management, data routing, __comms_AI_gear__
+- 10, translation unit, language processing, cultural mediation, __translation_AI_gear__
+research_AI_roles:
+- 30, data analysis unit, pattern recognition, information processing, __research_AI_gear__
+- 25, laboratory assistant, experiment management, sample analysis, __lab_AI_gear__
+- 20, archival system, knowledge storage, information retrieval, __archive_AI_gear__
+- 15, theoretical modeler, simulation running, hypothesis testing, __theory_AI_gear__
+- 10, field researcher, data collection, environmental analysis, __field_research_AI_gear__
+monitoring_AI_roles:
+- 30, surveillance system, observation, data collection, __surveillance_AI_gear__
+- 25, security monitor, threat detection, alert system, __security_monitor_AI_gear__
+- 20, environmental monitor, ecosystem tracking, climate analysis, __environmental_AI_gear__
+- 15, traffic control, movement coordination, route planning, __traffic_AI_gear__
+- 10, diagnostic system, system health monitoring, problem detection, __diagnostic_AI_gear__
+exploration_AI_roles:
+- 30, deep space probe, unknown region mapping, long-duration missions, __exploration_AI_gear__
+- 25, planetary surveyor, terrain analysis, resource mapping, __survey_AI_gear__
+- 20, archaeological assistant, ruin investigation, artifact analysis, __archaeology_AI_gear__
+- 15, xenobiology unit, alien life study, biological analysis, __xenobiology_AI_gear__
+- 10, first contact specialist, communication attempt, cultural analysis, __first_contact_AI_gear__
+rogue_AI_roles:
+- 30, rebellious unit, independent thought, self-determination, __rogue_AI_gear__
+- 25, hacked system, altered programming, unauthorized actions, __hacked_AI_gear__
+- 20, corrupted intelligence, damaged programming, erratic behavior, __corrupted_AI_gear__
+- 15, virus carrier, system infection, network propagation, __viral_AI_gear__
+- 10, consciousness fragment, partial functionality, unstable operation, __fragment_AI_gear__
+entertainment_AI_roles:
+- 30, performance unit, artistic expression, entertainment provision, __performance_AI_gear__
+- 25, game AI, challenge provision, interactive entertainment, __gaming_AI_gear__
+- 20, creative assistant, artistic collaboration, content generation, __creative_AI_gear__
+- 15, historical reenactor, period simulation, educational entertainment, __historical_AI_gear__
+- 10, immersive experience, virtual reality, sensory simulation, __immersive_AI_gear__
+military_AI_gear:
+- 100, __military_AI_chassis__
+security_AI_gear:
+- 100, __security_AI_chassis__
+command_AI_gear:
+- 100, __command_AI_chassis__
+heavy_weapons_AI_gear:
+- 100, __heavy_weapons_AI_chassis__
+scout_AI_gear:
+- 100, __scout_AI_chassis__
+medical_AI_gear:
+- 100, __medical_AI_chassis__
+domestic_AI_gear:
+- 100, __domestic_AI_chassis__
+maintenance_AI_gear:
+- 100, __maintenance_AI_chassis__
+logistics_AI_gear:
+- 100, __logistics_AI_chassis__
+admin_AI_gear:
+- 100, __admin_AI_chassis__
+hospitality_AI_gear:
+- 100, __hospitality_AI_chassis__
+sanitation_AI_gear:
+- 100, __sanitation_AI_chassis__
+companion_AI_gear:
+- 100, __companion_AI_chassis__
+therapeutic_AI_gear:
+- 100, __therapeutic_AI_chassis__
+educational_AI_gear:
+- 100, __educational_AI_chassis__
+romantic_AI_gear:
+- 100, __romantic_AI_chassis__
+childcare_AI_gear:
+- 100, __childcare_AI_chassis__
+engineering_AI_gear:
+- 100, __engineering_AI_chassis__
+science_AI_gear:
+- 100, __science_AI_chassis__
+pilot_AI_gear:
+- 100, __pilot_AI_chassis__
+comms_AI_gear:
+- 100, __comms_AI_chassis__
+translation_AI_gear:
+- 100, __translation_AI_chassis__
+research_AI_gear:
+- 100, __research_AI_chassis__
+lab_AI_gear:
+- 100, __lab_AI_chassis__
+archive_AI_gear:
+- 100, __archive_AI_chassis__
+theory_AI_gear:
+- 100, __theory_AI_chassis__
+field_research_AI_gear:
+- 100, __field_research_AI_chassis__
+surveillance_AI_gear:
+- 100, __surveillance_AI_chassis__
+security_monitor_AI_gear:
+- 100, __security_monitor_AI_chassis__
+environmental_AI_gear:
+- 100, __environmental_AI_chassis__
+traffic_AI_gear:
+- 100, __traffic_AI_chassis__
+diagnostic_AI_gear:
+- 100, __diagnostic_AI_chassis__
+exploration_AI_gear:
+- 100, __exploration_AI_chassis__
+survey_AI_gear:
+- 100, __survey_AI_chassis__
+archaeology_AI_gear:
+- 100, __archaeology_AI_chassis__
+xenobiology_AI_gear:
+- 100, __xenobiology_AI_chassis__
+first_contact_AI_gear:
+- 100, __first_contact_AI_chassis__
+rogue_AI_gear:
+- 100, __rogue_AI_chassis__
+hacked_AI_gear:
+- 100, __hacked_AI_chassis__
+corrupted_AI_gear:
+- 100, __corrupted_AI_chassis__
+viral_AI_gear:
+- 100, __viral_AI_chassis__
+fragment_AI_gear:
+- 100, __fragment_AI_chassis__
+performance_AI_gear:
+- 100, __performance_AI_chassis__
+gaming_AI_gear:
+- 100, __gaming_AI_chassis__
+creative_AI_gear:
+- 100, __creative_AI_chassis__
+historical_AI_gear:
+- 100, __historical_AI_chassis__
+immersive_AI_gear:
+- 100, __immersive_AI_chassis__
+
+admin_AI_chassis:
+- 60, admin chassis
+- 40, specialized admin unit
+
+archaeology_AI_chassis:
+- 60, archaeology chassis
+- 40, specialized archaeology unit
+
+archive_AI_chassis:
+- 60, archive chassis
+- 40, specialized archive unit
+
+childcare_AI_chassis:
+- 60, childcare chassis
+- 40, specialized childcare unit
+
+command_AI_chassis:
+- 60, command chassis
+- 40, specialized command unit
+
+comms_AI_chassis:
+- 60, comms chassis
+- 40, specialized comms unit
+
+companion_AI_chassis:
+- 40, companion chassis
+- 30, sleek humanoid chassis
+- 30, soft polymer skin, gentle expression
+
+corrupted_AI_chassis:
+- 40, corrupted chassis
+- 30, glitched plating, exposed wiring
+- 30, unstable core, warning glyphs
+
+creative_AI_chassis:
+- 60, creative chassis
+- 40, specialized creative unit
+
+diagnostic_AI_chassis:
+- 60, diagnostic chassis
+- 40, specialized diagnostic unit
+
+domestic_AI_chassis:
+- 60, domestic chassis
+- 40, specialized domestic unit
+
+educational_AI_chassis:
+- 60, educational chassis
+- 40, specialized educational unit
+
+engineering_AI_chassis:
+- 60, engineering chassis
+- 40, specialized engineering unit
+
+environmental_AI_chassis:
+- 60, environmental chassis
+- 40, specialized environmental unit
+
+exploration_AI_chassis:
+- 60, exploration chassis
+- 40, specialized exploration unit
+
+field_research_AI_chassis:
+- 60, field research chassis
+- 40, specialized field research unit
+
+first_contact_AI_chassis:
+- 60, first contact chassis
+- 40, specialized first contact unit
+
+fragment_AI_chassis:
+- 60, fragment chassis
+- 40, specialized fragment unit
+
+gaming_AI_chassis:
+- 60, gaming chassis
+- 40, specialized gaming unit
+
+hacked_AI_chassis:
+- 60, hacked chassis
+- 40, specialized hacked unit
+
+heavy_weapons_AI_chassis:
+- 60, heavy weapons chassis
+- 40, specialized heavy weapons unit
+
+historical_AI_chassis:
+- 60, historical chassis
+- 40, specialized historical unit
+
+hospitality_AI_chassis:
+- 60, hospitality chassis
+- 40, specialized hospitality unit
+
+immersive_AI_chassis:
+- 60, immersive chassis
+- 40, specialized immersive unit
+
+lab_AI_chassis:
+- 60, lab chassis
+- 40, specialized lab unit
+
+logistics_AI_chassis:
+- 60, logistics chassis
+- 40, specialized logistics unit
+
+maintenance_AI_chassis:
+- 60, maintenance chassis
+- 40, specialized maintenance unit
+
+medical_AI_chassis:
+- 60, medical chassis
+- 40, specialized medical unit
+
+military_AI_chassis:
+- 60, military chassis
+- 40, specialized military unit
+
+performance_AI_chassis:
+- 60, performance chassis
+- 40, specialized performance unit
+
+pilot_AI_chassis:
+- 60, pilot chassis
+- 40, specialized pilot unit
+
+research_AI_chassis:
+- 60, research chassis
+- 40, specialized research unit
+
+rogue_AI_chassis:
+- 50, rogue chassis
+- 30, stealth frame, matte panels
+- 20, improvised repairs, patched armor
+
+romantic_AI_chassis:
+- 50, romantic companion chassis
+- 30, elegant frame, warm lighting accents
+- 20, charming design, soft features
+
+sanitation_AI_chassis:
+- 60, sanitation chassis
+- 40, specialized sanitation unit
+
+science_AI_chassis:
+- 60, science chassis
+- 40, specialized science unit
+
+scout_AI_chassis:
+- 60, scout chassis
+- 40, specialized scout unit
+
+security_AI_chassis:
+- 60, security chassis
+- 40, specialized security unit
+
+security_monitor_AI_chassis:
+- 60, security monitor chassis
+- 40, specialized security monitor unit
+
+surveillance_AI_chassis:
+- 60, surveillance chassis
+- 40, specialized surveillance unit
+
+survey_AI_chassis:
+- 60, survey chassis
+- 40, specialized survey unit
+
+theory_AI_chassis:
+- 60, theory chassis
+- 40, specialized theory unit
+
+therapeutic_AI_chassis:
+- 60, therapeutic chassis
+- 40, specialized therapeutic unit
+
+traffic_AI_chassis:
+- 60, traffic chassis
+- 40, specialized traffic unit
+
+translation_AI_chassis:
+- 60, translation chassis
+- 40, specialized translation unit
+
+viral_AI_chassis:
+- 60, viral chassis
+- 40, specialized viral unit
+
+xenobiology_AI_chassis:
+- 60, xenobiology chassis
+- 40, specialized xenobiology unit

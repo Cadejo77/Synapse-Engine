@@ -1,0 +1,44 @@
+time_of_day:
+- /meta:vibe:romantic/ 40, __sunset__
+- /meta:vibe:romantic/ 30, __clear_night__
+- /meta:vibe:romantic/ 20, __sunrise__
+- /meta:vibe:romantic/ 10, __twilight__
+- /meta:vibe:dark/ 40, __pitch_black_night__
+- /meta:vibe:dark/ 30, __twilight__
+- /meta:vibe:dark/ 20, __foggy_night__
+- /meta:vibe:dark/ 10, __overcast_day__
+- /meta:vibe:calm/ 40, __daytime__
+- /meta:vibe:calm/ 30, __overcast_day__
+- /meta:vibe:calm/ 20, __sunset__
+- /meta:vibe:calm/ 10, __sunrise__
+- 25, __daytime__
+- 20, __sunset__
+- 15, __twilight__
+- 15, __clear_night__
+- 10, __sunrise__
+- 10, __overcast_day__
+- 5, __pitch_black_night__
+- 10, sunrise, soft pastel light
+- 10, midnight, deep shadows
+- 10, overcast afternoon
+daytime:
+- 60, daytime, sun high in the sky, meta:time:day
+- 40, midday, bright sunlight, meta:time:day
+sunset:
+- 60, sunset, golden hour, long warm shadows, meta:time:dusk
+- 40, dusk, the sky painted with orange and purple hues, meta:time:dusk
+sunrise:
+- 60, sunrise, soft pink and orange light, meta:time:dawn
+- 40, early morning, the first light of dawn, meta:time:dawn
+twilight:
+- 60, twilight, blue hour, the last light fading, meta:time:twilight
+- 40, the faint glow of twilight on the horizon, meta:time:twilight
+clear_night:
+- 70, nighttime, a clear sky filled with stars, meta:time:night
+- 30, a moonlit night, meta:time:night
+pitch_black_night:
+- 100, pitch black night, no moon, visibility near zero, meta:time:night, meta:night:nomoon
+foggy_night:
+- 100, a foggy night, mist glowing in the moonlight, meta:time:night
+overcast_day:
+- 100, overcast day, soft, diffuse grey light, meta:time:day

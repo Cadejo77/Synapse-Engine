@@ -1,0 +1,12 @@
+identity:
+- /meta:diversity:on/ /meta:style:pinup/ /meta:content:nude/ 100, __identity_inclusive_pinup__
+- /meta:diversity:on/ /meta:content:nude/ 100, __identity_inclusive_nude__
+- 100, adult
+identity_inclusive_pinup:
+- 70, meta:identity:cis_female, adult, woman
+- 15, meta:identity:transgender, adult, transgender
+- 15, meta:identity:futanari, adult, futanari
+identity_inclusive_nude:
+- 80, meta:identity:cis_female, adult, woman
+- 12, meta:identity:transgender, adult, transgender
+- 8, meta:identity:futanari, adult, futanari

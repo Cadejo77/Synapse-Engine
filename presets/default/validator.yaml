@@ -1,0 +1,144 @@
+validator:
+  entrypoints:
+  - file: 0_master_generator.yaml
+    key: template
+  - file: master_generator_fantasy.yaml
+    key: template
+  - file: master_generator_scifi.yaml
+    key: template
+  scenarios:
+  - name: fantasy_default
+    locks:
+    - meta:genre:fantasy
+    samples: 150
+  - name: scifi_default
+    locks:
+    - meta:genre:scifi
+    samples: 150
+  - name: scifi_military
+    locks:
+    - meta:genre:scifi
+    - meta:vibe:dark
+    - meta:loc:military
+    samples: 100
+  - name: fantasy_dungeon_dark
+    locks:
+    - meta:genre:fantasy
+    - meta:vibe:dark
+    - meta:loc:dungeon
+    samples: 100
+  - name: sexy_fantasy
+    locks:
+    - meta:genre:fantasy
+    - meta:vibe:explicit
+    - meta:content:nude
+    samples: 150
+  - name: sexy_scifi
+    locks:
+    - meta:genre:scifi
+    - meta:vibe:explicit
+    - meta:content:nude
+    samples: 150
+  - name: studio_modeling
+    locks:
+    - meta:mode:studio
+    - meta:content:portrait
+    - meta:vibe:calm
+    samples: 150
+  - name: worldgen_fantasy
+    locks:
+    - meta:mode:world
+    - meta:genre:fantasy
+    - meta:content:landscape
+    samples: 150
+  - name: worldgen_scifi
+    locks:
+    - meta:mode:world
+    - meta:genre:scifi
+    - meta:content:landscape
+    samples: 150
+  - name: worldgen_fantasy_dark
+    locks:
+    - meta:mode:world
+    - meta:genre:fantasy
+    - meta:content:landscape
+    - meta:vibe:dark
+    samples: 120
+  - name: pinup_fantasy
+    locks:
+    - meta:genre:fantasy
+    - meta:content:nude
+    - meta:content:boudoir
+    - meta:vibe:romantic
+    - meta:style:pinup
+    - meta:format:poster
+    samples: 140
+  - name: pinup_scifi
+    locks:
+    - meta:genre:scifi
+    - meta:content:nude
+    - meta:content:boudoir
+    - meta:vibe:romantic
+    - meta:style:pinup
+    - meta:format:poster
+    samples: 140
+  - name: pinup_studio
+    locks:
+    - meta:mode:studio
+    - meta:content:nude
+    - meta:content:boudoir
+    - meta:vibe:romantic
+    - meta:style:pinup
+    - meta:format:poster
+    samples: 140
+  - name: pinup_fantasy_inclusive
+    locks:
+    - meta:genre:fantasy
+    - meta:content:nude
+    - meta:content:boudoir
+    - meta:style:pinup
+    - meta:format:poster
+    - meta:diversity:on
+    samples: 150
+  - name: pinup_scifi_inclusive
+    locks:
+    - meta:genre:scifi
+    - meta:content:nude
+    - meta:content:boudoir
+    - meta:style:pinup
+    - meta:format:poster
+    - meta:diversity:on
+    samples: 150
+  - name: pinup_studio_inclusive
+    locks:
+    - meta:mode:studio
+    - meta:content:nude
+    - meta:content:boudoir
+    - meta:style:pinup
+    - meta:format:poster
+    - meta:diversity:on
+    samples: 150
+  - name: sexy_fantasy_inclusive
+    locks:
+    - meta:genre:fantasy
+    - meta:vibe:explicit
+    - meta:content:nude
+    - meta:diversity:on
+    samples: 150
+  - name: sexy_scifi_inclusive
+    locks:
+    - meta:genre:scifi
+    - meta:vibe:explicit
+    - meta:content:nude
+    - meta:diversity:on
+    samples: 150
+  required_tags_any:
+  - - meta:content:action
+    - meta:content:portrait
+    - meta:content:landscape
+    - meta:content:nude
+  - - meta:vibe:dark
+    - meta:vibe:adventurous
+    - meta:vibe:romantic
+    - meta:vibe:calm
+    - meta:vibe:explicit

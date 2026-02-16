@@ -1,0 +1,124 @@
+character_base:
+- __gender__, __age_descriptor__, __body_type__, __vibe_influence__, __shared/subject/appearance__
+gender:
+- 40, 1boy, __male_descriptor__
+- 40, 1girl, __female_descriptor__
+- /meta:action:duel/ 15, 2boys, __male_descriptor__, rival __male_descriptor__
+- /meta:action:duel/ 15, 2girls, __female_descriptor__, rival __female_descriptor__
+- /meta:action:duel/ 10, 1boy and 1girl, __male_descriptor__, rival __female_descriptor__
+- /meta:action:conversation/ 20, 2boys, __male_descriptor__, talking with __male_descriptor__
+- /meta:action:conversation/ 20, 2girls, __female_descriptor__, talking with __female_descriptor__
+- /meta:action:conversation/ 15, 1boy and 1girl, __male_descriptor__, talking with __female_descriptor__
+- /meta:action:boss_battle/ 10, group of adventurers, __male_descriptor__, __female_descriptor__, fighting together
+- /meta:vibe:romantic/ 25, 1boy and 1girl, __male_descriptor__, romantic __female_descriptor__
+- /meta:vibe:explicit/ 20, 1boy and 1girl, __male_descriptor__, intimate __female_descriptor__
+male_descriptor:
+- /meta:vibe:explicit/ 30, male, __explicit_male_traits__
+- /meta:vibe:explicit/ 70, man, __standard_male_traits__
+- /meta:vibe:romantic/ 40, handsome man, __romantic_traits__
+- /meta:vibe:romantic/ 60, man, __standard_male_traits__
+- man, __standard_male_traits__
+female_descriptor:
+- /meta:vibe:explicit/ 30, female, __explicit_female_traits__
+- /meta:vibe:explicit/ 70, woman, __standard_female_traits__
+- /meta:vibe:romantic/ 40, beautiful woman, __romantic_traits__
+- /meta:vibe:romantic/ 60, woman, __standard_female_traits__
+- woman, __standard_female_traits__
+age_descriptor:
+- 60, adult
+- 25, adult, 20s
+- 25, adult, late 20s
+- 20, adult, 30s
+- 15, mature, 30s
+- 10, mature, 40s
+- 5, mature, 50s
+body_type:
+- /meta:vibe:explicit/ 20, __body_type_voluptuous__
+- /meta:vibe:explicit/ 15, __body_type_athletic__
+- /meta:vibe:explicit/ 10, __body_type_lean__
+- /meta:vibe:explicit/ 5, __body_type_powerful__
+- /meta:vibe:romantic/ 15, __body_type_voluptuous__
+- /meta:vibe:romantic/ 20, __body_type_athletic__
+- /meta:vibe:romantic/ 10, __body_type_lean__
+- /meta:vibe:adventurous/ 25, __body_type_athletic__
+- /meta:vibe:adventurous/ 20, __body_type_lean__
+- /meta:vibe:adventurous/ 15, __body_type_powerful__
+- /meta:vibe:adventurous/ 5, __body_type_voluptuous__
+- /meta:vibe:dark/ 20, __body_type_powerful__
+- /meta:vibe:dark/ 15, __body_type_athletic__
+- /meta:vibe:dark/ 10, __body_type_lean__
+- __body_type_athletic__
+- 20, athletic build
+- 20, slender build
+- 20, curvy build
+- 15, toned physique
+- 10, statuesque
+- 10, petite
+- 10, broad-shouldered
+- 10, lean frame
+- 10, fit and healthy
+body_type_voluptuous:
+- 60, curvy, voluptuous, alluring figure
+- 40, full-figured, soft, generous proportions
+body_type_athletic:
+- 50, athletic, toned, fit physique
+- 30, muscular, defined muscles, strong
+- 20, swimmer's build, broad shoulders, lean
+body_type_lean:
+- 60, slender, graceful, elegant frame
+- 40, lean, wiry, agile build
+body_type_powerful:
+- 50, powerful, thick muscles, imposing
+- 30, huge, massive, giant frame
+- 20, brutish, thick-necked, formidable
+vibe_influence:
+- /meta:vibe:explicit/ 40, sensual, appealing
+- /meta:vibe:explicit/ 30, seductive, tempting
+- /meta:vibe:explicit/ 30, carnal, primal
+- /meta:vibe:romantic/ 50, attractive, appealing
+- /meta:vibe:romantic/ 30, elegant, graceful
+- /meta:vibe:romantic/ 20, charming, lovely
+- /meta:vibe:dark/ 40, grim, severe
+- /meta:vibe:dark/ 30, menacing, intimidating
+- /meta:vibe:dark/ 30, sinister, ominous
+- /meta:vibe:adventurous/ 60, rugged, hardy
+- /meta:vibe:adventurous/ 40, determined, resolute
+- null
+standard_male_traits:
+- 70, masculine, athletic build, broad shoulders
+- 20, lean, agile build, quick
+- 10, heavy, powerful build, imposing
+standard_female_traits:
+- 60, feminine, slender, graceful build
+- 30, athletic, toned build, strong
+- 10, curvy, voluptuous build, alluring
+explicit_male_traits:
+- 30, confident, magnetic
+- 25, rugged charm
+- 25, intense gaze
+- 20, composed, self-assured
+- 15, subtle smirk
+- 10, refined, elegant
+explicit_female_traits:
+- 30, sensual, confident
+- 25, alluring, graceful
+- 25, elegant, soft curves
+- 20, playful, flirtatious
+- 15, sultry gaze
+- 15, teasing smile
+- 10, poised, self-assured
+romantic_traits:
+- 35, warm smile, soft eyes
+- 25, gentle touch, intimate mood
+- 25, candlelit ambience, quiet tenderness
+- 20, close proximity, subtle chemistry
+- 15, longing gaze, restrained desire
+- 10, playful teasing, coy expression
+gender_prompt:
+- 50, 1girl, adult woman
+- 50, 1boy, adult man
+- 25, 1woman, adult woman
+- 25, 1man, adult man
+- 15, 2women, adult women
+- 15, 2men, adult men
+- 10, 1woman and 1man, adult couple

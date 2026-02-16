@@ -1,0 +1,6 @@
+depth_of_field:
+- 35, shallow_depth_of_field, bokeh, foreground_focus
+- 25, depth_of_field, cinematic_bokeh
+- 15, deep_focus, sharp_background
+- 15, sharp_focus, crisp_details
+- 10, soft_background_blur, focus_on_subject

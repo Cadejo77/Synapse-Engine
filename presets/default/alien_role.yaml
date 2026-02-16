@@ -1,0 +1,64 @@
+alien_role:
+- /meta:vibe:dark/ 40, __hostile_alien__
+- /meta:vibe:dark/ 30, __predator_alien__
+- /meta:vibe:dark/ 20, __corrupted_alien__
+- /meta:vibe:dark/ 10, __ancient_alien__
+- /meta:vibe:adventurous/ 30, __explorer_alien__
+- /meta:vibe:adventurous/ 25, __warrior_alien__
+- /meta:vibe:adventurous/ 20, __guardian_alien__
+- /meta:vibe:adventurous/ 15, __nomad_alien__
+- /meta:vibe:adventurous/ 10, __scout_alien__
+- /meta:vibe:explicit/ 40, __seductive_alien__
+- /meta:vibe:explicit/ 30, __dominant_alien__
+- /meta:vibe:explicit/ 20, __exotic_alien__
+- /meta:vibe:explicit/ 10, __symbiotic_alien__
+- 30, __warrior_alien__
+- 25, __hostile_alien__
+- 20, __ancient_alien__
+- 15, __guardian_alien__
+- 10, __explorer_alien__
+hostile_alien:
+- 40, hostile alien, aggressive, territorial
+- 30, enemy creature, dangerous, threatening
+- 20, alien invader, conquering, destructive
+- 10, xenomorph, biomechanical predator
+predator_alien:
+- 50, apex predator, hunting, stalking
+- 30, alien hunter, patient, deadly
+- 20, bio-weapon, engineered killer
+corrupted_alien:
+- 60, corrupted being, twisted, mutated
+- 40, infected alien, diseased, spreading
+ancient_alien:
+- 50, ancient alien, primordial, wise
+- 30, elder being, cosmic knowledge
+- 20, precursor entity, mysterious origins
+explorer_alien:
+- 60, alien explorer, curious, peaceful
+- 40, xenobiologist, studying, observing
+warrior_alien:
+- 50, alien warrior, battle-hardened, honorable
+- 30, soldier caste, disciplined, loyal
+- 20, berserker alien, frenzied, unstoppable
+guardian_alien:
+- 60, guardian entity, protective, ancient
+- 40, sentinel being, watchful, dutiful
+nomad_alien:
+- 70, nomadic alien, wandering, free
+- 30, space drifter, traveling, independent
+scout_alien:
+- 80, alien scout, reconnaissance, stealthy
+- 20, advance guard, preparing invasion
+seductive_alien:
+- /meta:gender:female/ 60, seductive alien, alluring, dangerous
+- /meta:gender:female/ 40, exotic beauty, otherworldly charm
+- /meta:gender:male/ 100, charismatic alien, magnetic presence
+dominant_alien:
+- 60, dominant alien, commanding, powerful
+- 40, alpha creature, pack leader
+exotic_alien:
+- 70, exotic alien, strange beauty, fascinating
+- 30, otherworldly being, alien grace
+symbiotic_alien:
+- 60, symbiotic organism, bonded, merged
+- 40, parasitic alien, controlling host

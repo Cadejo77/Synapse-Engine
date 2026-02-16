@@ -1,0 +1,5 @@
+negative:
+- lowres, blurry, jpeg artifacts, watermark, text, logo
+- bad anatomy, malformed hands, extra fingers, missing fingers
+- disfigured, deformed, fused fingers, long neck
+- oversaturated, underexposed, overexposed

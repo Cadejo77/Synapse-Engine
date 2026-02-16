@@ -1,0 +1,9 @@
+lens:
+- 25, 35mm_lens, natural_perspective
+- 25, 50mm_lens
+- 20, 85mm_lens, portrait_lens
+- 10, 24mm_wide_angle, wide_shot
+- 10, telephoto_lens, compressed_perspective
+- 5, macro_lens, extreme_detail
+- 3, anamorphic_lens, cinematic
+- 2, fisheye_lens, distortion

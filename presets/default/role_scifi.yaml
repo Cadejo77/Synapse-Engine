@@ -1,0 +1,213 @@
+role:
+- /meta:archetype:corporate/ 90, __corporate_roles__
+- /meta:archetype:civilian/ 40, __civilian_roles__
+- /meta:vibe:dark/ 30, __military_roles__
+- /meta:vibe:dark/ 25, __corporate_roles__
+- /meta:vibe:dark/ 20, __criminal_roles__
+- /meta:vibe:dark/ 15, __specialist_roles__
+- /meta:vibe:dark/ 10, __civilian_roles__
+- /meta:vibe:explicit/ 35, __corporate_roles__
+- /meta:vibe:explicit/ 25, __criminal_roles__
+- /meta:vibe:explicit/ 20, __entertainment_roles__
+- /meta:vibe:explicit/ 15, __military_roles__
+- /meta:vibe:explicit/ 5, __specialist_roles__
+- /meta:vibe:adventurous/ 30, __military_roles__
+- /meta:vibe:adventurous/ 25, __exploration_roles__
+- /meta:vibe:adventurous/ 20, __specialist_roles__
+- /meta:vibe:adventurous/ 15, __criminal_roles__
+- /meta:vibe:adventurous/ 10, __corporate_roles__
+- 25, __military_roles__
+- 20, __civilian_roles__
+- 15, __corporate_roles__
+- 15, __specialist_roles__
+- 10, __exploration_roles__
+- 8, __criminal_roles__
+- 5, __entertainment_roles__
+- 2, __synthetic_roles__
+military_roles:
+- 25, soldier, combat specialist, trained fighter, __military_gear_style__, __military_weapon_style__, meta:role:soldier
+- 20, marine, front-line fighter, armored, __military_gear_style__, __military_weapon_style__, meta:role:marine
+- 15, officer, command position, leadership role, __officer_gear_style__, __officer_weapon_style__, meta:role:officer
+- 15, pilot, spacecraft operator, skilled navigator, __pilot_gear_style__, __pilot_weapon_style__, meta:role:pilot
+- 10, commando, special forces, elite operative, __special_ops_gear_style__, __special_ops_weapon_style__, meta:role:commando
+- 10, mechanic, vehicle maintenance, technical specialist, __engineer_gear_style__, __engineer_weapon_style__, meta:role:mechanic
+- 5, medic, medical specialist, field medicine, __medic_gear_style__, __medic_weapon_style__, meta:role:medic
+corporate_roles:
+- 25, executive, decision-maker, powerful position, __executive_gear_style__, __executive_weapon_style__, meta:role:executive
+- 20, agent, corporate representative, field operative, __agent_gear_style__, __agent_weapon_style__, meta:role:agent
+- 20, scientist, research and development, innovation focus, __scientist_gear_style__, __scientist_weapon_style__, meta:role:scientist
+- 15, security, corporate protection, enforcement, __corporate_security_gear_style__, __security_weapon_style__, meta:role:security
+- 10, engineer, technical development, systems specialist, __engineer_gear_style__, __engineer_weapon_style__, meta:role:engineer
+- 10, analyst, data specialist, information processing, __analyst_gear_style__, __analyst_weapon_style__, meta:role:analyst
+civilian_roles:
+- 25, colonist, settler, frontier life, __colonist_gear_style__, __colonist_weapon_style__, meta:role:colonist
+- 20, merchant, trader, business operator, __merchant_gear_style__, __merchant_weapon_style__, meta:role:merchant
+- 20, technician, systems maintenance, practical skills, __technician_gear_style__, __technician_weapon_style__, meta:role:technician
+- 15, medic, healthcare provider, medical skills, __medic_gear_style__, __medic_weapon_style__, meta:role:medic
+- 10, administrator, bureaucratic role, organizational skills, __administrator_gear_style__, __administrator_weapon_style__,
+  meta:role:administrator
+- 10, cook, food preparation, sustenance provider, __civilian_gear_style__, __civilian_weapon_style__, meta:role:cook
+specialist_roles:
+- 25, engineer, systems specialist, technical expert, __engineer_gear_style__, __engineer_weapon_style__, meta:role:engineer
+- 20, scientist, research expert, knowledge seeker, __scientist_gear_style__, __scientist_weapon_style__, meta:role:scientist
+- 20, doctor, medical expert, healing focus, __doctor_gear_style__, __doctor_weapon_style__, meta:role:doctor
+- 15, meta:franchise:mass_effect, biotic, mass effect field manipulation, unique abilities, __biotic_gear_style__, __biotic_weapon_style__,
+  meta:role:meta:franchise:mass_effect
+- 10, meta:franchise:mass_effect, tech specialist, technology manipulation, hacking expert, __tech_specialist_gear_style__,
+  __tech_specialist_weapon_style__, meta:role:meta:franchise:mass_effect
+- 10, xenobiologist, alien life expert, research focus, __scientist_gear_style__, __scientist_weapon_style__, meta:role:xenobiologist
+exploration_roles:
+- 30, explorer, unknown region specialist, adventurous, __explorer_gear_style__, __explorer_weapon_style__
+- 25, scout, pathfinder, reconnaissance expert, __scout_gear_style__, __scout_weapon_style__
+- 20, surveyor, mapping specialist, cartography expert, __scientist_gear_style__, __scientist_weapon_style__
+- 15, archaeologist, ancient ruins expert, historical research, __scientist_gear_style__, __scientist_weapon_style__
+- 10, astrobiologist, alien life researcher, discovery focus, __scientist_gear_style__, __scientist_weapon_style__
+criminal_roles:
+- 30, pirate, space raider, lawless operative, __pirate_gear_style__, __pirate_weapon_style__, meta:role:pirate
+- 25, smuggler, clandestine transport, stealth expert, __smuggler_gear_style__, __smuggler_weapon_style__, meta:role:smuggler
+- 20, hacker, digital infiltration, systems breach expert, __hacker_gear_style__, __hacker_weapon_style__, meta:role:hacker
+- 15, assassin, targeted elimination, stealth specialist, __assassin_gear_style__, __assassin_weapon_style__, meta:role:assassin
+- 10, thief, acquisition specialist, stealth operative, __thief_gear_style__, __thief_weapon_style__, meta:role:thief
+entertainment_roles:
+- 35, dancer, performer, entertainment specialist, __entertainer_gear_style__, __entertainer_weapon_style__
+- 25, musician, audio performer, creative artist, __entertainer_gear_style__, __entertainer_weapon_style__
+- 20, actor, dramatic performer, media personality, __entertainer_gear_style__, __entertainer_weapon_style__
+- 15, celebrity, famous personality, public figure, __celebrity_gear_style__, __celebrity_weapon_style__
+- 5, artist, creative professional, visual arts, __artist_gear_style__, __artist_weapon_style__
+synthetic_roles:
+- 40, AI interface, human-machine connection, enhanced capabilities, __synthetic_gear_style__, __synthetic_weapon_style__
+- 30, cyborg, human-machine hybrid, augmented abilities, __cyborg_gear_style__, __cyborg_weapon_style__
+- 20, android, artificial human, advanced robotics, __android_gear_style__, __android_weapon_style__
+- 10, drone operator, remote systems control, tactical support, __operator_gear_style__, __operator_weapon_style__
+military_gear_style:
+- 100, meta:gear_style:standard_military_gear, meta:cap:armor_medium, meta:cap:rifle, meta:cap:sidearm
+officer_gear_style:
+- 100, meta:gear_style:officer_gear, meta:cap:armor_light, meta:cap:sidearm, meta:cap:command
+pilot_gear_style:
+- 100, meta:gear_style:pilot_gear, meta:cap:flight_suit, meta:cap:sidearm
+special_ops_gear_style:
+- 100, meta:gear_style:special_ops_gear, meta:cap:armor_light, meta:cap:rifle, meta:cap:stealth, meta:cap:knife
+engineer_gear_style:
+- 100, meta:gear_style:engineer_gear, meta:cap:tools, meta:cap:armor_light, meta:cap:sidearm
+medic_gear_style:
+- 100, meta:gear_style:medic_gear, meta:cap:medical_kit, meta:cap:armor_light, meta:cap:sidearm
+executive_gear_style:
+- 100, meta:gear_style:executive_gear, meta:cap:concealed_weapon, meta:cap:formalwear
+agent_gear_style:
+- 100, meta:gear_style:corporate_agent_gear, meta:cap:concealed_weapon, meta:cap:armor_light, meta:cap:sidearm
+scientist_gear_style:
+- 100, meta:gear_style:scientist_gear, meta:cap:lab_gear, meta:cap:stun
+corporate_security_gear_style:
+- 100, meta:gear_style:corporate_security_gear
+analyst_gear_style:
+- 100, meta:gear_style:analyst_gear, meta:cap:concealed_weapon, meta:cap:formalwear
+colonist_gear_style:
+- 100, meta:gear_style:colonist_gear, meta:cap:workwear, meta:cap:sidearm
+merchant_gear_style:
+- 100, meta:gear_style:merchant_gear, meta:cap:formalwear, meta:cap:concealed_weapon
+technician_gear_style:
+- 100, meta:gear_style:technician_gear, meta:cap:tools, meta:cap:workwear
+administrator_gear_style:
+- 100, meta:gear_style:administrator_gear, meta:cap:formalwear, meta:cap:concealed_weapon
+civilian_gear_style:
+- 100, meta:gear_style:civilian_gear, meta:cap:none
+biotic_gear_style:
+- 100, meta:gear_style:biotic_gear, meta:cap:biotic, meta:cap:armor_light
+tech_specialist_gear_style:
+- 100, meta:gear_style:tech_specialist_gear, meta:cap:tech, meta:cap:armor_light
+explorer_gear_style:
+- 100, meta:gear_style:explorer_gear, meta:cap:armor_medium, meta:cap:rifle, meta:cap:survival_kit
+scout_gear_style:
+- 100, meta:gear_style:scout_gear, meta:cap:armor_light, meta:cap:sniper, meta:cap:stealth
+pirate_gear_style:
+- 100, meta:gear_style:pirate_gear, meta:cap:armor_light, meta:cap:smg, meta:cap:knife
+smuggler_gear_style:
+- 100, meta:gear_style:smuggler_gear, meta:cap:concealed_weapon, meta:cap:armor_light
+hacker_gear_style:
+- 100, meta:gear_style:hacker_gear, meta:cap:tech, meta:cap:concealed_weapon
+assassin_gear_style:
+- 100, meta:gear_style:assassin_gear
+thief_gear_style:
+- 100, meta:gear_style:thief_gear
+entertainer_gear_style:
+- 100, meta:gear_style:entertainer_gear
+celebrity_gear_style:
+- 100, meta:gear_style:celebrity_gear
+artist_gear_style:
+- 100, meta:gear_style:artist_gear
+synthetic_gear_style:
+- 100, meta:gear_style:synthetic_gear, meta:cap:synthetic, meta:cap:integrated_tools
+cyborg_gear_style:
+- 100, meta:gear_style:cyborg_gear, meta:cap:cyborg, meta:cap:integrated_weapons
+android_gear_style:
+- 100, meta:gear_style:android_gear, meta:cap:synthetic, meta:cap:integrated_tools
+operator_gear_style:
+- 100, meta:gear_style:operator_gear, meta:cap:armor_light, meta:cap:rifle, meta:cap:tech
+doctor_gear_style:
+- 100, meta:gear_style:doctor_gear, meta:cap:medical_kit, meta:cap:lab_gear, meta:cap:stun
+military_weapon_style:
+- 100, meta:weapon_style:military_weapon, meta:cap:rifle, meta:cap:sidearm
+officer_weapon_style:
+- 100, meta:weapon_style:officer_weapon, meta:cap:sidearm
+pilot_weapon_style:
+- 100, meta:weapon_style:pilot_weapon, meta:cap:sidearm
+special_ops_weapon_style:
+- 100, meta:weapon_style:special_ops_weapon, meta:cap:rifle, meta:cap:knife, meta:cap:stealth
+engineer_weapon_style:
+- 100, meta:weapon_style:engineer_weapon, meta:cap:tool_weapon, meta:cap:sidearm
+medic_weapon_style:
+- 100, meta:weapon_style:medic_weapon, meta:cap:sidearm, meta:cap:stun
+executive_weapon_style:
+- 100, meta:weapon_style:executive_weapon, meta:cap:concealed_weapon
+agent_weapon_style:
+- 100, meta:weapon_style:agent_weapon, meta:cap:concealed_weapon, meta:cap:sidearm
+scientist_weapon_style:
+- 100, meta:weapon_style:scientist_weapon, meta:cap:stun
+security_weapon_style:
+- 100, meta:weapon_style:security_weapon, meta:cap:rifle, meta:cap:sidearm
+analyst_weapon_style:
+- 100, meta:weapon_style:analyst_weapon, meta:cap:concealed_weapon
+colonist_weapon_style:
+- 100, meta:weapon_style:colonist_weapon, meta:cap:sidearm
+merchant_weapon_style:
+- 100, meta:weapon_style:merchant_weapon, meta:cap:concealed_weapon
+technician_weapon_style:
+- 100, meta:weapon_style:technician_weapon, meta:cap:tool_weapon
+administrator_weapon_style:
+- 100, meta:weapon_style:administrator_weapon, meta:cap:concealed_weapon
+civilian_weapon_style:
+- 100, meta:weapon_style:civilian_weapon, meta:cap:none
+biotic_weapon_style:
+- 100, meta:weapon_style:biotic_weapon, meta:cap:biotic
+tech_specialist_weapon_style:
+- 100, meta:weapon_style:tech_specialist_weapon, meta:cap:tech, meta:cap:sidearm
+explorer_weapon_style:
+- 100, meta:weapon_style:explorer_weapon, meta:cap:rifle, meta:cap:sidearm
+scout_weapon_style:
+- 100, meta:weapon_style:scout_weapon, meta:cap:sniper, meta:cap:sidearm, meta:cap:stealth
+pirate_weapon_style:
+- 100, meta:weapon_style:pirate_weapon, meta:cap:smg, meta:cap:knife
+smuggler_weapon_style:
+- 100, meta:weapon_style:smuggler_weapon, meta:cap:concealed_weapon, meta:cap:sidearm
+hacker_weapon_style:
+- 100, meta:weapon_style:hacker_weapon, meta:cap:concealed_weapon, meta:cap:tech
+assassin_weapon_style:
+- 100, meta:weapon_style:assassin_weapon
+thief_weapon_style:
+- 100, meta:weapon_style:thief_weapon
+entertainer_weapon_style:
+- 100, meta:weapon_style:entertainer_weapon
+celebrity_weapon_style:
+- 100, meta:weapon_style:celebrity_weapon
+artist_weapon_style:
+- 100, meta:weapon_style:artist_weapon
+synthetic_weapon_style:
+- 100, meta:weapon_style:synthetic_weapon, meta:cap:integrated_weapons, meta:cap:synthetic
+cyborg_weapon_style:
+- 100, meta:weapon_style:cyborg_weapon, meta:cap:integrated_weapons, meta:cap:cyborg
+android_weapon_style:
+- 100, meta:weapon_style:android_weapon, meta:cap:integrated_weapons, meta:cap:android
+operator_weapon_style:
+- 100, meta:weapon_style:operator_weapon, meta:cap:rifle, meta:cap:sidearm, meta:cap:tech
+doctor_weapon_style:
+- 100, meta:weapon_style:doctor_weapon, meta:cap:stun, meta:cap:sidearm

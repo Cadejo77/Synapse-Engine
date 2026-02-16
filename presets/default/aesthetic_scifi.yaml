@@ -1,0 +1,99 @@
+aesthetic:
+- /meta:style:pinup/ 60, __pinup_aesthetic__
+- /meta:vibe:dark/ 35, __cyberpunk_aesthetic__
+- /meta:vibe:dark/ 25, __dystopian_aesthetic__
+- /meta:vibe:dark/ 20, __alien_aesthetic__
+- /meta:vibe:dark/ 15, __military_scifi_aesthetic__
+- /meta:vibe:dark/ 5, __cosmic_horror_aesthetic__
+- /meta:vibe:explicit/ 40, __cyberpunk_aesthetic__
+- /meta:vibe:explicit/ 25, __luxury_aesthetic__
+- /meta:vibe:explicit/ 20, __biopunk_aesthetic__
+- /meta:vibe:explicit/ 15, __virtual_aesthetic__
+- /meta:vibe:adventurous/ 30, __hard_scifi_aesthetic__
+- /meta:vibe:adventurous/ 25, __space_opera_aesthetic__
+- /meta:vibe:adventurous/ 20, __military_scifi_aesthetic__
+- /meta:vibe:adventurous/ 15, __exploration_aesthetic__
+- /meta:vibe:adventurous/ 10, __alien_aesthetic__
+- 25, __cyberpunk_aesthetic__
+- 20, __hard_scifi_aesthetic__
+- 15, __space_opera_aesthetic__
+- 12, __military_scifi_aesthetic__
+- 10, __alien_aesthetic__
+- 8, __dystopian_aesthetic__
+- 5, __biopunk_aesthetic__
+- 3, __cosmic_horror_aesthetic__
+- 2, __luxury_aesthetic__
+- 10, baroque ornamentation, gilded details
+- 10, minimalist design, clean lines
+- 10, grimy realism, worn surfaces
+- 10, high-contrast cinematic look
+cyberpunk_aesthetic:
+- 30, cyberpunk, neon-lit streets, rain-slicked surfaces, high-tech low-life
+- 25, neon noir, dark atmospheres, dramatic lighting, futuristic detective
+- 20, corporate dominance, sleek skyscrapers, visible inequality, oppressive
+- 15, cybernetic enhancement, visible implants, human-machine fusion, transhuman
+- 10, digital realm, virtual spaces, data visualization, abstract
+hard_scifi_aesthetic:
+- 30, hard science fiction, realistic technology, plausible physics, grounded
+- 25, near future, extrapolated current tech, familiar yet advanced, believable
+- 20, utilitarian design, function over form, practical equipment, efficient
+- 15, space realism, accurate orbital mechanics, vacuum operations, authentic
+- 10, generation ship, self-contained ecosystem, recycled systems, sustainable
+space_opera_aesthetic:
+- 30, space opera, epic scale, dramatic events, heroic characters
+- 25, galactic empire, vast territories, diverse species, political
+- 20, starfleet aesthetic, clean designs, optimistic future, exploratory
+- 15, ancient precursors, mysterious ruins, advanced artifacts, enigmatic
+- 10, space western, frontier justice, rugged individualism, independent
+military_scifi_aesthetic:
+- 30, military science fiction, disciplined forces, chain of command, structured
+- 25, powered armor, enhanced soldiers, heavy weaponry, formidable
+- 20, starship combat, naval traditions, vacuum warfare, strategic
+- 15, special operations, elite units, covert missions, precise
+- 10, military-industrial complex, corporate warfare, profit-driven, cynical
+alien_aesthetic:
+- 30, alien world, exotic ecosystems, unfamiliar biology, strange
+- 25, xenobiology, strange lifeforms, unusual adaptations, fascinating
+- 20, alien architecture, non-human design, unusual geometry, mysterious
+- 15, bio-mechanical, organic technology, living ships, integrated
+- 10, crystalline structures, geometric forms, reflective surfaces, elegant
+dystopian_aesthetic:
+- 30, dystopian future, oppressive society, limited freedoms, grim
+- 25, post-apocalyptic, ruined world, scavenged technology, desperate
+- 20, surveillance state, constant monitoring, privacy loss, Orwellian
+- 15, corporate rule, profit over people, advertising saturation, manipulative
+- 10, ecological collapse, environmental disaster, adaptation, harsh
+biopunk_aesthetic:
+- 30, biopunk, biological technology, genetic engineering, organic
+- 25, organic cities, grown structures, living buildings, natural
+- 20, genetic modification, altered lifeforms, customized biology, experimental
+- 15, viral aesthetics, infection imagery, transformation, chaotic
+- 10, symbiotic relationships, mutual integration, combined beings, unified
+cosmic_horror_aesthetic:
+- 30, cosmic horror, unknowable entities, human insignificance, terrifying
+- 25, Lovecraftian, ancient gods, madness, forbidden knowledge
+- 20, void horror, empty spaces, isolation, psychological
+- 15, non-Euclidean geometry, impossible angles, reality distortion, unsettling
+- 10, existential dread, meaninglessness, cosmic indifference, depressing
+luxury_aesthetic:
+- 30, luxury futurism, expensive materials, elegant design, opulent
+- 25, executive style, power dressing, status symbols, influential
+- 20, pleasure district, entertainment focus, hedonistic, indulgent
+- 15, resort world, vacation atmosphere, relaxation, peaceful
+- 10, luxury space travel, first-class accommodations, premium service, exclusive
+virtual_aesthetic:
+- 30, virtual reality, digital space, programmable environment, flexible
+- 25, simulation, artificial world, controlled parameters, perfect
+- 20, cyber space, data visualization, network exploration, abstract
+- 15, avatar representation, idealized forms, customizable appearance, fluid
+- 10, glitch art, digital corruption, system errors, chaotic
+exploration_aesthetic:
+- 30, exploration theme, discovery focus, unknown territories, adventurous
+- 25, scientific outpost, research equipment, analysis tools, curious
+- 20, frontier settlement, rough conditions, practical solutions, hardy
+- 15, survey mission, mapping equipment, charting tools, methodical
+- 10, first contact, diplomatic approach, cultural exchange, historic
+pinup_aesthetic:
+- 40, retro-futuristic pin-up poster art, neon glow, clean silhouettes
+- 30, cyberpunk glamour photography vibe, glossy highlights, soft haze
+- 30, sci-fi holo-ad pin-up poster style, crisp lighting, tasteful sensuality
