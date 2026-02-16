@@ -21,6 +21,7 @@ composition_style:
 - /meta:vibe:dark/ 20, __chaotic_composition__
 - /meta:vibe:dark/ 15, __focused_composition__
 - /meta:vibe:dark/ 10, __claustrophobic_composition__
+- /meta:vibe:dark/ 10, __fragmented_composition__
 - /meta:vibe:explicit/ 40, __focused_composition__
 - /meta:vibe:explicit/ 30, __intimate_composition__
 - /meta:vibe:explicit/ 20, __balanced_composition__
@@ -29,11 +30,13 @@ composition_style:
 - /meta:vibe:romantic/ 30, __soft_composition__
 - /meta:vibe:romantic/ 20, __intimate_composition__
 - /meta:vibe:romantic/ 10, __shallow_composition__
+- /meta:vibe:romantic/ 10, __flowing_composition__
 - /meta:vibe:adventurous/ 30, __dynamic_composition__
 - /meta:vibe:adventurous/ 25, __epic_composition__
 - /meta:vibe:adventurous/ 20, __rule_of_thirds__
 - /meta:vibe:adventurous/ 15, __balanced_composition__
 - /meta:vibe:adventurous/ 10, __leading_lines__
+- /meta:vibe:adventurous/ 10, __spiral_composition__
 - 25, __balanced_composition__
 - 20, __rule_of_thirds__
 - 15, __dynamic_composition__
@@ -45,6 +48,8 @@ composition_style:
 - 3, __dramatic_composition__
 - 2, __chaotic_composition__
 - 1, __minimalist_composition__
+- 2, __spiral_composition__
+- 2, __flowing_composition__
 - 10, centered composition
 - 10, rule of thirds composition
 - 10, leading lines composition
@@ -86,6 +91,12 @@ soft_composition:
 - 100, soft composition
 minimalist_composition:
 - 100, minimalist composition
+fragmented_composition:
+- 100, fragmented composition
+flowing_composition:
+- 100, flowing composition
+spiral_composition:
+- 100, spiral composition
 shallow_composition:
 - 100, shallow composition
 leading_lines:
@@ -99,6 +110,7 @@ depth_technique:
 - /meta:vibe:adventurous/ 30, __atmospheric_perspective__
 - /meta:vibe:adventurous/ 20, __foreground_framing__
 - /meta:vibe:adventurous/ 15, __scale_cues__
+- /meta:vibe:adventurous/ 10, __vanishing_point_depth__
 - /meta:vibe:dark/ 35, __foreground_framing__
 - /meta:vibe:dark/ 30, __layered_composition__
 - /meta:vibe:dark/ 20, __atmospheric_perspective__
@@ -112,12 +124,14 @@ depth_technique:
 - 20, __foreground_framing__
 - 10, __scale_cues__
 - 10, __negative_space_depth__
+- 10, __vanishing_point_depth__
 framing_technique:
 - /meta:vibe:dark/ 15, __tight_framing__
 - /meta:vibe:dark/ 18, __unconventional_framing__
 - /meta:vibe:dark/ 22, __foreground_framing__
 - /meta:vibe:dark/ 18, __negative_space__
 - /meta:vibe:dark/ 27, __open_framing__
+- /meta:vibe:dark/ 10, __occluded_framing__
 - /meta:vibe:romantic/ 40, __soft_framing__
 - /meta:vibe:romantic/ 30, __natural_framing__
 - /meta:vibe:romantic/ 20, __balanced_framing__
@@ -139,6 +153,7 @@ framing_technique:
 - 7, __dynamic_framing__
 - 3, __unconventional_framing__
 - 2, __negative_space__
+- 2, __occluded_framing__
 - 10, negative space framing
 - 10, silhouette framing
 - 10, natural frame through doorway
@@ -162,6 +177,8 @@ negative_space:
 - 100, negative space
 soft_framing:
 - 100, soft framing
+occluded_framing:
+- 100, occluded framing
 layered_composition:
 - 50, layered composition
 - 30, foreground, midground, background layers
@@ -178,3 +195,5 @@ scale_cues:
 negative_space_depth:
 - 60, negative space with depth
 - 40, spacious negative space, deep scene
+vanishing_point_depth:
+- 100, strong vanishing point perspective depth
