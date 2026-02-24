@@ -56,7 +56,10 @@ def _normalize_item(item: Any) -> Optional[str]:
         return s if s else None
     if isinstance(item, dict) and len(item) == 1:
         k, v = next(iter(item.items()))
-        # Reconstruct the user's intended string.
+        if isinstance(k, (int, float)):
+            if v is None:
+                return str(k)
+            return f"{k}, {str(v).strip()}"
         s = f"{str(k).strip()}: {str(v).strip()}"
         return s if s else None
     # Fallback to string conversion
@@ -128,8 +131,12 @@ class Context:
     sep_text: str
     active_tags: Set[str] = field(default_factory=set)
     call_stack: List[Tuple[str, str]] = field(default_factory=list)  # (module_stem, key)
+    call_stack_set: Set[Tuple[str, str]] = field(default_factory=set)
     debug_lines: List[str] = field(default_factory=list)
     max_depth: int = 80
+    complexity_budget: int = 80
+    complexity_used: int = 0
+    enable_synonym_normalize: bool = False
 
 class Preset:
     def __init__(self, preset_dir: str):
@@ -240,6 +247,47 @@ def _strip_meta_from_text(text: str) -> str:
 def _replace_sep(text: str, sep_text: str) -> str:
     return text.replace("[SEP]", sep_text)
 
+
+def _relation_multiplier(active_tags: Set[str], text: str) -> float:
+    text_l = text.lower()
+    # lightweight relation biasing based on active routing tags
+    if "meta:vibe:dark" in active_tags and any(t in text_l for t in ["necro", "death", "warlock", "gothic", "ashen"]):
+        return 1.35
+    if "meta:vibe:epic" in active_tags and any(t in text_l for t in ["legendary", "heroic", "epic", "paladin", "knight"]):
+        return 1.25
+    if "meta:vibe:romantic" in active_tags and any(t in text_l for t in ["soft", "warm", "pastel", "rose", "intimate"]):
+        return 1.2
+    if "meta:biome:forest" in active_tags and any(t in text_l for t in ["grove", "wood", "tree", "moss"]):
+        return 1.2
+    return 1.0
+
+
+def _apply_safety_filter(prompt: str) -> str:
+    banned = ["loli", "shota"]
+    cleaned = prompt
+    for b in banned:
+        cleaned = re.sub(rf"\b{re.escape(b)}\b", "", cleaned, flags=re.I)
+    cleaned = re.sub(r",\s*,", ",", cleaned).strip(" ,")
+    return cleaned
+
+
+def _normalize_synonyms(prompt: str) -> str:
+    parts = [p.strip() for p in re.split(r"[,\n]+", prompt) if p.strip()]
+    mapping = {
+        "ultra detailed": "highly detailed",
+        "masterpiece": "high quality",
+        "cinematic lighting": "dramatic lighting",
+    }
+    out: List[str] = []
+    for p in parts:
+        out.append(mapping.get(p.lower(), p))
+    return ", ".join(out)
+
+
+def _budget_cost(text: str) -> int:
+    # basic complexity estimation by token count
+    return max(1, len([p for p in re.split(r"[,\s]+", text) if p]))
+
 def expand_text(preset: Preset, ctx: Context, current_stem: str, text: str) -> str:
     """
     Expand any __tokens__ in the text. During expansion:
@@ -280,15 +328,16 @@ def expand_key(preset: Preset, ctx: Context, stem: str, key: str) -> str:
     if len(ctx.call_stack) >= ctx.max_depth:
         raise RecursionError(f"Expansion exceeded max depth ({ctx.max_depth}). Stack tail: {ctx.call_stack[-5:]}")
 
-    if (stem, key) in ctx.call_stack:
+    if (stem, key) in ctx.call_stack_set:
         cycle = " -> ".join([f"{s}.{k}" for s, k in ctx.call_stack] + [f"{stem}.{key}"])
-        raise RecursionError(f"Detected recursive cycle: {cycle}")
+        raise RecursionError(f"Detected recursive cycle while expanding {stem}.{key}: {cycle}")
 
     mod = preset.modules.get(stem)
     if not isinstance(mod, dict) or key not in mod:
         raise KeyError(f"Missing key '{key}' in module '{stem}.yaml'")
 
     ctx.call_stack.append((stem, key))
+    ctx.call_stack_set.add((stem, key))
     try:
         val = mod[key]
 
@@ -357,16 +406,20 @@ def expand_key(preset: Preset, ctx: Context, stem: str, key: str) -> str:
                         ctx.debug_lines.append(f"[{stem}.{key}] WEIGHTED -> (no candidates)")
                     return ""
 
-                total = sum(e.weight for e in candidates)
-                r = ctx.rng.random() * total
+                if ctx.complexity_used >= ctx.complexity_budget:
+                    candidates = sorted(candidates, key=lambda e: _budget_cost(e.text))
+                weighted_rows = [(e, e.weight * _relation_multiplier(ctx.active_tags, e.text)) for e in candidates]
+                total = sum(max(0.0, w) for _, w in weighted_rows)
+                r = ctx.rng.random() * total if total > 0 else 0.0
                 upto = 0.0
                 chosen = candidates[-1]
-                for e in candidates:
-                    upto += e.weight
+                for e, w in weighted_rows:
+                    upto += max(0.0, w)
                     if r <= upto:
                         chosen = e
                         break
                 piece = expand_text(preset, ctx, stem, chosen.text)
+                ctx.complexity_used += _budget_cost(piece)
                 if ctx.debug_lines is not None:
                     cond = " & ".join(chosen.conditions) if chosen.conditions else "ALL"
                     ctx.debug_lines.append(f"[{stem}.{key}] WEIGHTED({cond}, w={chosen.weight}) -> {piece}")
@@ -425,6 +478,7 @@ def expand_key(preset: Preset, ctx: Context, stem: str, key: str) -> str:
         return out
     finally:
         ctx.call_stack.pop()
+        ctx.call_stack_set.discard((stem, key))
 
 
 # ----------------------------
@@ -741,6 +795,7 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
                 "html_unescape": ("BOOLEAN", {"default": True}),
                 "danbooru_normalize": ("BOOLEAN", {"default": True}),
                 "dedupe_tags": ("BOOLEAN", {"default": True}),
+                "normalize_synonyms": ("BOOLEAN", {"default": False}),
                 "debug": ("BOOLEAN", {"default": False}),
             },
             "optional": {
@@ -749,8 +804,8 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
             }
         }
 
-    RETURN_TYPES = ("STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING")
-    RETURN_NAMES = ("positive_prompt", "subject_prompt", "scene_prompt", "composition_prompt", "ppg_json", "debug_report", "cleanup_report")
+    RETURN_TYPES = ("STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("positive_prompt", "negative_prompt", "subject_prompt", "scene_prompt", "composition_prompt", "ppg_json", "debug_report", "cleanup_report")
     FUNCTION = "generate_v2"
     CATEGORY = "prompt"
 
@@ -765,6 +820,7 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
                     html_unescape: bool,
                     danbooru_normalize: bool,
                     dedupe_tags: bool,
+                    normalize_synonyms: bool,
                     debug: bool,
                     entry_file: str = "0_master_generator.yaml",
                     entry_key: str = "template"):
@@ -789,6 +845,8 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
             rng=random.Random(seed),
             strip_meta=strip_meta_tags,
             sep_text=sep_text2,
+            complexity_budget=80,
+            enable_synonym_normalize=normalize_synonyms,
         )
 
         locks = []
@@ -826,19 +884,17 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
                 full_prompt = (ctx.sep_text or ", ").join(parts)
             else:
                 full_prompt = expand_key(preset, ctx, entry_stem, entry_key)
-
-                if isinstance(module_dict, dict) and "subject_prompt" in module_dict:
-                    subject = expand_key(preset, ctx, entry_stem, "subject_prompt")
-                if isinstance(module_dict, dict) and "scene_prompt" in module_dict:
-                    scene = expand_key(preset, ctx, entry_stem, "scene_prompt")
-                try:
-                    comp = expand_key(preset, ctx, "composition", "composition")
-                except Exception:
-                    comp = ""
             full_prompt = _replace_sep(full_prompt, ctx.sep_text)
             subject = _replace_sep(subject, ctx.sep_text)
             scene = _replace_sep(scene, ctx.sep_text)
             comp = _replace_sep(comp, ctx.sep_text)
+
+            negative_key = "negative_prompt" if isinstance(module_dict, dict) and "negative_prompt" in module_dict else "negative"
+            negative_prompt = ""
+            if isinstance(module_dict, dict) and negative_key in module_dict:
+                negative_prompt = expand_key(preset, ctx, entry_stem, negative_key)
+            elif "negative" in preset.modules and isinstance(preset.modules.get("negative"), dict) and "negative" in preset.modules["negative"]:
+                negative_prompt = expand_key(preset, ctx, "negative", "negative")
 
             def _clean_basic(s: str) -> str:
                 # Remove literal placeholder quotes that sometimes slip through from optional slots
@@ -854,9 +910,16 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
 
 
             full_prompt = _clean_basic(full_prompt)
+            negative_prompt = _clean_basic(negative_prompt)
             subject = _clean_basic(subject)
             scene = _clean_basic(scene)
             comp = _clean_basic(comp)
+
+            full_prompt = _apply_safety_filter(full_prompt)
+            negative_prompt = _apply_safety_filter(negative_prompt)
+            if ctx.enable_synonym_normalize:
+                full_prompt = _normalize_synonyms(full_prompt)
+                negative_prompt = _normalize_synonyms(negative_prompt)
 
             cleanup_report = {}
             if apply_conflict_resolver:
@@ -908,6 +971,7 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
 
             if danbooru_normalize:
                 full_prompt = _normalize_danbooru(full_prompt)
+                negative_prompt = _normalize_danbooru(negative_prompt)
                 subject = _normalize_danbooru(subject)
                 scene = _normalize_danbooru(scene)
                 comp = _normalize_danbooru(comp)
@@ -924,7 +988,7 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
                 "sep_text": sep_text2,
                 "meta_tags": meta_tags,
                 "sections": {"subject": subject, "scene": scene, "composition": comp},
-                "prompt": {"positive": full_prompt},
+                "prompt": {"positive": full_prompt, "negative": negative_prompt},
                 "cleanup": cleanup_report,
             }, ensure_ascii=False)
 
@@ -933,7 +997,7 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
                 debug_report = "\n".join(ctx.debug_lines)
                 debug_report += "\n\nActive meta tags:\n" + ", ".join(meta_tags)
 
-            return (full_prompt, subject, scene, comp, ppg_json, debug_report, json.dumps(cleanup_report, ensure_ascii=False))
+            return (full_prompt, negative_prompt, subject, scene, comp, ppg_json, debug_report, json.dumps(cleanup_report, ensure_ascii=False))
 
         except Exception as e:
             dbg = "\n".join(ctx.debug_lines) if debug else ""
@@ -981,51 +1045,3 @@ class PPGPromptSections:
             "seed": data.get("seed") if isinstance(data, dict) else None,
         }, ensure_ascii=False)
         return (positive, subject, scene, comp, meta)
-
-
-class PPGRegionPlanBuilder:
-    @classmethod
-    def INPUT_TYPES(cls):
-        return {
-            "required": {
-                "subject_prompt": ("STRING", {"multiline": True, "default": ""}),
-                "scene_prompt": ("STRING", {"multiline": True, "default": ""}),
-                "composition_prompt": ("STRING", {"multiline": True, "default": ""}),
-                "layout_mode": (["single", "two_shot_left_right", "foreground_mid_background", "rule_of_thirds"],),
-                "global_weight": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 3.0, "step": 0.05}),
-                "subject_weight": ("FLOAT", {"default": 1.2, "min": 0.0, "max": 3.0, "step": 0.05}),
-            }
-        }
-    RETURN_TYPES = ("STRING", "STRING")
-    RETURN_NAMES = ("region_plan_json", "debug_report")
-    FUNCTION = "build"
-    CATEGORY = "prompt/ppg"
-
-    def build(self, subject_prompt: str, scene_prompt: str, composition_prompt: str,
-              layout_mode: str, global_weight: float, subject_weight: float):
-        regions = []
-        if layout_mode == "single":
-            regions = [{"name": "subject", "rect": [0.0, 0.0, 1.0, 1.0], "weight": subject_weight, "prompt": subject_prompt}]
-        elif layout_mode == "two_shot_left_right":
-            regions = [
-                {"name": "left_subject", "rect": [0.0, 0.0, 0.5, 1.0], "weight": subject_weight, "prompt": subject_prompt},
-                {"name": "right_subject", "rect": [0.5, 0.0, 1.0, 1.0], "weight": subject_weight, "prompt": subject_prompt},
-            ]
-        elif layout_mode == "foreground_mid_background":
-            regions = [
-                {"name": "foreground", "rect": [0.0, 0.55, 1.0, 1.0], "weight": subject_weight, "prompt": subject_prompt},
-                {"name": "midground", "rect": [0.0, 0.25, 1.0, 0.75], "weight": subject_weight * 0.9, "prompt": subject_prompt},
-                {"name": "background", "rect": [0.0, 0.0, 1.0, 0.55], "weight": subject_weight * 0.7, "prompt": scene_prompt},
-            ]
-        else:
-            regions = [
-                {"name": "top_left", "rect": [0.0, 0.0, 0.33, 0.33], "weight": subject_weight, "prompt": subject_prompt},
-                {"name": "center", "rect": [0.33, 0.33, 0.66, 0.66], "weight": subject_weight, "prompt": subject_prompt},
-                {"name": "bottom_right", "rect": [0.66, 0.66, 1.0, 1.0], "weight": subject_weight, "prompt": subject_prompt},
-            ]
-
-        global_prompt = ", ".join([p for p in [scene_prompt, composition_prompt] if p]).strip(" ,")
-        plan = {"layout_mode": layout_mode, "global": {"prompt": global_prompt, "weight": global_weight}, "regions": regions}
-        dbg = f"Regions: {len(regions)} | Global prompt length: {len(global_prompt)}"
-        return (json.dumps(plan, ensure_ascii=False), dbg)
-

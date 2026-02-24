@@ -169,6 +169,12 @@ def _resolve_lora_path(folder_paths, name: str) -> Optional[Tuple[str, str]]:
             if p:
                 return cand, p
 
+    for ext in [".safetensors", ".ckpt", ".pt", ".bin"]:
+        test_name = clean + ext
+        direct = folder_paths.get_full_path("loras", test_name)
+        if direct:
+            return test_name, direct
+
     return None
 
 
@@ -255,11 +261,13 @@ class SynapseLoRAStyleMixer:
             },
             "optional": {
                 "salt": ("INT", {"default": 0, "min": 0, "max": 9999999}),
+                "max_loras": ("INT", {"default": 10, "min": 1, "max": 128}),
+                "lora_stack_in": ("LORA_STACK",),
             },
         }
 
-    RETURN_TYPES = ("MODEL", "CLIP", "LORA_STACK", "STRING", "STRING", "STRING")
-    RETURN_NAMES = ("model_out", "clip_out", "lora_stack", "trigger_words", "recipe_json", "debug_report")
+    RETURN_TYPES = ("MODEL", "CLIP", "LORA_STACK", "STRING", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("model_out", "clip_out", "lora_stack", "trigger_words", "recipe_json", "lora_info_json", "debug_report")
     FUNCTION = "mix"
     CATEGORY = "synapse/lora"
 
@@ -275,6 +283,8 @@ class SynapseLoRAStyleMixer:
         seed: int,
         extract_trigger_words: bool,
         salt: int = 0,
+        max_loras: int = 10,
+        lora_stack_in=None,
     ):
         folder_paths = _safe_import_folder_paths()
         if folder_paths is None:
@@ -284,9 +294,13 @@ class SynapseLoRAStyleMixer:
         import comfy.utils
 
         parsed = _parse_lora_text(lora_text, default_strength)
+        if lora_stack_in:
+            for row in lora_stack_in:
+                if isinstance(row, (list, tuple)) and len(row) >= 3:
+                    parsed.append({"name": row[0], "strength_model": float(row[1]), "strength_clip": float(row[2]), "source": "stack_in"})
         if not parsed:
             debug = "loras=0 | no valid LoRA entries found in lora_text"
-            return (model, clip, [], "", json.dumps({"loras": []}, ensure_ascii=False), debug)
+            return (model, clip, [], "", json.dumps({"loras": []}, ensure_ascii=False), json.dumps([], ensure_ascii=False), debug)
 
         resolved: List[Dict[str, Any]] = []
         unresolved_names: List[str] = []
@@ -309,6 +323,9 @@ class SynapseLoRAStyleMixer:
         if not resolved:
             raise FileNotFoundError("No LoRA entries from lora_text were found in ComfyUI loras folder.")
 
+        if len(resolved) > int(max_loras):
+            resolved = resolved[: int(max_loras)]
+
         rng = _seeded_rng(seed, salt)
         jit = float(weight_jitter)
         if jit > 0.0:
@@ -319,9 +336,12 @@ class SynapseLoRAStyleMixer:
 
         resolved = _normalize_strengths(resolved, normalize_mode, float(target_total))
 
+        total_model_strength = sum(abs(float(it["strength_model"])) for it in resolved)
         debug_lines = [
             f"loras={len(resolved)} | normalize={normalize_mode} | target_total={target_total:.2f} | jitter={jit:.2f}",
         ]
+        if total_model_strength > 2.0:
+            debug_lines.append(f"warning: total strength_model={total_model_strength:.3f} exceeds recommended 2.0")
 
         if unresolved_names:
             unique_unresolved = sorted(set(unresolved_names))
@@ -330,6 +350,7 @@ class SynapseLoRAStyleMixer:
         cur_model, cur_clip = model, clip
         lora_cache: Dict[str, Any] = {}
         applied: List[Dict[str, Any]] = []
+        lora_info: List[Dict[str, Any]] = []
         trigger_words: List[str] = []
         trigger_word_keys = set()
 
@@ -346,10 +367,11 @@ class SynapseLoRAStyleMixer:
 
             item = {"name": name, "strength_model": sm, "strength_clip": sc}
             applied.append(item)
+            lora_info.append({"name": name, "path": full_path, "trigger_words": _extract_trigger_words_for_lora(full_path), "hash": ""})
             debug_lines.append(f"- {name} | model={sm:.3f} clip={sc:.3f}")
 
             if extract_trigger_words:
-                words = _extract_trigger_words_for_lora(full_path)
+                words = lora_info[-1]["trigger_words"] if lora_info else _extract_trigger_words_for_lora(full_path)
                 for w in words:
                     key = w.lower()
                     if key not in trigger_word_keys:
@@ -374,4 +396,4 @@ class SynapseLoRAStyleMixer:
         }
 
         trigger_text = ", ".join(trigger_words)
-        return (cur_model, cur_clip, lora_stack, trigger_text, json.dumps(recipe, ensure_ascii=False), "\n".join(debug_lines))
+        return (cur_model, cur_clip, lora_stack, trigger_text, json.dumps(recipe, ensure_ascii=False), json.dumps(lora_info, ensure_ascii=False), "\n".join(debug_lines))

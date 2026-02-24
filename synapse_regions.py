@@ -3,32 +3,7 @@ import re
 from typing import Any, Dict, List
 
 
-def _get_node_class(name: str):
-    """Get a ComfyUI core node class by name."""
-    try:
-        import nodes  # ComfyUI core
-        if hasattr(nodes, "NODE_CLASS_MAPPINGS") and name in nodes.NODE_CLASS_MAPPINGS:
-            return nodes.NODE_CLASS_MAPPINGS[name]
-        return getattr(nodes, name, None)
-    except Exception:
-        return None
-
-
-def _call(node_obj, **kwargs):
-    fn_name = getattr(node_obj, "FUNCTION", None)
-    if not fn_name:
-        raise RuntimeError("Node object has no FUNCTION attribute")
-    fn = getattr(node_obj, fn_name)
-    return fn(**kwargs)
-
-
-def _clamp(v: float, lo: float, hi: float) -> float:
-    return max(lo, min(hi, float(v)))
-
-
-def _join_nonempty(parts: List[str]) -> str:
-    return ", ".join([p.strip(" ,") for p in parts if (p or "").strip()]).strip(" ,")
-
+from .synapse_utils import call_node as _call, clamp as _clamp, get_node_class as _get_node_class, join_nonempty as _join_nonempty
 
 def _filter_subject_tokens(text: str) -> str:
     """
@@ -141,6 +116,17 @@ def _build_plan(
             {"name": "background", "rect": [0.0, 0.0, 1.0, 0.60], "weight": max(0.0, subject_weight * 0.75), "prompt": scene_prompt},
             {"name": "subject_foreground", "rect": [0.0, 0.45, 1.0, 1.0], "weight": subject_weight, "prompt": subject_prompt},
         ]
+    elif layout_mode == "diagonal":
+        regions = [{"name": "subject_diagonal", "rect": [0.08, 0.08, 0.58, 0.58], "weight": subject_weight, "prompt": subject_prompt}]
+    elif layout_mode == "portrait_bust":
+        regions = [{"name": "subject_bust", "rect": [0.22, 0.03, 0.78, 0.70], "weight": subject_weight, "prompt": subject_prompt}]
+    elif layout_mode == "wide_panoramic":
+        regions = [{"name": "subject_wide", "rect": [0.30, 0.30, 0.70, 0.85], "weight": subject_weight, "prompt": subject_prompt}]
+    elif layout_mode == "split_screen":
+        regions = [
+            {"name": "left_panel", "rect": [0.0, 0.0, 0.5, 1.0], "weight": subject_weight, "prompt": subject_prompt},
+            {"name": "right_panel", "rect": [0.5, 0.0, 1.0, 1.0], "weight": subject_weight, "prompt": scene_prompt or subject_prompt},
+        ]
     else:  # rule_of_thirds (default)
         # SINGLE anchor region (prevents duplicate-subject ghosts).
         if subject_anchor == "auto":
@@ -185,18 +171,20 @@ class SynapseRegionConditioning:
                 "scene_prompt": ("STRING", {"multiline": True, "default": ""}),
                 "composition_prompt": ("STRING", {"multiline": True, "default": ""}),
                 "negative_prompt": ("STRING", {"multiline": True, "default": "worst quality, low quality, lowres, blurry, watermark, text"}),
-                "layout_mode": (["subject_center", "rule_of_thirds", "subject_left", "subject_right", "foreground_mid_background", "no_regions"],),
+                "layout_mode": (["subject_center", "rule_of_thirds", "subject_left", "subject_right", "foreground_mid_background", "diagonal", "portrait_bust", "wide_panoramic", "split_screen", "no_regions"],),
                 "subject_anchor": (["auto","center","top_left","top_right","bottom_left","bottom_right"],),
                 "subject_box_scale": ("FLOAT", {"default": 0.70, "min": 0.20, "max": 0.95, "step": 0.05}),
                 "global_weight": ("FLOAT", {"default": 1.00, "min": 0.0, "max": 3.0, "step": 0.05}),
                 "subject_weight": ("FLOAT", {"default": 1.10, "min": 0.0, "max": 3.0, "step": 0.05}),
-                "base_strength": ("FLOAT", {"default": 0.60, "min": 0.0, "max": 10.0, "step": 0.05}),
+                "global_strength": ("FLOAT", {"default": 0.60, "min": 0.0, "max": 10.0, "step": 0.05}),
                 "region_strength_multiplier": ("FLOAT", {"default": 1.00, "min": 0.0, "max": 10.0, "step": 0.05}),
             },
             "optional": {
                 "width_px": ("INT", {"default": 1024, "min": 64, "max": 8192, "step": 8}),
                 "height_px": ("INT", {"default": 1024, "min": 64, "max": 8192, "step": 8}),
                 "strength_cap": ("FLOAT", {"default": 10.0, "min": 0.1, "max": 50.0, "step": 0.5}),
+                "region_1_prompt": ("STRING", {"default": "", "multiline": True}),
+                "region_2_prompt": ("STRING", {"default": "", "multiline": True}),
             },
         }
 
@@ -217,11 +205,13 @@ class SynapseRegionConditioning:
         subject_box_scale: float,
         global_weight: float,
         subject_weight: float,
-        base_strength: float,
+        global_strength: float,
         region_strength_multiplier: float,
         width_px: int = 1024,
         height_px: int = 1024,
         strength_cap: float = 10.0,
+        region_1_prompt: str = "",
+        region_2_prompt: str = "",
     ):
         CLIPTextEncode = _get_node_class("CLIPTextEncode")
         ConditioningSetAreaPercentage = _get_node_class("ConditioningSetAreaPercentage")
@@ -268,7 +258,7 @@ class SynapseRegionConditioning:
         # Global conditioning over full canvas
         if global_prompt.strip():
             base_cond = _call(enc, clip=clip, text=global_prompt.strip())[0]
-            g_strength = _clamp(float(base_strength) * float(global_weight_val), 0.0, float(strength_cap))
+            g_strength = _clamp(float(global_strength) * float(global_weight_val), 0.0, float(strength_cap))
             if g_strength > 0.0:
                 if ConditioningSetAreaPercentage is not None:
                     sa = ConditioningSetAreaPercentage()
@@ -291,6 +281,10 @@ class SynapseRegionConditioning:
             name = str(r.get("name", f"region_{idx+1}"))
             rect = r.get("rect", None)
             prompt = str(r.get("prompt", "") or "").strip()
+            if idx == 0 and (region_1_prompt or "").strip():
+                prompt = region_1_prompt.strip()
+            if idx == 1 and (region_2_prompt or "").strip():
+                prompt = region_2_prompt.strip()
             weight = float(r.get("weight", 1.0) or 1.0)
 
             if not prompt:
@@ -377,21 +371,22 @@ class SynapseRegionPreview:
         regions = plan.get("regions", []) if isinstance(plan, dict) else []
 
         img = torch.zeros((1, int(height_px), int(width_px), 3), dtype=torch.float32)
+        img += 0.08
 
         debug_lines = [f"preview {width_px}x{height_px} | regions={len(regions)}"]
         t = max(1, int(border_thickness))
 
-        def draw_rect(x0, y0, x1, y1):
+        def draw_rect(x0, y0, x1, y1, color):
             x0 = max(0, min(int(width_px) - 1, int(x0)))
             x1 = max(0, min(int(width_px) - 1, int(x1)))
             y0 = max(0, min(int(height_px) - 1, int(y0)))
             y1 = max(0, min(int(height_px) - 1, int(y1)))
             if x1 <= x0 or y1 <= y0:
                 return
-            img[:, y0:y0 + t, x0:x1, :] = 1.0
-            img[:, y1 - t:y1, x0:x1, :] = 1.0
-            img[:, y0:y1, x0:x0 + t, :] = 1.0
-            img[:, y0:y1, x1 - t:x1, :] = 1.0
+            img[:, y0:y0 + t, x0:x1, :] = color
+            img[:, y1 - t:y1, x0:x1, :] = color
+            img[:, y0:y1, x0:x0 + t, :] = color
+            img[:, y0:y1, x1 - t:x1, :] = color
 
         for idx, r in enumerate(regions):
             if not isinstance(r, dict):
@@ -405,7 +400,9 @@ class SynapseRegionPreview:
             py0 = int(round(_clamp(y0, 0.0, 1.0) * height_px))
             px1 = int(round(_clamp(x1, 0.0, 1.0) * width_px))
             py1 = int(round(_clamp(y1, 0.0, 1.0) * height_px))
-            draw_rect(px0, py0, px1, py1)
+            palette=[torch.tensor([1.0,0.2,0.2]),torch.tensor([0.2,1.0,0.2]),torch.tensor([0.2,0.4,1.0]),torch.tensor([1.0,1.0,0.2])]
+            color = palette[idx % len(palette)]
+            draw_rect(px0, py0, px1, py1, color)
             debug_lines.append(f"{name}: {x0:.2f},{y0:.2f},{x1:.2f},{y1:.2f}")
 
         return (img, "\n".join(debug_lines))

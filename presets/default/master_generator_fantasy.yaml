@@ -26,7 +26,7 @@ vibe_selector:
 - 15, meta:vibe:epic
 - 5, meta:vibe:calm
 character_count:
-- /meta:mode:world/ 140, meta:count:zero, __no_characters__
+- /meta:mode:world/ 90, meta:count:zero, __no_characters__
 - /meta:mode:studio/ 75, meta:count:single, __studio_single_character__
 - /meta:mode:studio/ 18, meta:count:multiple, __studio_dual_characters__
 - /meta:mode:studio/ 7, meta:count:multiple, __studio_group_characters__
@@ -39,7 +39,7 @@ character_count:
 - /meta:action:boss_battle/ 30, meta:count:multiple, __group_characters__
 - /meta:action:ritual/ 25, meta:count:multiple, __group_characters__
 - /meta:action:team_fight/ 30, meta:count:multiple, __group_characters__
-- /meta:content:nude/ 5, meta:count:multiple, __nude_group__
+- /meta:content:nude/ 12, meta:count:multiple, __nude_group__
 - /meta:vibe:romantic/ 8, meta:count:multiple, __romantic_pair__
 single_character:
 - /meta:genre:fantasy/ 50, 1girl, meta:gender:female, __fantasy_complete_character__

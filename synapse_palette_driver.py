@@ -1,35 +1,9 @@
 import json
 import random
-from collections import deque
 from typing import Any, Dict, List, Tuple
 
 
-def _get_node_class(name: str):
-    """Get a ComfyUI core node class by name."""
-    try:
-        import nodes  # ComfyUI core
-        if hasattr(nodes, "NODE_CLASS_MAPPINGS") and name in nodes.NODE_CLASS_MAPPINGS:
-            return nodes.NODE_CLASS_MAPPINGS[name]
-        return getattr(nodes, name, None)
-    except Exception:
-        return None
-
-
-def _call(node_obj, **kwargs):
-    fn_name = getattr(node_obj, "FUNCTION", None)
-    if not fn_name:
-        raise RuntimeError("Node object has no FUNCTION attribute")
-    fn = getattr(node_obj, fn_name)
-    return fn(**kwargs)
-
-
-def _clamp(v: float, lo: float, hi: float) -> float:
-    return max(lo, min(hi, float(v)))
-
-
-def _join(parts: List[str]) -> str:
-    return ", ".join([p.strip(" ,") for p in parts if (p or "").strip()]).strip(" ,")
-
+from .synapse_utils import call_node as _call, clamp as _clamp, get_node_class as _get_node_class, join_nonempty as _join
 
 def _seeded_rng(seed: int, salt: int) -> random.Random:
     # Keep deterministic but spread out when user wants multiple independent draws
@@ -51,8 +25,6 @@ class SynapseColorPaletteDriver:
       - Feed the output CONDITIONING into KSampler.
     """
 
-    # Tiny in-process history to avoid back-to-back repeats when using changing seeds.
-    _HISTORY: deque = deque(maxlen=12)
 
     # Palette templates: short, model-friendly, works with both natural language + tag-ish prompts.
     _FAMILIES: Dict[str, List[Dict[str, Any]]] = {
@@ -126,7 +98,7 @@ class SynapseColorPaletteDriver:
     FUNCTION = "apply"
     CATEGORY = "synapse/color"
 
-    def _pick_palette(self, rng: random.Random, palette_family: str, anti_repeat: bool) -> Tuple[str, List[str]]:
+    def _pick_palette(self, rng: random.Random, palette_family: str, anti_repeat: bool, seed: int) -> Tuple[str, List[str]]:
         if palette_family == "auto":
             fam = rng.choice(sorted(list(self._FAMILIES.keys())))
         else:
@@ -135,16 +107,13 @@ class SynapseColorPaletteDriver:
         if not items:
             return ("auto", ["colorful", "color_variation"])
 
-        # Avoid immediate repeats when possible
         choices = items[:]
         if anti_repeat and len(choices) > 1:
-            choices2 = [it for it in choices if f"{fam}:{it.get('name')}" not in self._HISTORY]
-            if choices2:
-                choices = choices2
+            skip_idx = abs(hash((int(seed), fam))) % len(choices)
+            choices = [it for i, it in enumerate(choices) if i != skip_idx] or choices
 
         item = rng.choice(choices)
         pid = f"{fam}:{item.get('name', 'palette')}"
-        self._HISTORY.append(pid)
         return (pid, list(item.get("tokens", [])))
 
     def _pick_harmony(self, rng: random.Random, harmony: str) -> Tuple[str, List[str]]:
@@ -175,7 +144,7 @@ class SynapseColorPaletteDriver:
             raise RuntimeError("ComfyUI core node CLIPTextEncode not found. This node must run inside ComfyUI.")
 
         rng = _seeded_rng(seed, salt)
-        palette_id, palette_tokens = self._pick_palette(rng, palette_family, anti_repeat)
+        palette_id, palette_tokens = self._pick_palette(rng, palette_family, anti_repeat, seed)
         harmony_name, harmony_tokens = self._pick_harmony(rng, harmony)
 
         # Optional micro-variation so adjacent seeds feel more distinct
