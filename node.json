@@ -1,15 +1,19 @@
 {
-  "name": "Synapse-Engine",
-  "description": "ComfyUI node pack for procedural prompts, regional conditioning, palette steering, and text-driven LoRA mixing with trigger-word output.",
-  "version": "1.1.0",
-  "author": "Cadejo77",
-  "license": "MIT",
-  "repository": "https://github.com/Cadejo77/Synapse-Engine",
-  "reference": "https://github.com/Cadejo77/Synapse-Engine",
-  "files": [
-    "https://github.com/Cadejo77/Synapse-Engine"
-  ],
-  "install_type": "git-clone",
-  "pip": ["PyYAML>=6.0"],
-  "nodename_pattern": "Synapse"
+  "custom_nodes": [
+    {
+      "name": "Synapse-Engine",
+      "description": "ComfyUI node pack for procedural prompts, regional conditioning, palette steering, and text-driven LoRA mixing with trigger-word output.",
+      "version": "1.1.0",
+      "author": "Cadejo77",
+      "license": "MIT",
+      "repository": "https://github.com/Cadejo77/Synapse-Engine",
+      "reference": "https://github.com/Cadejo77/Synapse-Engine",
+      "files": [
+        "https://github.com/Cadejo77/Synapse-Engine"
+      ],
+      "install_type": "git-clone",
+      "pip": ["PyYAML>=6.0"],
+      "nodename_pattern": "Synapse"
+    }
+  ]
 }

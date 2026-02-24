@@ -29,25 +29,25 @@ render_quality:
 - 3, __high_contrast_quality__
 - 2, __gritty_quality__
 detailed_quality:
-- 40, highly_detailed, ultra_detailed, intricate_details
-- 30, detailed, fine_details
-- 20, crisp_lines, clean_edges
-- 10, meticulous_rendering, micro_detail
+- 40, highly detailed
+- 30, fine details
+- 20, crisp lines
+- 10, meticulous rendering
 cinematic_quality:
-- 40, cinematic, cinematic_lighting, film_grain
-- 30, movie_like, dramatic_lighting
-- 20, filmic, anamorphic_lens
-- 10, theatrical, volumetric_lighting
+- 40, cinematic
+- 30, movie like
+- 20, filmic
+- 10, theatrical
 realistic_quality:
-- 40, photorealistic, realistic
-- 30, natural_skin_texture, realistic_lighting
-- 20, lifelike, realistic_details
-- 10, high_dynamic_range, hdr
+- 40, photorealistic
+- 30, natural skin texture
+- 20, lifelike
+- 10, high dynamic range
 high_detail_quality:
-- 40, ultra_detailed, sharp_focus, highres
-- 30, detailed_face, detailed_eyes
-- 20, skin_detail, pores
-- 10, fabric_detail, embroidery
+- 40, ultra detailed
+- 30, detailed face
+- 20, skin detail
+- 10, fabric detail
 sharp_quality:
 - 40, sharp_focus, crisp_details
 - 30, high_sharpness, clean_lines

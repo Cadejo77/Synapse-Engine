@@ -1,8 +1,8 @@
 weapon:
 - /meta:style:pinup/ 80, __unarmed__
-- /meta:vibe:explicit/ 20, __unarmed__
-- /meta:vibe:romantic/ 15, __unarmed__
-- /meta:vibe:calm/ 10, __unarmed__
+- /meta:vibe:explicit/ 40, __unarmed__
+- /meta:vibe:romantic/ 20, __unarmed__
+- /meta:vibe:calm/ 15, __unarmed__
 - /meta:weapon_style:warrior/= __standard_warrior_weapon__
 - /meta:weapon_style:rogue/= __standard_rogue_weapon__
 - /meta:weapon_style:mage/= __standard_mage_weapon__
@@ -19,10 +19,10 @@ weapon:
 - /meta:weapon_style:bard/= __standard_bard_weapon__
 - /meta:weapon_style:sorcerer/= __standard_sorcerer_weapon__
 - /meta:weapon_style:witcher/= __standard_witcher_weapon__
-- /meta:vibe:epic/ 6, wielding a legendary halberd, ornate and battle-worn
-- /meta:vibe:dark/ 6, carrying a cruel flail, spiked and heavy
-- /meta:vibe:adventurous/ 6, holding a hunting spear, practical
-- /meta:vibe:romantic/ 4, carrying a ceremonial rapier, elegant
+- /meta:vibe:epic/ 25, wielding a legendary halberd, ornate and battle-worn
+- /meta:vibe:dark/ 20, carrying a cruel flail, spiked and heavy
+- /meta:vibe:adventurous/ 18, holding a hunting spear, practical
+- /meta:vibe:romantic/ 12, carrying a ceremonial rapier, elegant
 standard_warrior_weapon:
 - /meta:vibe:dark/ 30, __warrior_weapon_dark__
 - /meta:vibe:dark/ 70, __warrior_weapon_standard__
