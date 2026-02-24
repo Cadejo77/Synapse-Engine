@@ -132,7 +132,7 @@ class Context:
     active_tags: Set[str] = field(default_factory=set)
     call_stack: List[Tuple[str, str]] = field(default_factory=list)  # (module_stem, key)
     call_stack_set: Set[Tuple[str, str]] = field(default_factory=set)
-    debug_lines: List[str] = field(default_factory=list)
+    debug_lines: Optional[List[str]] = None
     max_depth: int = 80
     complexity_budget: int = 80
     complexity_used: int = 0
@@ -557,7 +557,7 @@ class ProceduralPromptGraph:
             strip_meta=bool(strip_meta_tags),
             sep_text=str(sep_text),
             active_tags=set(),
-            debug_lines=[] if debug else [],
+            debug_lines=[] if debug else None,
         )
 
         try:
@@ -847,6 +847,7 @@ class ProceduralPromptGraphV2(ProceduralPromptGraph):
             sep_text=sep_text2,
             complexity_budget=80,
             enable_synonym_normalize=normalize_synonyms,
+            debug_lines=[] if debug else None,
         )
 
         locks = []
